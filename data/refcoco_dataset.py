@@ -25,6 +25,8 @@ from data.base_dataset import BaseDataset
 from bert.tokenization_bert import BertTokenizer
 from data.poly_utils import string_to_polygons, downsample_polygons, polygons_to_string, points_to_token_string
 import cv2
+from transformers import AutoTokenizer, AutoModelForMaskedLM
+
 
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 ImageFile.MAX_IMAGE_PIXELS = None
@@ -71,7 +73,8 @@ class RefcocoDataset(BaseDataset):
             T.ToTensor(),
             T.Normalize(mean=mean, std=std, max_image_size=max_image_size)
         ])
-        self.tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+        # self.tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+        self.tokenizer = AutoTokenizer.from_pretrained('xlm-roberta-base')
 
     def __getitem__(self, index):
         data = self.dataset[index]

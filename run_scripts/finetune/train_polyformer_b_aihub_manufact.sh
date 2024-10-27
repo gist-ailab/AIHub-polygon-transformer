@@ -7,15 +7,18 @@ export MASTER_PORT=6061
 det_weight=0.1
 cls_weight=0.0005
 num_bins=64
-log_dir=./polyformer_b_logs
-save_dir=./polyformer_b_checkpoints
+# log_dir=./polyformer_b_logs
+# save_dir=./polyformer_b_checkpoints
+log_dir=./polyformer_b_aihub_manufact_logs
+save_dir=./polyformer_b_aihub_manufact_checkpoints
 mkdir -p $log_dir $save_dir
 
 bpe_dir=../../utils/BPE
 user_dir=../../polyformer_module
 
 data_dir=../../datasets/finetune
-data=${data_dir}/refcoco+g_train_shuffled.tsv,${data_dir}/refcoco/refcoco_val.tsv
+data=${data_dir}/aihub_manufact/aihub_manufact_train.tsv,${data_dir}/aihub_manufact/aihub_manufact_val.tsv
+# data=${data_dir}/refcoco+g_train_shuffled.tsv,${data_dir}/refcoco/refcoco_val.tsv
 selected_cols=0,5,6,2,4,3,7
 restore_file=../../weights/polyformer_b_pretrain.pt
 
@@ -53,8 +56,8 @@ for max_epoch in 100; do
       mkdir -p $save_path
 
       echo "train.py"
+            # CUDA_VISIBLE_DEVICES=0,1,2,3 python3 -m torch.distributed.launch --nproc_per_node=4 --master_port=${MASTER_PORT} ../../train.py \
       CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 python3 -m torch.distributed.launch --nproc_per_node=8 --master_port=${MASTER_PORT} ../../train.py \
-      # CUDA_VISIBLE_DEVICES=0,1,2,3 python3 -m torch.distributed.launch --nproc_per_node=4 --master_port=${MASTER_PORT} ../../train.py \
           $data \
           --selected-cols=${selected_cols} \
           --bpe-dir=${bpe_dir} \

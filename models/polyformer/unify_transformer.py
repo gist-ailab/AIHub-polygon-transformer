@@ -41,6 +41,7 @@ from torch import Tensor
 from .unify_transformer_layer import TransformerEncoderLayer, TransformerDecoderLayer
 from .swin import SwinTransformer
 from bert.modeling_bert import BertModel
+from transformers import AutoTokenizer, AutoModelForMaskedLM
 
 
 
@@ -529,7 +530,8 @@ class TransformerEncoder(FairseqEncoder):
         self.register_buffer("token_rp_bucket", token_rp_bucket)
         self.register_buffer("image_rp_bucket", image_rp_bucket)
         self.entangle_position_embedding = args.entangle_position_embedding
-        self.bert = BertModel.from_pretrained("bert-base-uncased")
+        # self.bert = BertModel.from_pretrained("bert-base-uncased")
+        self.bert = AutoModelForMaskedLM.from_pretrained("xlm-roberta-base")
 
     def train(self, mode=True):
         super(TransformerEncoder, self).train(mode)
@@ -613,7 +615,8 @@ class TransformerEncoder(FairseqEncoder):
     ):
         # embed tokens and positions
         if token_embedding is None:
-            token_embedding = self.bert(src_tokens, attention_mask=att_masks)[0]
+            # token_embedding = self.bert(src_tokens, attention_mask=att_masks)[0]
+            token_embedding = self.bert(src_tokens, attention_mask=att_masks, output_hidden_states=True,).hidden_states[0]
 
         x = embed = token_embedding
         if self.entangle_position_embedding and pos_embed is not None:

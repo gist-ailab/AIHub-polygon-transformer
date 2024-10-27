@@ -15,10 +15,19 @@ from poly_utils import is_clockwise, revert_direction, check_length, reorder_poi
 max_length = 400
 
 data_root = './refer/data'
-datasets = ['refcoco', 'refcoco+', 'refcocog']
+# datasets = ['refcoco', 'refcoco+', 'refcocog']
+# datasets = ['aihub_indoor']
+datasets = ['aihub_manufact']
 
-image_dir = './datasets/images/mscoco/train2014'
+if datasets[0] == 'aihub_indoor':
+    image_dir = './refer/data/aihub_refcoco_format/indoor/images'
+elif datasets[0] == 'aihub_manufact':
+    image_dir = './refer/data/aihub_refcoco_format/manufact/images'
+else:
+    image_dir = './datasets/images/mscoco/train2014'
 val_test_files = pickle.load(open("data/val_test_files.p", "rb"))
+
+
 
 combined_train_data = []
 
@@ -32,6 +41,12 @@ for dataset in datasets:
     elif dataset == 'refcocog':
         splits = ['train', 'val']
         splitBy = 'umd'
+    elif dataset == 'aihub_indoor':
+        splits = ['train', 'val', 'test']
+        splitBy = None
+    elif dataset == 'aihub_manufact':
+        splits = ['train', 'val', 'test']
+        splitBy = None
 
     save_dir = f'datasets/finetune/{dataset}'
     os.makedirs(save_dir, exist_ok=True)
@@ -113,12 +128,12 @@ for dataset in datasets:
                     combined_train_data.append(instance)
         writer.close()
 
-random.shuffle(combined_train_data)
-file_name = os.path.join("datasets/finetune/refcoco+g_train_shuffled.tsv")
-print("creating ", file_name)
-writer = open(file_name, 'w')
-writer.writelines(combined_train_data)
-writer.close()
+# random.shuffle(combined_train_data)
+# file_name = os.path.join("datasets/finetune/refcoco+g_train_shuffled.tsv")
+# print("creating ", file_name)
+# writer = open(file_name, 'w')
+# writer.writelines(combined_train_data)
+# writer.close()
 
 
 

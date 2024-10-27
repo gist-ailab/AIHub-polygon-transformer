@@ -50,17 +50,37 @@ class REFER:
 		# print ('loading dataset %s into memory...' % dataset)
 		self.ROOT_DIR = osp.abspath(osp.dirname(__file__))
 		self.DATA_DIR = osp.join(data_root, dataset)
+		self.dataset = dataset
 		if dataset in ['refcoco', 'refcoco+', 'refcocog']:
 			self.IMAGE_DIR = osp.join(data_root, 'images/mscoco/train2014')
 		elif dataset == 'refclef':
 			self.IMAGE_DIR = osp.join(data_root, 'images/saiapr_tc-12')
+		elif dataset == 'aihub_indoor':
+			self.DATA_DIR = osp.join(data_root, 'refcoco')
+			print('Dataset preprocessing...')
+			print('Print list of AIHub Indoor dataset...')
+			self.DATA_DIR = "refer/data/aihub_refcoco_format/indoor"
+			self.IMAGE_DIR = "refer/data/aihub_refcoco_format/indoor/images"
+			print('Dataset preprocessing...')
+			print('Print list of AIHub Indoor dataset...')
+			# print(os.listdir(self.IMAGE_DIR))
+		elif dataset == 'aihub_manufact':
+			# self.DATA_DIR = osp.join(data_root, 'refcocog')
+			self.DATA_DIR = "refer/data/aihub_refcoco_format/manufact"
+			self.IMAGE_DIR = "refer/data/aihub_refcoco_format/manufact/images"
+			print('Dataset preprocessing...')
+			print('Print list of AIHub Manufact dataset...')
+			# print(os.listdir(self.IMAGE_DIR))
 		else:
 			print('No refer dataset is called [%s]' % dataset)
 			sys.exit()
 
 		# load refs from data/dataset/refs(dataset).json
 		tic = time.time()
-		ref_file = osp.join(self.DATA_DIR, 'refs('+splitBy+').p')
+		if dataset in ['aihub_indoor', 'aihub_manufact']:
+			ref_file = osp.join(self.DATA_DIR, 'refs.p')
+		else:
+			ref_file = osp.join(self.DATA_DIR, 'refs('+splitBy+').p')
 		self.data = {}
 		self.data['dataset'] = dataset
 		self.data['refs'] = pickle.load(open(ref_file, 'rb'))
@@ -231,25 +251,56 @@ class REFER:
 		ann = self.refToAnn[ref_id]
 		return ann['bbox']  # [x, y, w, h]
     
+	def polygonFromMask(self, maskedArr):
+		# adapted from https://github.com/hazirbas/coco-json-converter/blob/master/generate_coco_json.py
+		contours, _ = cv2.findContours(maskedArr, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+		segmentation = []
+		valid_poly = 0
+		for contour in contours:
+		# Valid polygons have >= 6 coordinates (3 points)
+			if contour.size >= 6:
+				segmentation.append(contour.astype(float).flatten().tolist())
+				valid_poly += 1
+		if valid_poly == 0:
+			raise ValueError
+		return segmentation
+
 	def getPolygon(self, ref):
 		# return mask, area and mask-center
 		ann = self.refToAnn[ref['ref_id']]
 		image = self.Imgs[ref['image_id']]
-		if type(ann['segmentation'][0]) == list: # polygon
-			rle = mask.frPyObjects(ann['segmentation'], image['height'], image['width'])
-
+		if self.dataset in ['aihub_indoor', 'aihub_manufact']:
+			rle = [ann['segmentation']]
 		else:
-			rle = ann['segmentation']
+			if type(ann['segmentation'][0]) == list: # polygon
+				rle = mask.frPyObjects(ann['segmentation'], image['height'], image['width'])
+
+			else:
+				rle = ann['segmentation']
 		m = mask.decode(rle)
 		m = np.sum(m, axis=2)  # sometimes there are multiple binary map (corresponding to multiple segs)
 		m = m.astype(np.uint8) # convert to np.uint8
 		# compute area
 		area = sum(mask.area(rle))  # should be close to ann['area']
 		polygons = []
-		for seg in ann['segmentation']:
+
+		if self.dataset in ['aihub_indoor', 'aihub_manufact']:
+			# seg = ann['segmentation']
+			seg = self.polygonFromMask(m)[0]
+			# print(np.array(seg).shape)
+			# print(seg)
+			# print(len(seg))
 			# poly = np.array(seg).reshape((len(seg)//2, 2))
+			# print(poly)
+			# print("----------------------")
 			# polygons.append(Polygon(poly, True, alpha=0.4))
 			polygons.append(seg)
+		else:
+			for seg in ann['segmentation']:
+				# poly = np.array(seg).reshape((len(seg)//2, 2))
+				# polygons.append(Polygon(poly, True, alpha=0.4))
+				# print(np.array(seg).shape)
+				polygons.append(seg)
 
 		return {'polygon': polygons, 'area': area}
     
@@ -301,10 +352,14 @@ class REFER:
 		# return mask, area and mask-center
 		ann = self.refToAnn[ref['ref_id']]
 		image = self.Imgs[ref['image_id']]
-		if type(ann['segmentation'][0]) == list: # polygon
-			rle = mask.frPyObjects(ann['segmentation'], image['height'], image['width'])
+		
+		if self.dataset in ['aihub_indoor', 'aihub_manufact']:
+			rle = [ann['segmentation']]
 		else:
-			rle = ann['segmentation']
+			if type(ann['segmentation'][0]) == list: # polygon
+				rle = mask.frPyObjects(ann['segmentation'], image['height'], image['width'])
+			else:
+				rle = ann['segmentation']
 		m = mask.decode(rle)
 		m = np.sum(m, axis=2)  # sometimes there are multiple binary map (corresponding to multiple segs)
 		m = m.astype(np.uint8) # convert to np.uint8

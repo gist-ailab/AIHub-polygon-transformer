@@ -1,0 +1,14 @@
+datasets/*
+refer/data/*
+pretrained_weights/*
+run_scripts/finetune/polyformer_b_aihub_indoor_checkpoints
+run_scripts/finetune/polyformer_b_aihub_indoor_logs
+run_scripts/finetune/polyformer_b_aihub_manufact_checkpoints
+run_scripts/finetune/polyformer_b_aihub_manufact_logs
+run_scripts/finetune/polyformer_l_checkpoints
+run_scripts/finetune/polyformer_l_logs
+results_polyformer_b
+weights
+
+*.pt
+*.png
