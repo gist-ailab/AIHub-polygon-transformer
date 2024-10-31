@@ -17,7 +17,7 @@ user_dir=../../polyformer_module
 # data_dir=../../datasets/pretrain
 # data=${data_dir}/train_shuffled.tsv,${data_dir}/val_refcoco_unc.tsv
 data_dir=../../datasets/pretrain
-data=${data_dir}/train_aihub_indoor_80.tsv,${data_dir}/val_aihub_indoor.tsv
+data=${data_dir}/train_aihub_indoor_80.tsv,${data_dir}/val_aihub_indoor_80.tsv
 selected_cols=0,3,1,2
 
 task=refcoco_pretrain

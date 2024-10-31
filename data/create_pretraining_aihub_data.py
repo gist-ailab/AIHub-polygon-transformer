@@ -51,7 +51,7 @@ print(len(ref_ann))
 # exit()
 
 
-tsv_filename = "datasets/pretrain/train_aihub_indoor_80.tsv"
+tsv_filename = "datasets/pretrain/train_aihub_indoor_80_test.tsv"
 writer = open(tsv_filename, 'w')
 print("generating ", tsv_filename)
 
@@ -59,14 +59,23 @@ lines = []
 
 train_idx = 0
 # ref_ann_i = next((d for d in ref_ann if d["ref_id"] == str(i)), None)
+ann_id_list = [d["id"] for d in data['annotations']]
+# print(ann_id_list)
+# exit()
 # ref_ann_i = ref_ann[i]
 # for i, ann_i in enumerate(tqdm(data['annotations'])):
 for i, ref_ann_i in enumerate(tqdm(ref_ann)):
-    ann_i = data['annotations'][int(ref_ann_i["ref_id"])]
+    # ann_idx = ann_id_list.index(ref_ann_i["ref_id"])
+    ann_i = data['annotations'][i]
     image_id = ann_i['image_id']
     bbox = ann_i['bbox']
     
-    
+    # assert ann_i['image_id'] == ref_ann_i['image_id']
+    # if ann_i['image_id'] != ref_ann_i['image_id']:
+    #     print(ann_i, ref_ann_i)
+    if ref_ann_i["ann_id"] != ann_i["id"]:
+        print(ann_i, ref_ann_i)
+
     if ref_ann_i['split'] == 'train':
         # print("train!!")
         pass
@@ -77,10 +86,17 @@ for i, ref_ann_i in enumerate(tqdm(ref_ann)):
     expressions = ref_ann_i['sentences'][0]['raw']
     # print(expressions)
     # print(expressions[0])
-
     
     img_dict_i = next((d for d in data['images'] if d["id"] == image_id), None)
     height, width = img_dict_i['height'], img_dict_i['width']
+
+    # if "핸드백의 손잡이가" in expressions:
+    if "\t" in expressions:
+        print(expressions)
+        print(img_dict_i['file_name'])
+        expressions = expressions.replace('\t', '')
+        print(expressions)
+
 
     x, y, w, h = bbox
     box_string = f'{x},{y},{x + w},{y + h}'

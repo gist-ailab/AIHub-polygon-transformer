@@ -82,8 +82,13 @@ class RefcocoPretrainDataset(BaseDataset):
     def __getitem__(self, index):
         uniq_id, img_file, text, region_coord = self.dataset[index]
 
-        img_path = os.path.join(self.image_path, img_file)
-        image = Image.open(img_path).convert("RGB")
+        try:
+            img_path = os.path.join(self.image_path, img_file)
+            image = Image.open(img_path).convert("RGB")
+        except:
+            print(uniq_id, img_file, text, region_coord)
+            raise(FileNotFoundError)
+
 
         w, h = image.size
         boxes_target = {"boxes": [], "labels": [], "area": [], "size": torch.tensor([h, w])}
