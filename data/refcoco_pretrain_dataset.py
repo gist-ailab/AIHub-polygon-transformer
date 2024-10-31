@@ -24,6 +24,8 @@ from PIL import Image, ImageFile
 from data import data_utils
 from data.base_dataset import BaseDataset
 from bert.tokenization_bert import BertTokenizer
+from transformers import AutoTokenizer, AutoModelForMaskedLM
+
 
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 ImageFile.MAX_IMAGE_PIXELS = None
@@ -50,7 +52,8 @@ class RefcocoPretrainDataset(BaseDataset):
         imagenet_default_mean_and_std=False,
         num_bins=1000,
         max_image_size=512,
-        image_path="../../datasets/images"
+        image_path="../../"
+        # image_path="../../datasets/images"
     ):
         super().__init__(split, dataset, bpe, src_dict, tgt_dict)
         self.max_src_length = max_src_length
@@ -72,7 +75,9 @@ class RefcocoPretrainDataset(BaseDataset):
             T.ToTensor(),
             T.Normalize(mean=mean, std=std, max_image_size=max_image_size)
         ])
-        self.tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+        # self.tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+        self.tokenizer = AutoTokenizer.from_pretrained('xlm-roberta-base')
+
 
     def __getitem__(self, index):
         uniq_id, img_file, text, region_coord = self.dataset[index]

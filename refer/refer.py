@@ -251,19 +251,48 @@ class REFER:
 		ann = self.refToAnn[ref_id]
 		return ann['bbox']  # [x, y, w, h]
     
-	def polygonFromMask(self, maskedArr):
+	def polygonFromMask(self, maskedArr, epsilon_factor=0.01):
 		# adapted from https://github.com/hazirbas/coco-json-converter/blob/master/generate_coco_json.py
 		contours, _ = cv2.findContours(maskedArr, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+		
 		segmentation = []
 		valid_poly = 0
 		for contour in contours:
-		# Valid polygons have >= 6 coordinates (3 points)
+			# Calculate epsilon based on the contour's perimeter
+			epsilon = epsilon_factor * cv2.arcLength(contour, True)
+			# Approximate the contour to reduce the number of points
+			approx = cv2.approxPolyDP(contour, epsilon, True)
+			# Valid polygons have >= 6 coordinates (3 points)
 			if contour.size >= 6:
-				segmentation.append(contour.astype(float).flatten().tolist())
+				segmentation.append(approx.astype(float).flatten().tolist())
 				valid_poly += 1
 		if valid_poly == 0:
 			raise ValueError
 		return segmentation
+
+	def visualizePolygon(self, maskedArr, polygon):
+		# Create a color image to draw the polygons on
+		if len(maskedArr.shape) == 2:
+			# Convert grayscale mask to BGR color image
+			display_img = cv2.cvtColor(maskedArr, cv2.COLOR_GRAY2BGR)
+		else:
+			display_img = maskedArr.copy()
+
+		# Iterate over the polygons and draw them
+		# for polygon in polygons:
+			# Check if polygon has enough points
+			# if len(polygon) < 3:
+			# 	print("Polygon does not have enough points to form a valid shape.")
+			# 	continue  # Skip this polygon
+			# Convert the flattened list back to Nx1x2 array of points
+		points = np.array(polygon, np.int32).reshape((-1, 1, 2))
+		# Draw the polygon on the image
+		cv2.polylines(display_img, [points], isClosed=True, color=(0, 255, 0), thickness=2)
+
+		# Display the image
+		# cv2.imwrite('Polygons.png', display_img)
+		# cv2.waitKey(0)
+		# cv2.destroyAllWindows()
 
 	def getPolygon(self, ref):
 		# return mask, area and mask-center
@@ -286,7 +315,9 @@ class REFER:
 
 		if self.dataset in ['aihub_indoor', 'aihub_manufact']:
 			# seg = ann['segmentation']
+			
 			seg = self.polygonFromMask(m)[0]
+			self.visualizePolygon(m, seg)
 			# print(np.array(seg).shape)
 			# print(seg)
 			# print(len(seg))
@@ -294,6 +325,8 @@ class REFER:
 			# print(poly)
 			# print("----------------------")
 			# polygons.append(Polygon(poly, True, alpha=0.4))
+			# print(np.array(seg).shape)
+
 			polygons.append(seg)
 		else:
 			for seg in ann['segmentation']:

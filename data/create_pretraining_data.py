@@ -7,9 +7,9 @@ import pickle
 # set up image paths
 imgsfile = dict(
     coco='mscoco/train2014',
-    vg='visual-genome',
-    saiaprtc12='saiaprtc12',
-    flickr='flickr30k'
+    # vg='visual-genome',
+    # saiaprtc12='saiaprtc12',
+    # flickr='flickr30k'
 )
 
 # load annotation files
@@ -24,6 +24,12 @@ val_test_files = pickle.load(open("data/val_test_files.p", "rb"))
 # create result folder
 os.makedirs("datasets/pretrain", exist_ok=True)
 
+print(data.keys())
+print(data['train'][0])
+
+print(data['train'][0].keys())
+
+
 # generate training tsv file
 train_instances = data['train']
 tsv_filename = "datasets/pretrain/train_shuffled.tsv"
@@ -33,9 +39,12 @@ print("generating ", tsv_filename)
 lines = []
 for i, data_i in enumerate(tqdm(train_instances)):
     data_source = data_i['data_source']
+    if data_source is not "coco":
+        continue
     image_id = data_i['image_id']
     bbox = data_i['bbox']
     expressions = data_i['expressions']
+    print(expressions)
     height, width = data_i['height'], data_i['width']
     x, y, w, h = bbox
     box_string = f'{x},{y},{x + w},{y + h}'
