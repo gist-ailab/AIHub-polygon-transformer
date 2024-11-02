@@ -18,7 +18,9 @@ import torch
 import base64
 import utils.transforms as T
 import math
+# from PIL import ImageFile
 from PIL import Image, ImageFile
+# import Image
 
 from data import data_utils
 from data.base_dataset import BaseDataset
@@ -86,7 +88,12 @@ class RefcocoDataset(BaseDataset):
             train = False
 
         # load image and segmentation labels
-        image = Image.open(BytesIO(base64.urlsafe_b64decode(base64_str))).convert("RGB")
+        # print(base64.urlsafe_b64decode(base64_str))
+        # print(BytesIO(base64.urlsafe_b64decode(base64_str)))
+        
+        # image = Image.open(BytesIO(base64.urlsafe_b64decode(base64_str))).convert("RGB")
+        image = Image.open(BytesIO(base64.b64decode(base64_str))).convert("RGB")
+        
         label = Image.open(BytesIO(base64.urlsafe_b64decode(seg64_str)))
         label = np.asarray(label)
         label = cv2.resize(label, [self.patch_image_size, self.patch_image_size], interpolation=cv2.INTER_NEAREST)

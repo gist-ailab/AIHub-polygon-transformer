@@ -1,0 +1,1515 @@
+/home/ubuntu/anaconda3/envs/polyformer/lib/python3.7/site-packages/torch/distributed/launch.py:188: FutureWarning: The module torch.distributed.launch is deprecated
+and will be removed in future. Use torchrun.
+Note that --use_env is set by default in torchrun.
+If your script expects `--local_rank` argument to be set, please
+change it to read from `os.environ['LOCAL_RANK']` instead. See 
+https://pytorch.org/docs/stable/distributed.html#launch-utility for 
+further instructions
+
+  FutureWarning,
+WARNING:torch.distributed.run:
+*****************************************
+Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+*****************************************
+2024-11-02 09:29:09 - file_utils.py[line:39] - INFO: PyTorch version 1.13.1+cu116 available.
+2024-11-02 09:29:09 - file_utils.py[line:39] - INFO: PyTorch version 1.13.1+cu116 available.
+2024-11-02 09:29:09 - file_utils.py[line:39] - INFO: PyTorch version 1.13.1+cu116 available.
+2024-11-02 09:29:09 - file_utils.py[line:39] - INFO: PyTorch version 1.13.1+cu116 available.
+2024-11-02 09:29:09 - file_utils.py[line:39] - INFO: PyTorch version 1.13.1+cu116 available.
+2024-11-02 09:29:09 - file_utils.py[line:39] - INFO: PyTorch version 1.13.1+cu116 available.
+2024-11-02 09:29:09 - file_utils.py[line:39] - INFO: PyTorch version 1.13.1+cu116 available.
+2024-11-02 09:29:09 - file_utils.py[line:39] - INFO: PyTorch version 1.13.1+cu116 available.
+2024-11-02 09:29:12 - utils.py[line:258] - INFO: distributed init (rank 4): env://
+2024-11-02 09:29:12 - utils.py[line:261] - INFO: Start init
+2024-11-02 09:29:12 - distributed_c10d.py[line:319] - INFO: Added key: store_based_barrier_key:1 to store for rank: 4
+2024-11-02 09:29:12 - utils.py[line:258] - INFO: distributed init (rank 6): env://
+2024-11-02 09:29:12 - utils.py[line:261] - INFO: Start init
+2024-11-02 09:29:12 - distributed_c10d.py[line:319] - INFO: Added key: store_based_barrier_key:1 to store for rank: 6
+2024-11-02 09:29:12 - utils.py[line:258] - INFO: distributed init (rank 7): env://
+2024-11-02 09:29:12 - utils.py[line:261] - INFO: Start init
+2024-11-02 09:29:12 - distributed_c10d.py[line:319] - INFO: Added key: store_based_barrier_key:1 to store for rank: 7
+2024-11-02 09:29:12 - utils.py[line:258] - INFO: distributed init (rank 3): env://
+2024-11-02 09:29:12 - utils.py[line:261] - INFO: Start init
+2024-11-02 09:29:12 - distributed_c10d.py[line:319] - INFO: Added key: store_based_barrier_key:1 to store for rank: 3
+2024-11-02 09:29:12 - utils.py[line:258] - INFO: distributed init (rank 2): env://
+2024-11-02 09:29:12 - utils.py[line:261] - INFO: Start init
+2024-11-02 09:29:12 - utils.py[line:258] - INFO: distributed init (rank 5): env://
+2024-11-02 09:29:12 - utils.py[line:261] - INFO: Start init
+2024-11-02 09:29:12 - distributed_c10d.py[line:319] - INFO: Added key: store_based_barrier_key:1 to store for rank: 2
+2024-11-02 09:29:12 - utils.py[line:258] - INFO: distributed init (rank 1): env://
+2024-11-02 09:29:12 - utils.py[line:261] - INFO: Start init
+2024-11-02 09:29:12 - distributed_c10d.py[line:319] - INFO: Added key: store_based_barrier_key:1 to store for rank: 5
+2024-11-02 09:29:12 - utils.py[line:258] - INFO: distributed init (rank 0): env://
+2024-11-02 09:29:12 - utils.py[line:261] - INFO: Start init
+2024-11-02 09:29:12 - distributed_c10d.py[line:319] - INFO: Added key: store_based_barrier_key:1 to store for rank: 1
+2024-11-02 09:29:12 - distributed_c10d.py[line:319] - INFO: Added key: store_based_barrier_key:1 to store for rank: 0
+2024-11-02 09:29:12 - distributed_c10d.py[line:354] - INFO: Rank 0: Completed store-based barrier for key:store_based_barrier_key:1 with 8 nodes.
+2024-11-02 09:29:12 - utils.py[line:274] - INFO: initialized host ip-172-31-38-178 as rank 0
+single-machine distributed training is initialized.
+2024-11-02 09:29:12 - distributed_c10d.py[line:354] - INFO: Rank 3: Completed store-based barrier for key:store_based_barrier_key:1 with 8 nodes.
+2024-11-02 09:29:12 - utils.py[line:274] - INFO: initialized host ip-172-31-38-178 as rank 3
+single-machine distributed training is initialized.
+2024-11-02 09:29:12 - distributed_c10d.py[line:354] - INFO: Rank 4: Completed store-based barrier for key:store_based_barrier_key:1 with 8 nodes.
+2024-11-02 09:29:12 - utils.py[line:274] - INFO: initialized host ip-172-31-38-178 as rank 4
+single-machine distributed training is initialized.
+2024-11-02 09:29:12 - distributed_c10d.py[line:354] - INFO: Rank 6: Completed store-based barrier for key:store_based_barrier_key:1 with 8 nodes.
+2024-11-02 09:29:12 - utils.py[line:274] - INFO: initialized host ip-172-31-38-178 as rank 6
+single-machine distributed training is initialized.
+2024-11-02 09:29:12 - distributed_c10d.py[line:354] - INFO: Rank 2: Completed store-based barrier for key:store_based_barrier_key:1 with 8 nodes.
+2024-11-02 09:29:12 - utils.py[line:274] - INFO: initialized host ip-172-31-38-178 as rank 2
+single-machine distributed training is initialized.
+2024-11-02 09:29:12 - distributed_c10d.py[line:354] - INFO: Rank 5: Completed store-based barrier for key:store_based_barrier_key:1 with 8 nodes.
+2024-11-02 09:29:12 - utils.py[line:274] - INFO: initialized host ip-172-31-38-178 as rank 5
+single-machine distributed training is initialized.
+2024-11-02 09:29:12 - distributed_c10d.py[line:354] - INFO: Rank 7: Completed store-based barrier for key:store_based_barrier_key:1 with 8 nodes.
+2024-11-02 09:29:12 - utils.py[line:274] - INFO: initialized host ip-172-31-38-178 as rank 7
+single-machine distributed training is initialized.
+2024-11-02 09:29:12 - distributed_c10d.py[line:354] - INFO: Rank 1: Completed store-based barrier for key:store_based_barrier_key:1 with 8 nodes.
+2024-11-02 09:29:12 - utils.py[line:274] - INFO: initialized host ip-172-31-38-178 as rank 1
+single-machine distributed training is initialized.
+2024-11-02 09:29:15 - train.py[line:77] - INFO: {'_name': None, 'common': {'_name': None, 'no_progress_bar': False, 'log_interval': 10, 'log_format': 'simple', 'log_file': None, 'tensorboard_logdir': None, 'wandb_project': None, 'azureml_logging': False, 'seed': 1, 'cpu': False, 'tpu': False, 'bf16': False, 'memory_efficient_bf16': False, 'fp16': True, 'memory_efficient_fp16': False, 'fp16_no_flatten_grads': False, 'fp16_init_scale': 128, 'fp16_scale_window': 512, 'fp16_scale_tolerance': 0.0, 'on_cpu_convert_precision': False, 'min_loss_scale': 0.0001, 'threshold_loss_scale': None, 'amp': False, 'amp_batch_retries': 2, 'amp_init_scale': 128, 'amp_scale_window': None, 'user_dir': '../../polyformer_module', 'empty_cache_freq': 0, 'all_gather_list_size': 16384, 'model_parallel_size': 1, 'quantization_config_path': None, 'profile': False, 'reset_logging': False, 'suppress_crashes': False, 'use_plasma_view': False, 'plasma_path': '/tmp/plasma'}, 'common_eval': {'_name': None, 'path': None, 'post_process': None, 'quiet': False, 'model_overrides': '{}', 'results_path': None}, 'distributed_training': {'_name': None, 'distributed_world_size': 8, 'distributed_num_procs': 8, 'distributed_rank': 0, 'distributed_backend': 'nccl', 'distributed_init_method': 'env://', 'distributed_port': -1, 'device_id': 0, 'distributed_no_spawn': True, 'ddp_backend': 'pytorch_ddp', 'ddp_comm_hook': 'none', 'bucket_cap_mb': 25, 'fix_batches_to_gpus': False, 'find_unused_parameters': True, 'gradient_as_bucket_view': False, 'fast_stat_sync': False, 'heartbeat_timeout': -1, 'broadcast_buffers': False, 'slowmo_momentum': None, 'slowmo_algorithm': 'LocalSGD', 'localsgd_frequency': 3, 'nprocs_per_node': 8, 'pipeline_model_parallel': False, 'pipeline_balance': None, 'pipeline_devices': None, 'pipeline_chunks': 0, 'pipeline_encoder_balance': None, 'pipeline_encoder_devices': None, 'pipeline_decoder_balance': None, 'pipeline_decoder_devices': None, 'pipeline_checkpoint': 'never', 'zero_sharding': 'none', 'fp16': True, 'memory_efficient_fp16': False, 'tpu': False, 'no_reshard_after_forward': False, 'fp32_reduce_scatter': False, 'cpu_offload': False, 'use_sharded_state': False}, 'dataset': {'_name': None, 'num_workers': 0, 'skip_invalid_size_inputs_valid_test': False, 'max_tokens': None, 'batch_size': 16, 'required_batch_size_multiple': 8, 'required_seq_len_multiple': 1, 'dataset_impl': None, 'data_buffer_size': 10, 'train_subset': 'train', 'valid_subset': 'valid', 'combine_valid_subsets': None, 'ignore_unused_valid_subsets': False, 'validate_interval': 1, 'validate_interval_updates': 500, 'validate_after_updates': 0, 'fixed_validation_seed': 7, 'disable_validation': False, 'max_tokens_valid': None, 'batch_size_valid': 16, 'max_valid_steps': None, 'curriculum': 0, 'gen_subset': 'test', 'num_shards': 1, 'shard_id': 0}, 'optimization': {'_name': None, 'max_epoch': 100, 'max_update': 0, 'stop_time_hours': 0.0, 'clip_norm': 1.0, 'sentence_avg': False, 'update_freq': [8], 'lr': [5e-05], 'stop_min_lr': -1.0, 'use_bmuf': False}, 'checkpoint': {'_name': None, 'save_dir': './polyformer_b_aihub_indoor_80_checkpoints/100_5e-5_512', 'restore_file': '../pretrain/polyformer_b_pretrain_aihub_indoor_80_checkpoints_resume/20_5e-5_512/checkpoint.best_score_0.5110.pt', 'finetune_from_model': None, 'reset_dataloader': True, 'reset_lr_scheduler': False, 'reset_meters': True, 'reset_optimizer': True, 'optimizer_overrides': '{}', 'save_interval': 1, 'save_interval_updates': 500, 'keep_interval_updates': -1, 'keep_interval_updates_pattern': -1, 'keep_last_epochs': -1, 'keep_best_checkpoints': 1, 'no_save': False, 'no_epoch_checkpoints': True, 'no_last_checkpoints': False, 'no_save_optimizer_state': False, 'best_checkpoint_metric': 'score', 'maximize_best_checkpoint_metric': True, 'patience': -1, 'checkpoint_suffix': '', 'checkpoint_shard_count': 1, 'load_checkpoint_on_all_dp_ranks': False, 'write_checkpoints_asynchronously': False, 'model_parallel_size': 1, 'use_ema_weights_to_init_param': False, 'use_latest_weights_to_init_ema': False}, 'bmuf': {'_name': None, 'block_lr': 1.0, 'block_momentum': 0.875, 'global_sync_iter': 50, 'warmup_iterations': 500, 'use_nbm': False, 'average_sync': False, 'distributed_world_size': 8}, 'generation': {'_name': None, 'beam': 5, 'nbest': 1, 'max_len_a': 0.0, 'max_len_b': 200, 'min_len': 1, 'match_source_len': False, 'unnormalized': False, 'no_early_stop': False, 'no_beamable_mm': False, 'lenpen': 1.0, 'unkpen': 0.0, 'replace_unk': None, 'sacrebleu': False, 'score_reference': False, 'prefix_size': 0, 'no_repeat_ngram_size': 0, 'sampling': False, 'sampling_topk': -1, 'sampling_topp': -1.0, 'constraints': None, 'temperature': 1.0, 'diverse_beam_groups': -1, 'diverse_beam_strength': 0.5, 'diversity_rate': -1.0, 'print_alignment': None, 'print_step': False, 'lm_path': None, 'lm_weight': 0.0, 'iter_decode_eos_penalty': 0.0, 'iter_decode_max_iter': 10, 'iter_decode_force_max_iter': False, 'iter_decode_with_beam': 1, 'iter_decode_with_external_reranker': False, 'retain_iter_history': False, 'retain_dropout': False, 'retain_dropout_modules': None, 'decoding_format': None, 'no_seed_provided': False}, 'eval_lm': {'_name': None, 'output_word_probs': False, 'output_word_stats': False, 'context_window': 0, 'softmax_batch': 9223372036854775807}, 'interactive': {'_name': None, 'buffer_size': 0, 'input': '-'}, 'model': Namespace(_name='polyformer_b', activation_fn='gelu', adam_betas='(0.9,0.999)', adam_eps=1e-08, adaptive_softmax_cutoff=None, adaptive_softmax_dropout=0, add_type_embedding=True, all_gather_list_size=16384, amp=False, amp_batch_retries=2, amp_init_scale=128, amp_scale_window=None, arch='polyformer_b', attention_dropout=0.0, attn_scale_factor=2, azureml_logging=False, batch_size=16, batch_size_valid=16, best_checkpoint_metric='score', bf16=False, bpe=None, bpe_dir='../../utils/BPE', broadcast_buffers=False, bucket_cap_mb=25, checkpoint_shard_count=1, checkpoint_suffix='', clip_norm=1.0, cls_weight=0.0005, code_dict_size=8192, code_image_size=128, code_layernorm_embedding=True, combine_valid_subsets=None, constraint_range=None, cpu=False, cpu_offload=False, criterion='adjust_label_smoothed_cross_entropy', cross_self_attention=False, curriculum=0, data='../../datasets/finetune/aihub_indoor/aihub_indoor_train.tsv,../../datasets/finetune/aihub_indoor/aihub_indoor_val.tsv', data_buffer_size=10, dataset_impl=None, ddp_backend='pytorch_ddp', ddp_comm_hook='none', decoder_attention_heads=12, decoder_drop_path_rate=0.1, decoder_embed_dim=768, decoder_embed_path=None, decoder_ffn_embed_dim=3072, decoder_input_dim=768, decoder_layerdrop=0, decoder_layers=6, decoder_layers_to_keep=None, decoder_learned_pos=True, decoder_normalize_before=True, decoder_output_dim=768, det_weight=0.1, device_id=0, disable_entangle=True, disable_validation=False, distributed_backend='nccl', distributed_init_method=None, distributed_no_spawn=False, distributed_num_procs=8, distributed_port=-1, distributed_rank=0, distributed_world_size=8, drop_worst_after=0, drop_worst_ratio=0.0, dropout=0.1, ema_decay=0.9999, ema_fp32=False, ema_seed_model=None, ema_start_update=0, ema_update_freq=1, empty_cache_freq=0, encoder_attention_heads=12, encoder_drop_path_rate=0.1, encoder_embed_dim=768, encoder_embed_path=None, encoder_ffn_embed_dim=3072, encoder_layerdrop=0, encoder_layers=6, encoder_layers_to_keep=None, encoder_learned_pos=True, encoder_normalize_before=True, end_learning_rate=0.0, entangle_position_embedding=False, eos=2, eval_acc=True, eval_args='{"beam":5,"min_len":2,"max_len_a":0,"max_len_b":2}', eval_print_samples=False, fast_stat_sync=False, find_unused_parameters=True, finetune_from_model=None, fix_batches_to_gpus=False, fixed_validation_seed=7, force_anneal=None, fp16=True, fp16_adam_stats=False, fp16_init_scale=128, fp16_no_flatten_grads=False, fp16_scale_tolerance=0.0, fp16_scale_window=512, fp32_reduce_scatter=False, freeze_decoder_embedding=False, freeze_encoder_embedding=False, gen_subset='test', gradient_as_bucket_view=False, heartbeat_timeout=-1, ignore_eos=False, ignore_prefix_size=0, ignore_unused_valid_subsets=False, image_bucket_size=42, imagenet_default_mean_and_std=False, keep_best_checkpoints=1, keep_interval_updates=-1, keep_interval_updates_pattern=-1, keep_last_epochs=-1, label_smoothing=0.1, layernorm_embedding=True, load_checkpoint_on_all_dp_ranks=False, localsgd_frequency=3, log_file=None, log_format='simple', log_interval=10, lr=[5e-05], lr_scheduler='polynomial_decay', max_epoch=100, max_image_size=512, max_source_positions=1024, max_src_length=80, max_target_positions=1024, max_tgt_length=420, max_tokens=None, max_tokens_valid=None, max_update=0, max_valid_steps=None, maximize_best_checkpoint_metric=True, memory_efficient_bf16=False, memory_efficient_fp16=False, min_loss_scale=0.0001, min_params_to_wrap=100000000, model_parallel_size=1, no_cross_attention=False, no_epoch_checkpoints=True, no_last_checkpoints=False, no_progress_bar=False, no_reshard_after_forward=False, no_save=False, no_save_optimizer_state=False, no_scale_embedding=True, no_seed_provided=False, no_token_positional_embeddings=False, nprocs_per_node=8, num_bins=64, num_shards=1, num_workers=0, on_cpu_convert_precision=False, optimizer='adam', optimizer_overrides='{}', out_index=3, pad=1, patch_image_size=512, patch_layernorm_embedding=True, patience=-1, pipeline_balance=None, pipeline_checkpoint='never', pipeline_chunks=0, pipeline_decoder_balance=None, pipeline_decoder_devices=None, pipeline_devices=None, pipeline_encoder_balance=None, pipeline_encoder_devices=None, pipeline_model_parallel=False, plasma_path='/tmp/plasma', pooler_activation_fn='tanh', pooler_classifier='mlp', pooler_dropout=0.0, power=1.0, profile=False, quant_noise_pq=0, quant_noise_pq_block_size=8, quant_noise_scalar=0, quantization_config_path=None, reg_alpha=1.0, relu_dropout=0.0, report_accuracy=False, required_batch_size_multiple=8, required_seq_len_multiple=1, reset_dataloader=True, reset_logging=False, reset_lr_scheduler=False, reset_meters=True, reset_optimizer=True, resnet_drop_path_rate=0.0, restore_file='../pretrain/polyformer_b_pretrain_aihub_indoor_80_checkpoints_resume/20_5e-5_512/checkpoint.best_score_0.5110.pt', sample_patch_num=196, save_dir='./polyformer_b_aihub_indoor_80_checkpoints/100_5e-5_512', save_interval=1, save_interval_updates=500, scale_attn=True, scale_fc=True, scale_heads=True, scale_resids=False, scoring='bleu', scst=False, scst_args='{}', seed=1, selected_cols='0,5,6,2,4,3,7', sentence_avg=False, shard_id=0, share_all_embeddings=True, share_decoder_input_output_embed=True, simul_type=None, skip_invalid_size_inputs_valid_test=False, slowmo_algorithm='LocalSGD', slowmo_momentum=None, stop_min_lr=-1.0, stop_time_hours=0, store_ema=False, suppress_crashes=False, sync_bn=False, task='refcoco', tensorboard_logdir=None, threshold_loss_scale=None, token_bucket_size=256, tokenizer=None, total_num_update=1000000, tpu=False, train_subset='train', unk=3, update_freq=[8], use_bmuf=False, use_ema_weights_to_init_param=False, use_latest_weights_to_init_ema=False, use_old_adam=False, use_plasma_view=False, use_rdrop=False, use_sharded_state=False, user_dir='../../polyformer_module', uses_ema=False, valid_subset='valid', validate_after_updates=0, validate_interval=1, validate_interval_updates=500, vis_encoder_type='swin-base', wandb_project=None, warmup_ratio=0.06, warmup_updates=0, weight_decay=0.01, write_checkpoints_asynchronously=False, zero_sharding='none'), 'task': {'_name': 'refcoco', 'data': '../../datasets/finetune/aihub_indoor/aihub_indoor_train.tsv,../../datasets/finetune/aihub_indoor/aihub_indoor_val.tsv', 'selected_cols': '0,5,6,2,4,3,7', 'bpe_dir': '../../utils/BPE', 'max_source_positions': 1024, 'max_target_positions': 1024, 'max_src_length': 80, 'max_tgt_length': 420, 'code_dict_size': 8192, 'patch_image_size': 512, 'num_bins': 64, 'imagenet_default_mean_and_std': False, 'constraint_range': None, 'eval_acc': True, 'eval_args': '{"beam":5,"min_len":2,"max_len_a":0,"max_len_b":2}', 'uses_ema': False, 'eval_print_samples': False, 'max_image_size': 512, 'scst': False, 'scst_args': '{}'}, 'criterion': {'_name': 'adjust_label_smoothed_cross_entropy', 'label_smoothing': 0.1, 'report_accuracy': False, 'det_weight': 0.1, 'cls_weight': 0.0005, 'ignore_prefix_size': 0, 'ignore_eos': False, 'sentence_avg': False, 'drop_worst_ratio': 0.0, 'drop_worst_after': 0, 'use_rdrop': False, 'reg_alpha': 1.0, 'sample_patch_num': 196, 'constraint_range': None}, 'optimizer': {'_name': 'adam', 'adam_betas': '(0.9,0.999)', 'adam_eps': 1e-08, 'weight_decay': 0.01, 'use_old_adam': False, 'fp16_adam_stats': False, 'tpu': False, 'lr': [5e-05]}, 'lr_scheduler': {'_name': 'polynomial_decay', 'warmup_updates': 0, 'warmup_ratio': 0.06, 'force_anneal': None, 'end_learning_rate': 0.0, 'power': 1.0, 'total_num_update': 1000000.0, 'lr': [5e-05]}, 'scoring': {'_name': 'bleu', 'pad': 1, 'eos': 2, 'unk': 3}, 'bpe': None, 'tokenizer': None, 'ema': {'_name': None, 'store_ema': False, 'ema_decay': 0.9999, 'ema_start_update': 0, 'ema_seed_model': None, 'ema_update_freq': 1, 'ema_fp32': False}, 'simul_type': None}
+2024-11-02 09:29:15 - base_task.py[line:187] - INFO: source dictionary: 4100 types
+2024-11-02 09:29:15 - base_task.py[line:188] - INFO: target dictionary: 4100 types
+/home/ubuntu/anaconda3/envs/polyformer/lib/python3.7/site-packages/torch/functional.py:504: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at ../aten/src/ATen/native/TensorShape.cpp:3190.)
+  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+/home/ubuntu/anaconda3/envs/polyformer/lib/python3.7/site-packages/torch/functional.py:504: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at ../aten/src/ATen/native/TensorShape.cpp:3190.)
+  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+/home/ubuntu/anaconda3/envs/polyformer/lib/python3.7/site-packages/torch/functional.py:504: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at ../aten/src/ATen/native/TensorShape.cpp:3190.)
+  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+/home/ubuntu/anaconda3/envs/polyformer/lib/python3.7/site-packages/torch/functional.py:504: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at ../aten/src/ATen/native/TensorShape.cpp:3190.)
+  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+/home/ubuntu/anaconda3/envs/polyformer/lib/python3.7/site-packages/torch/functional.py:504: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at ../aten/src/ATen/native/TensorShape.cpp:3190.)
+  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+/home/ubuntu/anaconda3/envs/polyformer/lib/python3.7/site-packages/torch/functional.py:504: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at ../aten/src/ATen/native/TensorShape.cpp:3190.)
+  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+/home/ubuntu/anaconda3/envs/polyformer/lib/python3.7/site-packages/torch/functional.py:504: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at ../aten/src/ATen/native/TensorShape.cpp:3190.)
+  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+/home/ubuntu/anaconda3/envs/polyformer/lib/python3.7/site-packages/torch/functional.py:504: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at ../aten/src/ATen/native/TensorShape.cpp:3190.)
+  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+local datafile ../../datasets/finetune/aihub_indoor/aihub_indoor_val.tsv slice_id 1 begin to initialize row_count and line_idx-to-offset mapping
+local datafile ../../datasets/finetune/aihub_indoor/aihub_indoor_val.tsv slice_id 3 begin to initialize row_count and line_idx-to-offset mapping
+local datafile ../../datasets/finetune/aihub_indoor/aihub_indoor_val.tsv slice_id 5 begin to initialize row_count and line_idx-to-offset mapping
+local datafile ../../datasets/finetune/aihub_indoor/aihub_indoor_val.tsv slice_id 7 begin to initialize row_count and line_idx-to-offset mapping
+local datafile ../../datasets/finetune/aihub_indoor/aihub_indoor_val.tsv slice_id 4 begin to initialize row_count and line_idx-to-offset mapping
+local datafile ../../datasets/finetune/aihub_indoor/aihub_indoor_val.tsv slice_id 2 begin to initialize row_count and line_idx-to-offset mapping
+local datafile ../../datasets/finetune/aihub_indoor/aihub_indoor_val.tsv slice_id 6 begin to initialize row_count and line_idx-to-offset mapping
+2024-11-02 09:29:27 - train.py[line:101] - INFO: PolyFormerModel(
+  (encoder): TransformerEncoder(
+    (dropout_module): FairseqDropout()
+    (embed_tokens): Embedding(4100, 768, padding_idx=1)
+    (layernorm_embedding): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+    (type_embedding): Embedding(2, 768)
+    (embed_images): SwinTransformer(
+      (patch_embed): PatchEmbed(
+        (proj): Conv2d(3, 128, kernel_size=(4, 4), stride=(4, 4))
+        (norm): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+      )
+      (pos_drop): Dropout(p=0.0, inplace=False)
+      (layers): ModuleList(
+        (0): BasicLayer(
+          (blocks): ModuleList(
+            (0): SwinTransformerBlock(
+              (norm1): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+              (attn): WindowAttention(
+                (qkv): Linear(in_features=128, out_features=384, bias=True)
+                (attn_drop): Dropout(p=0.0, inplace=False)
+                (proj): Linear(in_features=128, out_features=128, bias=True)
+                (proj_drop): Dropout(p=0.0, inplace=False)
+                (softmax): Softmax(dim=-1)
+              )
+              (drop_path): Identity()
+              (norm2): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=128, out_features=512, bias=True)
+                (act): GELU(approximate='none')
+                (fc2): Linear(in_features=512, out_features=128, bias=True)
+                (drop): Dropout(p=0.0, inplace=False)
+              )
+            )
+            (1): SwinTransformerBlock(
+              (norm1): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+              (attn): WindowAttention(
+                (qkv): Linear(in_features=128, out_features=384, bias=True)
+                (attn_drop): Dropout(p=0.0, inplace=False)
+                (proj): Linear(in_features=128, out_features=128, bias=True)
+                (proj_drop): Dropout(p=0.0, inplace=False)
+                (softmax): Softmax(dim=-1)
+              )
+              (drop_path): DropPath(drop_prob=0.009)
+              (norm2): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=128, out_features=512, bias=True)
+                (act): GELU(approximate='none')
+                (fc2): Linear(in_features=512, out_features=128, bias=True)
+                (drop): Dropout(p=0.0, inplace=False)
+              )
+            )
+          )
+          (downsample): PatchMerging(
+            (reduction): Linear(in_features=512, out_features=256, bias=False)
+            (norm): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+          )
+        )
+        (1): BasicLayer(
+          (blocks): ModuleList(
+            (0): SwinTransformerBlock(
+              (norm1): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+              (attn): WindowAttention(
+                (qkv): Linear(in_features=256, out_features=768, bias=True)
+                (attn_drop): Dropout(p=0.0, inplace=False)
+                (proj): Linear(in_features=256, out_features=256, bias=True)
+                (proj_drop): Dropout(p=0.0, inplace=False)
+                (softmax): Softmax(dim=-1)
+              )
+              (drop_path): DropPath(drop_prob=0.017)
+              (norm2): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=256, out_features=1024, bias=True)
+                (act): GELU(approximate='none')
+                (fc2): Linear(in_features=1024, out_features=256, bias=True)
+                (drop): Dropout(p=0.0, inplace=False)
+              )
+            )
+            (1): SwinTransformerBlock(
+              (norm1): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+              (attn): WindowAttention(
+                (qkv): Linear(in_features=256, out_features=768, bias=True)
+                (attn_drop): Dropout(p=0.0, inplace=False)
+                (proj): Linear(in_features=256, out_features=256, bias=True)
+                (proj_drop): Dropout(p=0.0, inplace=False)
+                (softmax): Softmax(dim=-1)
+              )
+              (drop_path): DropPath(drop_prob=0.026)
+              (norm2): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=256, out_features=1024, bias=True)
+                (act): GELU(approximate='none')
+                (fc2): Linear(in_features=1024, out_features=256, bias=True)
+                (drop): Dropout(p=0.0, inplace=False)
+              )
+            )
+          )
+          (downsample): PatchMerging(
+            (reduction): Linear(in_features=1024, out_features=512, bias=False)
+            (norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+          )
+        )
+        (2): BasicLayer(
+          (blocks): ModuleList(
+            (0): SwinTransformerBlock(
+              (norm1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (attn): WindowAttention(
+                (qkv): Linear(in_features=512, out_features=1536, bias=True)
+                (attn_drop): Dropout(p=0.0, inplace=False)
+                (proj): Linear(in_features=512, out_features=512, bias=True)
+                (proj_drop): Dropout(p=0.0, inplace=False)
+                (softmax): Softmax(dim=-1)
+              )
+              (drop_path): DropPath(drop_prob=0.035)
+              (norm2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=512, out_features=2048, bias=True)
+                (act): GELU(approximate='none')
+                (fc2): Linear(in_features=2048, out_features=512, bias=True)
+                (drop): Dropout(p=0.0, inplace=False)
+              )
+            )
+            (1): SwinTransformerBlock(
+              (norm1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (attn): WindowAttention(
+                (qkv): Linear(in_features=512, out_features=1536, bias=True)
+                (attn_drop): Dropout(p=0.0, inplace=False)
+                (proj): Linear(in_features=512, out_features=512, bias=True)
+                (proj_drop): Dropout(p=0.0, inplace=False)
+                (softmax): Softmax(dim=-1)
+              )
+              (drop_path): DropPath(drop_prob=0.043)
+              (norm2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=512, out_features=2048, bias=True)
+                (act): GELU(approximate='none')
+                (fc2): Linear(in_features=2048, out_features=512, bias=True)
+                (drop): Dropout(p=0.0, inplace=False)
+              )
+            )
+            (2): SwinTransformerBlock(
+              (norm1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (attn): WindowAttention(
+                (qkv): Linear(in_features=512, out_features=1536, bias=True)
+                (attn_drop): Dropout(p=0.0, inplace=False)
+                (proj): Linear(in_features=512, out_features=512, bias=True)
+                (proj_drop): Dropout(p=0.0, inplace=False)
+                (softmax): Softmax(dim=-1)
+              )
+              (drop_path): DropPath(drop_prob=0.052)
+              (norm2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=512, out_features=2048, bias=True)
+                (act): GELU(approximate='none')
+                (fc2): Linear(in_features=2048, out_features=512, bias=True)
+                (drop): Dropout(p=0.0, inplace=False)
+              )
+            )
+            (3): SwinTransformerBlock(
+              (norm1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (attn): WindowAttention(
+                (qkv): Linear(in_features=512, out_features=1536, bias=True)
+                (attn_drop): Dropout(p=0.0, inplace=False)
+                (proj): Linear(in_features=512, out_features=512, bias=True)
+                (proj_drop): Dropout(p=0.0, inplace=False)
+                (softmax): Softmax(dim=-1)
+              )
+              (drop_path): DropPath(drop_prob=0.061)
+              (norm2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=512, out_features=2048, bias=True)
+                (act): GELU(approximate='none')
+                (fc2): Linear(in_features=2048, out_features=512, bias=True)
+                (drop): Dropout(p=0.0, inplace=False)
+              )
+            )
+            (4): SwinTransformerBlock(
+              (norm1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (attn): WindowAttention(
+                (qkv): Linear(in_features=512, out_features=1536, bias=True)
+                (attn_drop): Dropout(p=0.0, inplace=False)
+                (proj): Linear(in_features=512, out_features=512, bias=True)
+                (proj_drop): Dropout(p=0.0, inplace=False)
+                (softmax): Softmax(dim=-1)
+              )
+              (drop_path): DropPath(drop_prob=0.070)
+              (norm2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=512, out_features=2048, bias=True)
+                (act): GELU(approximate='none')
+                (fc2): Linear(in_features=2048, out_features=512, bias=True)
+                (drop): Dropout(p=0.0, inplace=False)
+              )
+            )
+            (5): SwinTransformerBlock(
+              (norm1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (attn): WindowAttention(
+                (qkv): Linear(in_features=512, out_features=1536, bias=True)
+                (attn_drop): Dropout(p=0.0, inplace=False)
+                (proj): Linear(in_features=512, out_features=512, bias=True)
+                (proj_drop): Dropout(p=0.0, inplace=False)
+                (softmax): Softmax(dim=-1)
+              )
+              (drop_path): DropPath(drop_prob=0.078)
+              (norm2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=512, out_features=2048, bias=True)
+                (act): GELU(approximate='none')
+                (fc2): Linear(in_features=2048, out_features=512, bias=True)
+                (drop): Dropout(p=0.0, inplace=False)
+              )
+            )
+            (6): SwinTransformerBlock(
+              (norm1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (attn): WindowAttention(
+                (qkv): Linear(in_features=512, out_features=1536, bias=True)
+                (attn_drop): Dropout(p=0.0, inplace=False)
+                (proj): Linear(in_features=512, out_features=512, bias=True)
+                (proj_drop): Dropout(p=0.0, inplace=False)
+                (softmax): Softmax(dim=-1)
+              )
+              (drop_path): DropPath(drop_prob=0.087)
+              (norm2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=512, out_features=2048, bias=True)
+                (act): GELU(approximate='none')
+                (fc2): Linear(in_features=2048, out_features=512, bias=True)
+                (drop): Dropout(p=0.0, inplace=False)
+              )
+            )
+            (7): SwinTransformerBlock(
+              (norm1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (attn): WindowAttention(
+                (qkv): Linear(in_features=512, out_features=1536, bias=True)
+                (attn_drop): Dropout(p=0.0, inplace=False)
+                (proj): Linear(in_features=512, out_features=512, bias=True)
+                (proj_drop): Dropout(p=0.0, inplace=False)
+                (softmax): Softmax(dim=-1)
+              )
+              (drop_path): DropPath(drop_prob=0.096)
+              (norm2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=512, out_features=2048, bias=True)
+                (act): GELU(approximate='none')
+                (fc2): Linear(in_features=2048, out_features=512, bias=True)
+                (drop): Dropout(p=0.0, inplace=False)
+              )
+            )
+            (8): SwinTransformerBlock(
+              (norm1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (attn): WindowAttention(
+                (qkv): Linear(in_features=512, out_features=1536, bias=True)
+                (attn_drop): Dropout(p=0.0, inplace=False)
+                (proj): Linear(in_features=512, out_features=512, bias=True)
+                (proj_drop): Dropout(p=0.0, inplace=False)
+                (softmax): Softmax(dim=-1)
+              )
+              (drop_path): DropPath(drop_prob=0.104)
+              (norm2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=512, out_features=2048, bias=True)
+                (act): GELU(approximate='none')
+                (fc2): Linear(in_features=2048, out_features=512, bias=True)
+                (drop): Dropout(p=0.0, inplace=False)
+              )
+            )
+            (9): SwinTransformerBlock(
+              (norm1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (attn): WindowAttention(
+                (qkv): Linear(in_features=512, out_features=1536, bias=True)
+                (attn_drop): Dropout(p=0.0, inplace=False)
+                (proj): Linear(in_features=512, out_features=512, bias=True)
+                (proj_drop): Dropout(p=0.0, inplace=False)
+                (softmax): Softmax(dim=-1)
+              )
+              (drop_path): DropPath(drop_prob=0.113)
+              (norm2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=512, out_features=2048, bias=True)
+                (act): GELU(approximate='none')
+                (fc2): Linear(in_features=2048, out_features=512, bias=True)
+                (drop): Dropout(p=0.0, inplace=False)
+              )
+            )
+            (10): SwinTransformerBlock(
+              (norm1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (attn): WindowAttention(
+                (qkv): Linear(in_features=512, out_features=1536, bias=True)
+                (attn_drop): Dropout(p=0.0, inplace=False)
+                (proj): Linear(in_features=512, out_features=512, bias=True)
+                (proj_drop): Dropout(p=0.0, inplace=False)
+                (softmax): Softmax(dim=-1)
+              )
+              (drop_path): DropPath(drop_prob=0.122)
+              (norm2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=512, out_features=2048, bias=True)
+                (act): GELU(approximate='none')
+                (fc2): Linear(in_features=2048, out_features=512, bias=True)
+                (drop): Dropout(p=0.0, inplace=False)
+              )
+            )
+            (11): SwinTransformerBlock(
+              (norm1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (attn): WindowAttention(
+                (qkv): Linear(in_features=512, out_features=1536, bias=True)
+                (attn_drop): Dropout(p=0.0, inplace=False)
+                (proj): Linear(in_features=512, out_features=512, bias=True)
+                (proj_drop): Dropout(p=0.0, inplace=False)
+                (softmax): Softmax(dim=-1)
+              )
+              (drop_path): DropPath(drop_prob=0.130)
+              (norm2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=512, out_features=2048, bias=True)
+                (act): GELU(approximate='none')
+                (fc2): Linear(in_features=2048, out_features=512, bias=True)
+                (drop): Dropout(p=0.0, inplace=False)
+              )
+            )
+            (12): SwinTransformerBlock(
+              (norm1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (attn): WindowAttention(
+                (qkv): Linear(in_features=512, out_features=1536, bias=True)
+                (attn_drop): Dropout(p=0.0, inplace=False)
+                (proj): Linear(in_features=512, out_features=512, bias=True)
+                (proj_drop): Dropout(p=0.0, inplace=False)
+                (softmax): Softmax(dim=-1)
+              )
+              (drop_path): DropPath(drop_prob=0.139)
+              (norm2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=512, out_features=2048, bias=True)
+                (act): GELU(approximate='none')
+                (fc2): Linear(in_features=2048, out_features=512, bias=True)
+                (drop): Dropout(p=0.0, inplace=False)
+              )
+            )
+            (13): SwinTransformerBlock(
+              (norm1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (attn): WindowAttention(
+                (qkv): Linear(in_features=512, out_features=1536, bias=True)
+                (attn_drop): Dropout(p=0.0, inplace=False)
+                (proj): Linear(in_features=512, out_features=512, bias=True)
+                (proj_drop): Dropout(p=0.0, inplace=False)
+                (softmax): Softmax(dim=-1)
+              )
+              (drop_path): DropPath(drop_prob=0.148)
+              (norm2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=512, out_features=2048, bias=True)
+                (act): GELU(approximate='none')
+                (fc2): Linear(in_features=2048, out_features=512, bias=True)
+                (drop): Dropout(p=0.0, inplace=False)
+              )
+            )
+            (14): SwinTransformerBlock(
+              (norm1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (attn): WindowAttention(
+                (qkv): Linear(in_features=512, out_features=1536, bias=True)
+                (attn_drop): Dropout(p=0.0, inplace=False)
+                (proj): Linear(in_features=512, out_features=512, bias=True)
+                (proj_drop): Dropout(p=0.0, inplace=False)
+                (softmax): Softmax(dim=-1)
+              )
+              (drop_path): DropPath(drop_prob=0.157)
+              (norm2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=512, out_features=2048, bias=True)
+                (act): GELU(approximate='none')
+                (fc2): Linear(in_features=2048, out_features=512, bias=True)
+                (drop): Dropout(p=0.0, inplace=False)
+              )
+            )
+            (15): SwinTransformerBlock(
+              (norm1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (attn): WindowAttention(
+                (qkv): Linear(in_features=512, out_features=1536, bias=True)
+                (attn_drop): Dropout(p=0.0, inplace=False)
+                (proj): Linear(in_features=512, out_features=512, bias=True)
+                (proj_drop): Dropout(p=0.0, inplace=False)
+                (softmax): Softmax(dim=-1)
+              )
+              (drop_path): DropPath(drop_prob=0.165)
+              (norm2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=512, out_features=2048, bias=True)
+                (act): GELU(approximate='none')
+                (fc2): Linear(in_features=2048, out_features=512, bias=True)
+                (drop): Dropout(p=0.0, inplace=False)
+              )
+            )
+            (16): SwinTransformerBlock(
+              (norm1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (attn): WindowAttention(
+                (qkv): Linear(in_features=512, out_features=1536, bias=True)
+                (attn_drop): Dropout(p=0.0, inplace=False)
+                (proj): Linear(in_features=512, out_features=512, bias=True)
+                (proj_drop): Dropout(p=0.0, inplace=False)
+                (softmax): Softmax(dim=-1)
+              )
+              (drop_path): DropPath(drop_prob=0.174)
+              (norm2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=512, out_features=2048, bias=True)
+                (act): GELU(approximate='none')
+                (fc2): Linear(in_features=2048, out_features=512, bias=True)
+                (drop): Dropout(p=0.0, inplace=False)
+              )
+            )
+            (17): SwinTransformerBlock(
+              (norm1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (attn): WindowAttention(
+                (qkv): Linear(in_features=512, out_features=1536, bias=True)
+                (attn_drop): Dropout(p=0.0, inplace=False)
+                (proj): Linear(in_features=512, out_features=512, bias=True)
+                (proj_drop): Dropout(p=0.0, inplace=False)
+                (softmax): Softmax(dim=-1)
+              )
+              (drop_path): DropPath(drop_prob=0.183)
+              (norm2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=512, out_features=2048, bias=True)
+                (act): GELU(approximate='none')
+                (fc2): Linear(in_features=2048, out_features=512, bias=True)
+                (drop): Dropout(p=0.0, inplace=False)
+              )
+            )
+          )
+          (downsample): PatchMerging(
+            (reduction): Linear(in_features=2048, out_features=1024, bias=False)
+            (norm): LayerNorm((2048,), eps=1e-05, elementwise_affine=True)
+          )
+        )
+        (3): BasicLayer(
+          (blocks): ModuleList(
+            (0): SwinTransformerBlock(
+              (norm1): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+              (attn): WindowAttention(
+                (qkv): Linear(in_features=1024, out_features=3072, bias=True)
+                (attn_drop): Dropout(p=0.0, inplace=False)
+                (proj): Linear(in_features=1024, out_features=1024, bias=True)
+                (proj_drop): Dropout(p=0.0, inplace=False)
+                (softmax): Softmax(dim=-1)
+              )
+              (drop_path): DropPath(drop_prob=0.191)
+              (norm2): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+                (act): GELU(approximate='none')
+                (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+                (drop): Dropout(p=0.0, inplace=False)
+              )
+            )
+            (1): SwinTransformerBlock(
+              (norm1): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+              (attn): WindowAttention(
+                (qkv): Linear(in_features=1024, out_features=3072, bias=True)
+                (attn_drop): Dropout(p=0.0, inplace=False)
+                (proj): Linear(in_features=1024, out_features=1024, bias=True)
+                (proj_drop): Dropout(p=0.0, inplace=False)
+                (softmax): Softmax(dim=-1)
+              )
+              (drop_path): DropPath(drop_prob=0.200)
+              (norm2): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+              (mlp): Mlp(
+                (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+                (act): GELU(approximate='none')
+                (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+                (drop): Dropout(p=0.0, inplace=False)
+              )
+            )
+          )
+        )
+      )
+      (norm3): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+    )
+    (image_proj): Linear(in_features=1024, out_features=768, bias=True)
+    (patch_layernorm_embedding): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+    (embed_positions): Embedding(1026, 768)
+    (embed_image_positions): Embedding(1765, 768)
+    (pos_ln): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+    (image_pos_ln): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+    (pos_q_linear): Linear(in_features=768, out_features=768, bias=True)
+    (pos_k_linear): Linear(in_features=768, out_features=768, bias=True)
+    (layers): ModuleList(
+      (0): TransformerEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (self_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (dropout_module): FairseqDropout()
+        (activation_dropout_module): FairseqDropout()
+        (fc1): Linear(in_features=768, out_features=3072, bias=True)
+        (fc2): Linear(in_features=3072, out_features=768, bias=True)
+        (attn_ln): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (ffn_layernorm): LayerNorm((3072,), eps=1e-05, elementwise_affine=True)
+        (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (drop_path): Identity()
+      )
+      (1): TransformerEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (self_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (dropout_module): FairseqDropout()
+        (activation_dropout_module): FairseqDropout()
+        (fc1): Linear(in_features=768, out_features=3072, bias=True)
+        (fc2): Linear(in_features=3072, out_features=768, bias=True)
+        (attn_ln): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (ffn_layernorm): LayerNorm((3072,), eps=1e-05, elementwise_affine=True)
+        (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (drop_path): DropPath(p=0.019999999552965164)
+      )
+      (2): TransformerEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (self_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (dropout_module): FairseqDropout()
+        (activation_dropout_module): FairseqDropout()
+        (fc1): Linear(in_features=768, out_features=3072, bias=True)
+        (fc2): Linear(in_features=3072, out_features=768, bias=True)
+        (attn_ln): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (ffn_layernorm): LayerNorm((3072,), eps=1e-05, elementwise_affine=True)
+        (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (drop_path): DropPath(p=0.03999999910593033)
+      )
+      (3): TransformerEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (self_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (dropout_module): FairseqDropout()
+        (activation_dropout_module): FairseqDropout()
+        (fc1): Linear(in_features=768, out_features=3072, bias=True)
+        (fc2): Linear(in_features=3072, out_features=768, bias=True)
+        (attn_ln): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (ffn_layernorm): LayerNorm((3072,), eps=1e-05, elementwise_affine=True)
+        (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (drop_path): DropPath(p=0.06000000238418579)
+      )
+      (4): TransformerEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (self_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (dropout_module): FairseqDropout()
+        (activation_dropout_module): FairseqDropout()
+        (fc1): Linear(in_features=768, out_features=3072, bias=True)
+        (fc2): Linear(in_features=3072, out_features=768, bias=True)
+        (attn_ln): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (ffn_layernorm): LayerNorm((3072,), eps=1e-05, elementwise_affine=True)
+        (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (drop_path): DropPath(p=0.07999999821186066)
+      )
+      (5): TransformerEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (self_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (dropout_module): FairseqDropout()
+        (activation_dropout_module): FairseqDropout()
+        (fc1): Linear(in_features=768, out_features=3072, bias=True)
+        (fc2): Linear(in_features=3072, out_features=768, bias=True)
+        (attn_ln): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (ffn_layernorm): LayerNorm((3072,), eps=1e-05, elementwise_affine=True)
+        (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (drop_path): DropPath(p=0.10000000149011612)
+      )
+    )
+    (layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+    (token_rel_pos_table_list): ModuleList(
+      (0): Embedding(511, 12)
+      (1): Embedding(511, 12)
+      (2): Embedding(511, 12)
+      (3): Embedding(511, 12)
+      (4): Embedding(511, 12)
+      (5): Embedding(511, 12)
+    )
+    (image_rel_pos_table_list): ModuleList(
+      (0): Embedding(6892, 12)
+      (1): Embedding(6892, 12)
+      (2): Embedding(6892, 12)
+      (3): Embedding(6892, 12)
+      (4): Embedding(6892, 12)
+      (5): Embedding(6892, 12)
+    )
+    (bert): XLMRobertaForMaskedLM(
+      (roberta): XLMRobertaModel(
+        (embeddings): XLMRobertaEmbeddings(
+          (word_embeddings): Embedding(250002, 768, padding_idx=1)
+          (position_embeddings): Embedding(514, 768, padding_idx=1)
+          (token_type_embeddings): Embedding(1, 768)
+          (LayerNorm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+          (dropout): Dropout(p=0.1, inplace=False)
+        )
+        (encoder): XLMRobertaEncoder(
+          (layer): ModuleList(
+            (0): XLMRobertaLayer(
+              (attention): XLMRobertaAttention(
+                (self): XLMRobertaSelfAttention(
+                  (query): Linear(in_features=768, out_features=768, bias=True)
+                  (key): Linear(in_features=768, out_features=768, bias=True)
+                  (value): Linear(in_features=768, out_features=768, bias=True)
+                  (dropout): Dropout(p=0.1, inplace=False)
+                )
+                (output): XLMRobertaSelfOutput(
+                  (dense): Linear(in_features=768, out_features=768, bias=True)
+                  (LayerNorm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+                  (dropout): Dropout(p=0.1, inplace=False)
+                )
+              )
+              (intermediate): XLMRobertaIntermediate(
+                (dense): Linear(in_features=768, out_features=3072, bias=True)
+                (intermediate_act_fn): GELUActivation()
+              )
+              (output): XLMRobertaOutput(
+                (dense): Linear(in_features=3072, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (1): XLMRobertaLayer(
+              (attention): XLMRobertaAttention(
+                (self): XLMRobertaSelfAttention(
+                  (query): Linear(in_features=768, out_features=768, bias=True)
+                  (key): Linear(in_features=768, out_features=768, bias=True)
+                  (value): Linear(in_features=768, out_features=768, bias=True)
+                  (dropout): Dropout(p=0.1, inplace=False)
+                )
+                (output): XLMRobertaSelfOutput(
+                  (dense): Linear(in_features=768, out_features=768, bias=True)
+                  (LayerNorm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+                  (dropout): Dropout(p=0.1, inplace=False)
+                )
+              )
+              (intermediate): XLMRobertaIntermediate(
+                (dense): Linear(in_features=768, out_features=3072, bias=True)
+                (intermediate_act_fn): GELUActivation()
+              )
+              (output): XLMRobertaOutput(
+                (dense): Linear(in_features=3072, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (2): XLMRobertaLayer(
+              (attention): XLMRobertaAttention(
+                (self): XLMRobertaSelfAttention(
+                  (query): Linear(in_features=768, out_features=768, bias=True)
+                  (key): Linear(in_features=768, out_features=768, bias=True)
+                  (value): Linear(in_features=768, out_features=768, bias=True)
+                  (dropout): Dropout(p=0.1, inplace=False)
+                )
+                (output): XLMRobertaSelfOutput(
+                  (dense): Linear(in_features=768, out_features=768, bias=True)
+                  (LayerNorm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+                  (dropout): Dropout(p=0.1, inplace=False)
+                )
+              )
+              (intermediate): XLMRobertaIntermediate(
+                (dense): Linear(in_features=768, out_features=3072, bias=True)
+                (intermediate_act_fn): GELUActivation()
+              )
+              (output): XLMRobertaOutput(
+                (dense): Linear(in_features=3072, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (3): XLMRobertaLayer(
+              (attention): XLMRobertaAttention(
+                (self): XLMRobertaSelfAttention(
+                  (query): Linear(in_features=768, out_features=768, bias=True)
+                  (key): Linear(in_features=768, out_features=768, bias=True)
+                  (value): Linear(in_features=768, out_features=768, bias=True)
+                  (dropout): Dropout(p=0.1, inplace=False)
+                )
+                (output): XLMRobertaSelfOutput(
+                  (dense): Linear(in_features=768, out_features=768, bias=True)
+                  (LayerNorm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+                  (dropout): Dropout(p=0.1, inplace=False)
+                )
+              )
+              (intermediate): XLMRobertaIntermediate(
+                (dense): Linear(in_features=768, out_features=3072, bias=True)
+                (intermediate_act_fn): GELUActivation()
+              )
+              (output): XLMRobertaOutput(
+                (dense): Linear(in_features=3072, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (4): XLMRobertaLayer(
+              (attention): XLMRobertaAttention(
+                (self): XLMRobertaSelfAttention(
+                  (query): Linear(in_features=768, out_features=768, bias=True)
+                  (key): Linear(in_features=768, out_features=768, bias=True)
+                  (value): Linear(in_features=768, out_features=768, bias=True)
+                  (dropout): Dropout(p=0.1, inplace=False)
+                )
+                (output): XLMRobertaSelfOutput(
+                  (dense): Linear(in_features=768, out_features=768, bias=True)
+                  (LayerNorm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+                  (dropout): Dropout(p=0.1, inplace=False)
+                )
+              )
+              (intermediate): XLMRobertaIntermediate(
+                (dense): Linear(in_features=768, out_features=3072, bias=True)
+                (intermediate_act_fn): GELUActivation()
+              )
+              (output): XLMRobertaOutput(
+                (dense): Linear(in_features=3072, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (5): XLMRobertaLayer(
+              (attention): XLMRobertaAttention(
+                (self): XLMRobertaSelfAttention(
+                  (query): Linear(in_features=768, out_features=768, bias=True)
+                  (key): Linear(in_features=768, out_features=768, bias=True)
+                  (value): Linear(in_features=768, out_features=768, bias=True)
+                  (dropout): Dropout(p=0.1, inplace=False)
+                )
+                (output): XLMRobertaSelfOutput(
+                  (dense): Linear(in_features=768, out_features=768, bias=True)
+                  (LayerNorm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+                  (dropout): Dropout(p=0.1, inplace=False)
+                )
+              )
+              (intermediate): XLMRobertaIntermediate(
+                (dense): Linear(in_features=768, out_features=3072, bias=True)
+                (intermediate_act_fn): GELUActivation()
+              )
+              (output): XLMRobertaOutput(
+                (dense): Linear(in_features=3072, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (6): XLMRobertaLayer(
+              (attention): XLMRobertaAttention(
+                (self): XLMRobertaSelfAttention(
+                  (query): Linear(in_features=768, out_features=768, bias=True)
+                  (key): Linear(in_features=768, out_features=768, bias=True)
+                  (value): Linear(in_features=768, out_features=768, bias=True)
+                  (dropout): Dropout(p=0.1, inplace=False)
+                )
+                (output): XLMRobertaSelfOutput(
+                  (dense): Linear(in_features=768, out_features=768, bias=True)
+                  (LayerNorm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+                  (dropout): Dropout(p=0.1, inplace=False)
+                )
+              )
+              (intermediate): XLMRobertaIntermediate(
+                (dense): Linear(in_features=768, out_features=3072, bias=True)
+                (intermediate_act_fn): GELUActivation()
+              )
+              (output): XLMRobertaOutput(
+                (dense): Linear(in_features=3072, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (7): XLMRobertaLayer(
+              (attention): XLMRobertaAttention(
+                (self): XLMRobertaSelfAttention(
+                  (query): Linear(in_features=768, out_features=768, bias=True)
+                  (key): Linear(in_features=768, out_features=768, bias=True)
+                  (value): Linear(in_features=768, out_features=768, bias=True)
+                  (dropout): Dropout(p=0.1, inplace=False)
+                )
+                (output): XLMRobertaSelfOutput(
+                  (dense): Linear(in_features=768, out_features=768, bias=True)
+                  (LayerNorm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+                  (dropout): Dropout(p=0.1, inplace=False)
+                )
+              )
+              (intermediate): XLMRobertaIntermediate(
+                (dense): Linear(in_features=768, out_features=3072, bias=True)
+                (intermediate_act_fn): GELUActivation()
+              )
+              (output): XLMRobertaOutput(
+                (dense): Linear(in_features=3072, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (8): XLMRobertaLayer(
+              (attention): XLMRobertaAttention(
+                (self): XLMRobertaSelfAttention(
+                  (query): Linear(in_features=768, out_features=768, bias=True)
+                  (key): Linear(in_features=768, out_features=768, bias=True)
+                  (value): Linear(in_features=768, out_features=768, bias=True)
+                  (dropout): Dropout(p=0.1, inplace=False)
+                )
+                (output): XLMRobertaSelfOutput(
+                  (dense): Linear(in_features=768, out_features=768, bias=True)
+                  (LayerNorm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+                  (dropout): Dropout(p=0.1, inplace=False)
+                )
+              )
+              (intermediate): XLMRobertaIntermediate(
+                (dense): Linear(in_features=768, out_features=3072, bias=True)
+                (intermediate_act_fn): GELUActivation()
+              )
+              (output): XLMRobertaOutput(
+                (dense): Linear(in_features=3072, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (9): XLMRobertaLayer(
+              (attention): XLMRobertaAttention(
+                (self): XLMRobertaSelfAttention(
+                  (query): Linear(in_features=768, out_features=768, bias=True)
+                  (key): Linear(in_features=768, out_features=768, bias=True)
+                  (value): Linear(in_features=768, out_features=768, bias=True)
+                  (dropout): Dropout(p=0.1, inplace=False)
+                )
+                (output): XLMRobertaSelfOutput(
+                  (dense): Linear(in_features=768, out_features=768, bias=True)
+                  (LayerNorm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+                  (dropout): Dropout(p=0.1, inplace=False)
+                )
+              )
+              (intermediate): XLMRobertaIntermediate(
+                (dense): Linear(in_features=768, out_features=3072, bias=True)
+                (intermediate_act_fn): GELUActivation()
+              )
+              (output): XLMRobertaOutput(
+                (dense): Linear(in_features=3072, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (10): XLMRobertaLayer(
+              (attention): XLMRobertaAttention(
+                (self): XLMRobertaSelfAttention(
+                  (query): Linear(in_features=768, out_features=768, bias=True)
+                  (key): Linear(in_features=768, out_features=768, bias=True)
+                  (value): Linear(in_features=768, out_features=768, bias=True)
+                  (dropout): Dropout(p=0.1, inplace=False)
+                )
+                (output): XLMRobertaSelfOutput(
+                  (dense): Linear(in_features=768, out_features=768, bias=True)
+                  (LayerNorm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+                  (dropout): Dropout(p=0.1, inplace=False)
+                )
+              )
+              (intermediate): XLMRobertaIntermediate(
+                (dense): Linear(in_features=768, out_features=3072, bias=True)
+                (intermediate_act_fn): GELUActivation()
+              )
+              (output): XLMRobertaOutput(
+                (dense): Linear(in_features=3072, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (11): XLMRobertaLayer(
+              (attention): XLMRobertaAttention(
+                (self): XLMRobertaSelfAttention(
+                  (query): Linear(in_features=768, out_features=768, bias=True)
+                  (key): Linear(in_features=768, out_features=768, bias=True)
+                  (value): Linear(in_features=768, out_features=768, bias=True)
+                  (dropout): Dropout(p=0.1, inplace=False)
+                )
+                (output): XLMRobertaSelfOutput(
+                  (dense): Linear(in_features=768, out_features=768, bias=True)
+                  (LayerNorm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+                  (dropout): Dropout(p=0.1, inplace=False)
+                )
+              )
+              (intermediate): XLMRobertaIntermediate(
+                (dense): Linear(in_features=768, out_features=3072, bias=True)
+                (intermediate_act_fn): GELUActivation()
+              )
+              (output): XLMRobertaOutput(
+                (dense): Linear(in_features=3072, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+          )
+        )
+      )
+      (lm_head): XLMRobertaLMHead(
+        (dense): Linear(in_features=768, out_features=768, bias=True)
+        (layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (decoder): Linear(in_features=768, out_features=250002, bias=True)
+      )
+    )
+  )
+  (decoder): TransformerDecoder(
+    (dropout_module): FairseqDropout()
+    (embed_tokens): Embedding(4100, 768, padding_idx=1)
+    (layernorm_embedding): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+    (embed_positions): Embedding(1026, 768)
+    (embed_image_positions): Embedding(1765, 768)
+    (pos_ln): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+    (image_pos_ln): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+    (self_pos_q_linear): Linear(in_features=768, out_features=768, bias=True)
+    (self_pos_k_linear): Linear(in_features=768, out_features=768, bias=True)
+    (cross_pos_q_linear): Linear(in_features=768, out_features=768, bias=True)
+    (cross_pos_k_linear): Linear(in_features=768, out_features=768, bias=True)
+    (code_layernorm_embedding): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+    (layers): ModuleList(
+      (0): TransformerDecoderLayer(
+        (dropout_module): FairseqDropout()
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (self_attn_ln): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (cross_attn_ln): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (activation_dropout_module): FairseqDropout()
+        (self_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (ffn_layernorm): LayerNorm((3072,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=768, out_features=3072, bias=True)
+        (fc2): Linear(in_features=3072, out_features=768, bias=True)
+        (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (drop_path): Identity()
+      )
+      (1): TransformerDecoderLayer(
+        (dropout_module): FairseqDropout()
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (self_attn_ln): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (cross_attn_ln): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (activation_dropout_module): FairseqDropout()
+        (self_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (ffn_layernorm): LayerNorm((3072,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=768, out_features=3072, bias=True)
+        (fc2): Linear(in_features=3072, out_features=768, bias=True)
+        (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (drop_path): DropPath(p=0.019999999552965164)
+      )
+      (2): TransformerDecoderLayer(
+        (dropout_module): FairseqDropout()
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (self_attn_ln): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (cross_attn_ln): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (activation_dropout_module): FairseqDropout()
+        (self_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (ffn_layernorm): LayerNorm((3072,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=768, out_features=3072, bias=True)
+        (fc2): Linear(in_features=3072, out_features=768, bias=True)
+        (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (drop_path): DropPath(p=0.03999999910593033)
+      )
+      (3): TransformerDecoderLayer(
+        (dropout_module): FairseqDropout()
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (self_attn_ln): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (cross_attn_ln): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (activation_dropout_module): FairseqDropout()
+        (self_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (ffn_layernorm): LayerNorm((3072,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=768, out_features=3072, bias=True)
+        (fc2): Linear(in_features=3072, out_features=768, bias=True)
+        (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (drop_path): DropPath(p=0.06000000238418579)
+      )
+      (4): TransformerDecoderLayer(
+        (dropout_module): FairseqDropout()
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (self_attn_ln): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (cross_attn_ln): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (activation_dropout_module): FairseqDropout()
+        (self_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (ffn_layernorm): LayerNorm((3072,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=768, out_features=3072, bias=True)
+        (fc2): Linear(in_features=3072, out_features=768, bias=True)
+        (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (drop_path): DropPath(p=0.07999999821186066)
+      )
+      (5): TransformerDecoderLayer(
+        (dropout_module): FairseqDropout()
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (self_attn_ln): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (cross_attn_ln): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (activation_dropout_module): FairseqDropout()
+        (self_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (ffn_layernorm): LayerNorm((3072,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=768, out_features=3072, bias=True)
+        (fc2): Linear(in_features=3072, out_features=768, bias=True)
+        (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (drop_path): DropPath(p=0.10000000149011612)
+      )
+    )
+    (layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+    (reg_head): MLP(
+      (layers): ModuleList(
+        (0): Linear(in_features=768, out_features=768, bias=True)
+        (1): Linear(in_features=768, out_features=768, bias=True)
+        (2): Linear(in_features=768, out_features=2, bias=True)
+      )
+    )
+    (cls_head): Linear(in_features=768, out_features=3, bias=False)
+    (token_rel_pos_table_list): ModuleList(
+      (0): Embedding(511, 12)
+      (1): Embedding(511, 12)
+      (2): Embedding(511, 12)
+      (3): Embedding(511, 12)
+      (4): Embedding(511, 12)
+      (5): Embedding(511, 12)
+    )
+    (image_rel_pos_table_list): ModuleList(
+      (0): Embedding(6892, 12)
+      (1): Embedding(6892, 12)
+      (2): Embedding(6892, 12)
+      (3): Embedding(6892, 12)
+      (4): Embedding(6892, 12)
+      (5): Embedding(6892, 12)
+    )
+  )
+  (classification_heads): ModuleDict()
+)
+2024-11-02 09:29:27 - train.py[line:102] - INFO: task: RefcocoTask
+2024-11-02 09:29:27 - train.py[line:103] - INFO: model: PolyFormerModel
+2024-11-02 09:29:27 - train.py[line:104] - INFO: criterion: AdjustLabelSmoothedCrossEntropyCriterion
+2024-11-02 09:29:27 - train.py[line:108] - INFO: num. shared model params: 478,547,732 (num. trained: 478,547,732)
+2024-11-02 09:29:27 - train.py[line:115] - INFO: num. expert model params: 0 (num. trained: 0)
+local datafile ../../datasets/finetune/aihub_indoor/aihub_indoor_val.tsv slice_id 0 begin to initialize row_count and line_idx-to-offset mapping
+local datafile ../../datasets/finetune/aihub_indoor/aihub_indoor_val.tsv slice_id 1 finished initializing row_count and line_idx-to-offset mapping
+file ../../datasets/finetune/aihub_indoor/aihub_indoor_val.tsv slice_id 1 row count 6840 total row count 54715
+local datafile ../../datasets/finetune/aihub_indoor/aihub_indoor_val.tsv slice_id 3 finished initializing row_count and line_idx-to-offset mappinglocal datafile ../../datasets/finetune/aihub_indoor/aihub_indoor_val.tsv slice_id 5 finished initializing row_count and line_idx-to-offset mapping
+
+file ../../datasets/finetune/aihub_indoor/aihub_indoor_val.tsv slice_id 3 row count 6839 total row count 54715file ../../datasets/finetune/aihub_indoor/aihub_indoor_val.tsv slice_id 5 row count 6839 total row count 54715
+
+local datafile ../../datasets/finetune/aihub_indoor/aihub_indoor_val.tsv slice_id 7 finished initializing row_count and line_idx-to-offset mapping
+file ../../datasets/finetune/aihub_indoor/aihub_indoor_val.tsv slice_id 7 row count 6839 total row count 54715
+local datafile ../../datasets/finetune/aihub_indoor/aihub_indoor_val.tsv slice_id 2 finished initializing row_count and line_idx-to-offset mapping
+file ../../datasets/finetune/aihub_indoor/aihub_indoor_val.tsv slice_id 2 row count 6840 total row count 54715
+local datafile ../../datasets/finetune/aihub_indoor/aihub_indoor_val.tsv slice_id 4 finished initializing row_count and line_idx-to-offset mappinglocal datafile ../../datasets/finetune/aihub_indoor/aihub_indoor_val.tsv slice_id 0 finished initializing row_count and line_idx-to-offset mappinglocal datafile ../../datasets/finetune/aihub_indoor/aihub_indoor_val.tsv slice_id 6 finished initializing row_count and line_idx-to-offset mapping
+
+
+file ../../datasets/finetune/aihub_indoor/aihub_indoor_val.tsv slice_id 4 row count 6839 total row count 54715file ../../datasets/finetune/aihub_indoor/aihub_indoor_val.tsv slice_id 0 row count 6840 total row count 54715
+
+file ../../datasets/finetune/aihub_indoor/aihub_indoor_val.tsv slice_id 6 row count 6839 total row count 54715
+2024-11-02 09:29:52 - distributed_c10d.py[line:319] - INFO: Added key: store_based_barrier_key:2 to store for rank: 0
+2024-11-02 09:29:52 - distributed_c10d.py[line:354] - INFO: Rank 0: Completed store-based barrier for key:store_based_barrier_key:2 with 8 nodes.
+2024-11-02 09:29:52 - trainer.py[line:124] - INFO: detected shared parameter: encoder.embed_tokens.weight <- decoder.embed_tokens.weight
+2024-11-02 09:29:52 - trainer.py[line:124] - INFO: detected shared parameter: encoder.embed_images.layers.0.downsample.reduction.bias <- encoder.embed_images.layers.1.downsample.reduction.bias
+2024-11-02 09:29:52 - trainer.py[line:124] - INFO: detected shared parameter: encoder.embed_images.layers.0.downsample.reduction.bias <- encoder.embed_images.layers.2.downsample.reduction.bias
+2024-11-02 09:29:52 - trainer.py[line:124] - INFO: detected shared parameter: encoder.embed_images.layers.0.downsample.reduction.bias <- decoder.cls_head.bias
+2024-11-02 09:29:52 - trainer.py[line:124] - INFO: detected shared parameter: encoder.bert.roberta.embeddings.word_embeddings.weight <- encoder.bert.lm_head.decoder.weight
+2024-11-02 09:29:52 - trainer.py[line:124] - INFO: detected shared parameter: encoder.bert.lm_head.bias <- encoder.bert.lm_head.decoder.bias
+2024-11-02 09:29:53 - utils.py[line:759] - INFO: ***********************CUDA enviroments for all 8 workers***********************
+2024-11-02 09:29:53 - utils.py[line:765] - INFO: rank   0: capabilities =  8.0  ; total memory = 39.564 GB ; name = NVIDIA A100-SXM4-40GB                   
+2024-11-02 09:29:53 - utils.py[line:765] - INFO: rank   1: capabilities =  8.0  ; total memory = 39.564 GB ; name = NVIDIA A100-SXM4-40GB                   
+2024-11-02 09:29:53 - utils.py[line:765] - INFO: rank   2: capabilities =  8.0  ; total memory = 39.564 GB ; name = NVIDIA A100-SXM4-40GB                   
+2024-11-02 09:29:53 - utils.py[line:765] - INFO: rank   3: capabilities =  8.0  ; total memory = 39.564 GB ; name = NVIDIA A100-SXM4-40GB                   
+2024-11-02 09:29:53 - utils.py[line:765] - INFO: rank   4: capabilities =  8.0  ; total memory = 39.564 GB ; name = NVIDIA A100-SXM4-40GB                   
+2024-11-02 09:29:53 - utils.py[line:765] - INFO: rank   5: capabilities =  8.0  ; total memory = 39.564 GB ; name = NVIDIA A100-SXM4-40GB                   
+2024-11-02 09:29:53 - utils.py[line:765] - INFO: rank   6: capabilities =  8.0  ; total memory = 39.564 GB ; name = NVIDIA A100-SXM4-40GB                   
+2024-11-02 09:29:53 - utils.py[line:765] - INFO: rank   7: capabilities =  8.0  ; total memory = 39.564 GB ; name = NVIDIA A100-SXM4-40GB                   
+2024-11-02 09:29:53 - utils.py[line:767] - INFO: ***********************CUDA enviroments for all 8 workers***********************
+2024-11-02 09:29:53 - train.py[line:145] - INFO: training on 8 devices (GPUs/TPUs)
+2024-11-02 09:29:53 - train.py[line:151] - INFO: max tokens per device = None and max sentences per device = 16
+2024-11-02 09:29:53 - trainer.py[line:458] - INFO: Preparing to load checkpoint ../pretrain/polyformer_b_pretrain_aihub_indoor_80_checkpoints_resume/20_5e-5_512/checkpoint.best_score_0.5110.pt
+local datafile ../../datasets/finetune/aihub_indoor/aihub_indoor_train.tsv slice_id 4 begin to initialize row_count and line_idx-to-offset mapping
+local datafile ../../datasets/finetune/aihub_indoor/aihub_indoor_train.tsv slice_id 6 begin to initialize row_count and line_idx-to-offset mapping
+local datafile ../../datasets/finetune/aihub_indoor/aihub_indoor_train.tsv slice_id 2 begin to initialize row_count and line_idx-to-offset mapping
+local datafile ../../datasets/finetune/aihub_indoor/aihub_indoor_train.tsv slice_id 5 begin to initialize row_count and line_idx-to-offset mapping
+2024-11-02 09:30:04 - trainer.py[line:619] - INFO: Loaded checkpoint ../pretrain/polyformer_b_pretrain_aihub_indoor_80_checkpoints_resume/20_5e-5_512/checkpoint.best_score_0.5110.pt (epoch 12 @ 0 updates)
+2024-11-02 09:30:04 - trainer.py[line:639] - INFO: loading train data for epoch 1
+local datafile ../../datasets/finetune/aihub_indoor/aihub_indoor_train.tsv slice_id 0 begin to initialize row_count and line_idx-to-offset mapping
+local datafile ../../datasets/finetune/aihub_indoor/aihub_indoor_train.tsv slice_id 7 begin to initialize row_count and line_idx-to-offset mapping
+local datafile ../../datasets/finetune/aihub_indoor/aihub_indoor_train.tsv slice_id 1 begin to initialize row_count and line_idx-to-offset mapping
+local datafile ../../datasets/finetune/aihub_indoor/aihub_indoor_train.tsv slice_id 3 begin to initialize row_count and line_idx-to-offset mapping
+local datafile ../../datasets/finetune/aihub_indoor/aihub_indoor_train.tsv slice_id 2 finished initializing row_count and line_idx-to-offset mapping
+file ../../datasets/finetune/aihub_indoor/aihub_indoor_train.tsv slice_id 2 row count 50000 total row count 400000
+/home/ubuntu/anaconda3/envs/polyformer/lib/python3.7/site-packages/torchvision/transforms/functional.py:443: UserWarning: Argument 'interpolation' of type int is deprecated since 0.13 and will be removed in 0.15. Please use InterpolationMode enum.
+  "Argument 'interpolation' of type int is deprecated since 0.13 and will be removed in 0.15. "
+local datafile ../../datasets/finetune/aihub_indoor/aihub_indoor_train.tsv slice_id 7 finished initializing row_count and line_idx-to-offset mappinglocal datafile ../../datasets/finetune/aihub_indoor/aihub_indoor_train.tsv slice_id 5 finished initializing row_count and line_idx-to-offset mapping
+
+file ../../datasets/finetune/aihub_indoor/aihub_indoor_train.tsv slice_id 7 row count 50000 total row count 400000
+file ../../datasets/finetune/aihub_indoor/aihub_indoor_train.tsv slice_id 5 row count 50000 total row count 400000
+slice_id 2 seek offset 100000
+Total steps 39100, warmup steps 2346, warmup_factor 0.00042625745950554135
+/home/ubuntu/anaconda3/envs/polyformer/lib/python3.7/site-packages/torchvision/transforms/functional.py:443: UserWarning: Argument 'interpolation' of type int is deprecated since 0.13 and will be removed in 0.15. Please use InterpolationMode enum.
+  "Argument 'interpolation' of type int is deprecated since 0.13 and will be removed in 0.15. "
+/home/ubuntu/anaconda3/envs/polyformer/lib/python3.7/site-packages/torchvision/transforms/functional.py:443: UserWarning: Argument 'interpolation' of type int is deprecated since 0.13 and will be removed in 0.15. Please use InterpolationMode enum.
+  "Argument 'interpolation' of type int is deprecated since 0.13 and will be removed in 0.15. "
+slice_id 5 seek offset 250000
+slice_id 7 seek offset 350000
+Total steps 39100, warmup steps 2346, warmup_factor 0.00042625745950554135
+Total steps 39100, warmup steps 2346, warmup_factor 0.00042625745950554135
+local datafile ../../datasets/finetune/aihub_indoor/aihub_indoor_train.tsv slice_id 1 finished initializing row_count and line_idx-to-offset mapping
+file ../../datasets/finetune/aihub_indoor/aihub_indoor_train.tsv slice_id 1 row count 50000 total row count 400000
+local datafile ../../datasets/finetune/aihub_indoor/aihub_indoor_train.tsv slice_id 3 finished initializing row_count and line_idx-to-offset mapping
+file ../../datasets/finetune/aihub_indoor/aihub_indoor_train.tsv slice_id 3 row count 50000 total row count 400000
+/home/ubuntu/anaconda3/envs/polyformer/lib/python3.7/site-packages/torchvision/transforms/functional.py:443: UserWarning: Argument 'interpolation' of type int is deprecated since 0.13 and will be removed in 0.15. Please use InterpolationMode enum.
+  "Argument 'interpolation' of type int is deprecated since 0.13 and will be removed in 0.15. "
+/home/ubuntu/anaconda3/envs/polyformer/lib/python3.7/site-packages/torchvision/transforms/functional.py:443: UserWarning: Argument 'interpolation' of type int is deprecated since 0.13 and will be removed in 0.15. Please use InterpolationMode enum.
+  "Argument 'interpolation' of type int is deprecated since 0.13 and will be removed in 0.15. "
+slice_id 1 seek offset 50000
+Total steps 39100, warmup steps 2346, warmup_factor 0.00042625745950554135
+slice_id 3 seek offset 150000
+Total steps 39100, warmup steps 2346, warmup_factor 0.00042625745950554135
+local datafile ../../datasets/finetune/aihub_indoor/aihub_indoor_train.tsv slice_id 4 finished initializing row_count and line_idx-to-offset mappinglocal datafile ../../datasets/finetune/aihub_indoor/aihub_indoor_train.tsv slice_id 6 finished initializing row_count and line_idx-to-offset mapping
+
+file ../../datasets/finetune/aihub_indoor/aihub_indoor_train.tsv slice_id 4 row count 50000 total row count 400000
+file ../../datasets/finetune/aihub_indoor/aihub_indoor_train.tsv slice_id 6 row count 50000 total row count 400000
+local datafile ../../datasets/finetune/aihub_indoor/aihub_indoor_train.tsv slice_id 0 finished initializing row_count and line_idx-to-offset mapping
+file ../../datasets/finetune/aihub_indoor/aihub_indoor_train.tsv slice_id 0 row count 50000 total row count 400000
+/home/ubuntu/anaconda3/envs/polyformer/lib/python3.7/site-packages/torchvision/transforms/functional.py:443: UserWarning: Argument 'interpolation' of type int is deprecated since 0.13 and will be removed in 0.15. Please use InterpolationMode enum.
+  "Argument 'interpolation' of type int is deprecated since 0.13 and will be removed in 0.15. "
+/home/ubuntu/anaconda3/envs/polyformer/lib/python3.7/site-packages/torchvision/transforms/functional.py:443: UserWarning: Argument 'interpolation' of type int is deprecated since 0.13 and will be removed in 0.15. Please use InterpolationMode enum.
+  "Argument 'interpolation' of type int is deprecated since 0.13 and will be removed in 0.15. "
+/home/ubuntu/anaconda3/envs/polyformer/lib/python3.7/site-packages/torchvision/transforms/functional.py:443: UserWarning: Argument 'interpolation' of type int is deprecated since 0.13 and will be removed in 0.15. Please use InterpolationMode enum.
+  "Argument 'interpolation' of type int is deprecated since 0.13 and will be removed in 0.15. "
+slice_id 4 seek offset 200000
+slice_id 0 seek offset 0
+slice_id 6 seek offset 300000
+Total steps 39100, warmup steps 2346, warmup_factor 0.00042625745950554135
+Total steps 39100, warmup steps 2346, warmup_factor 0.00042625745950554135
+2024-11-02 09:32:55 - trainer.py[line:703] - INFO: begin training epoch 1
+2024-11-02 09:32:55 - train.py[line:297] - INFO: Start iterating over samples
+Total steps 39100, warmup steps 2346, warmup_factor 0.00042625745950554135
+/home/ubuntu/anaconda3/envs/polyformer/lib/python3.7/site-packages/torch/nn/functional.py:1967: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/ubuntu/anaconda3/envs/polyformer/lib/python3.7/site-packages/torch/nn/functional.py:1967: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/ubuntu/anaconda3/envs/polyformer/lib/python3.7/site-packages/torch/nn/functional.py:1967: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/ubuntu/anaconda3/envs/polyformer/lib/python3.7/site-packages/torch/nn/functional.py:1967: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/ubuntu/anaconda3/envs/polyformer/lib/python3.7/site-packages/torch/nn/functional.py:1967: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/ubuntu/anaconda3/envs/polyformer/lib/python3.7/site-packages/torch/nn/functional.py:1967: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/ubuntu/anaconda3/envs/polyformer/lib/python3.7/site-packages/torch/nn/functional.py:1967: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/ubuntu/anaconda3/envs/polyformer/lib/python3.7/site-packages/torch/nn/functional.py:1967: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+loss_reg: 0.32390177874317655 loss_cls: 0.010846885852515697
+loss_reg: 0.39555145093433214 loss_cls: 0.01039428636431694
+loss_reg: 0.38023831664518637 loss_cls: 0.01019315980374813
+loss_reg: 0.43635732306925157 loss_cls: 0.010234182700514793
+loss_reg: 0.3831515473366293 loss_cls: 0.010999951511621475
+loss_reg: 0.3219282856078285 loss_cls: 0.011131435632705688
+loss_reg: 0.08631158439451321 loss_cls: 0.007506558205932379
+loss_reg: 0.39199914268639596 loss_cls: 0.010031906887888908
+loss_reg: 0.36213894899736304 loss_cls: 0.012622173875570297
+loss_reg: 0.3397852601856226 loss_cls: 0.009701356291770935
+loss_reg: 0.3797071319867054 loss_cls: 0.016987070441246033
+loss_reg: 0.3112807228794638 loss_cls: 0.010740354657173157
+loss_reg: 0.37408836577851734 loss_cls: 0.010850588791072369
+loss_reg: 0.0734424321450891 loss_cls: 0.00818309374153614
+loss_reg: 0.37926400202731503 loss_cls: 0.011885513551533222
+loss_reg: 0.4017423232225268 loss_cls: 0.009074103087186813
+loss_reg: 0.40810977694586137 loss_cls: 0.012974491342902184
+loss_reg: 0.37194512494103976 loss_cls: 0.015157915651798248
+loss_reg: 0.3637165166376972 loss_cls: 0.010469007305800915
+loss_reg: 0.3670836146346797 loss_cls: 0.013471346348524094
+loss_reg: 0.42704184097739867 loss_cls: 0.015218750573694706
+loss_reg: 0.36422459044743816 loss_cls: 0.017412526533007622
+loss_reg: 0.06811292131829999 loss_cls: 0.008524122647941113
+loss_reg: 0.2858400102558543 loss_cls: 0.01216928567737341
+loss_reg: 0.4210049845173392 loss_cls: 0.014376296661794186
+loss_reg: 0.3760820267839877 loss_cls: 0.0073402621783316135
+loss_reg: 0.41060025111374737 loss_cls: 0.013578398153185844
+loss_reg: 0.3656241796523159 loss_cls: 0.01635650359094143
+loss_reg: 0.29898597199160987 loss_cls: 0.015624859370291233
+loss_reg: 0.381110855533424 loss_cls: 0.010038752108812332
+loss_reg: 0.06363479834357855 loss_cls: 0.011223150417208672
+loss_reg: 0.42332477871665497 loss_cls: 0.02443326637148857
+loss_reg: 0.34910607756502754 loss_cls: 0.010157515294849873
+loss_reg: 0.39543350212649603 loss_cls: 0.010238236747682095
+loss_reg: 0.4132033694840631 loss_cls: 0.01419928390532732
+loss_reg: 0.37461141318045404 loss_cls: 0.010693316347897053
+loss_reg: 0.42873386127050933 loss_cls: 0.013348410837352276
+loss_reg: 0.3976192102619629 loss_cls: 0.01200591865926981
+loss_reg: 0.06220919759811597 loss_cls: 0.00823152158409357
+loss_reg: 0.37542740419766163 loss_cls: 0.009732580743730068
+loss_reg: 0.4200538804420818 loss_cls: 0.013359556905925274
+loss_reg: 0.38834203558321295 loss_cls: 0.02016262896358967
+loss_reg: 0.41172047526543626 loss_cls: 0.011662802658975124
+loss_reg: 0.39770116324699767 loss_cls: 0.010891644284129143
+loss_reg: 0.3944830176517776 loss_cls: 0.01953117921948433
+loss_reg: 0.40516211385500966 loss_cls: 0.01863989047706127
+loss_reg: 0.08418831694802245 loss_cls: 0.007715568877756596
+loss_reg: 0.44303603866765207 loss_cls: 0.014887263998389244
+loss_reg: 0.3987544362630697 loss_cls: 0.010930725373327732
+loss_reg: 0.4129833713202445 loss_cls: 0.011662546545267105
+loss_reg: 0.36710937853197034 loss_cls: 0.012950442731380463
+loss_reg: 0.4158561191797958 loss_cls: 0.009415081702172756
+loss_reg: 0.38365807490875753 loss_cls: 0.013250254094600677
+loss_reg: 0.40155651270767506 loss_cls: 0.010067231021821499
+loss_reg: 0.0785448193251907 loss_cls: 0.00962782558053732
+loss_reg: 0.44448998726086003 loss_cls: 0.012568791396915913
+loss_reg: 0.425762336682325 loss_cls: 0.012720229104161263
+loss_reg: 0.38051614258137295 loss_cls: 0.011475355364382267
+loss_reg: 0.38687206928087464 loss_cls: 0.009795383550226688
+loss_reg: 0.343938542929606 loss_cls: 0.00922701321542263
+loss_reg: 0.097440167955862 loss_cls: 0.011257928796112537
+loss_reg: 0.39429750125809654 loss_cls: 0.00926609430462122
+loss_reg: 0.3781245587819277 loss_cls: 0.012637811712920666
+loss_reg: 0.37356498015667183 loss_cls: 0.01626497693359852
+2024-11-02 09:33:53 - progress_bar.py[line:274] - INFO: epoch 001:     10 / 391 loss=0.022, loss_v1=0, loss_v2=0, nll_loss=25.898, ntokens=17535.3, nsentences=1024, sample_size=1024, sample_size_v1=0, sample_size_v2=0, ppl=6.25448e+07, wps=3318.4, ups=0.19, wpb=17535.3, bsz=1024, num_updates=10, lr=2.13129e-07, gnorm=0.057, clip=0, loss_scale=128, train_wall=36, gb_free=13.5, wall=240
+2024-11-02 09:34:47 - progress_bar.py[line:274] - INFO: epoch 001:     20 / 391 loss=0.022, loss_v1=0, loss_v2=0, nll_loss=25.923, ntokens=17733.4, nsentences=1024, sample_size=1024, sample_size_v1=0, sample_size_v2=0, ppl=6.36272e+07, wps=3306.1, ups=0.19, wpb=17733.4, bsz=1024, num_updates=20, lr=4.26257e-07, gnorm=0.059, clip=0, loss_scale=128, train_wall=30, gb_free=13.5, wall=294
+2024-11-02 09:35:40 - progress_bar.py[line:274] - INFO: epoch 001:     30 / 391 loss=0.021, loss_v1=0, loss_v2=0, nll_loss=23.875, ntokens=17420.7, nsentences=1024, sample_size=1024, sample_size_v1=0, sample_size_v2=0, ppl=1.53831e+07, wps=3270.4, ups=0.19, wpb=17420.7, bsz=1024, num_updates=30, lr=6.39386e-07, gnorm=0.106, clip=0, loss_scale=128, train_wall=30, gb_free=13.5, wall=347
+2024-11-02 09:36:33 - progress_bar.py[line:274] - INFO: epoch 001:     40 / 391 loss=0.015, loss_v1=0, loss_v2=0, nll_loss=22.242, ntokens=17831.8, nsentences=1024, sample_size=1024, sample_size_v1=0, sample_size_v2=0, ppl=4.96101e+06, wps=3368.7, ups=0.19, wpb=17831.8, bsz=1024, num_updates=40, lr=8.52515e-07, gnorm=0.221, clip=0, loss_scale=128, train_wall=32, gb_free=13.6, wall=400
+2024-11-02 09:37:27 - progress_bar.py[line:274] - INFO: epoch 001:     50 / 391 loss=0.008, loss_v1=0, loss_v2=0, nll_loss=19.471, ntokens=17628.1, nsentences=1024, sample_size=1024, sample_size_v1=0, sample_size_v2=0, ppl=726639, wps=3266, ups=0.19, wpb=17628.1, bsz=1024, num_updates=50, lr=1.06564e-06, gnorm=0.065, clip=0, loss_scale=128, train_wall=30, gb_free=13.5, wall=454
+2024-11-02 09:38:21 - progress_bar.py[line:274] - INFO: epoch 001:     60 / 391 loss=0.007, loss_v1=0, loss_v2=0, nll_loss=18.079, ntokens=17924.3, nsentences=1024, sample_size=1024, sample_size_v1=0, sample_size_v2=0, ppl=276977, wps=3313, ups=0.18, wpb=17924.3, bsz=1024, num_updates=60, lr=1.27877e-06, gnorm=0.024, clip=0, loss_scale=128, train_wall=30, gb_free=13.5, wall=508
+2024-11-02 09:39:16 - progress_bar.py[line:274] - INFO: epoch 001:     70 / 391 loss=0.006, loss_v1=0, loss_v2=0, nll_loss=15.717, ntokens=17717.1, nsentences=1024, sample_size=1024, sample_size_v1=0, sample_size_v2=0, ppl=53877.6, wps=3250.4, ups=0.18, wpb=17717.1, bsz=1024, num_updates=70, lr=1.4919e-06, gnorm=0.017, clip=0, loss_scale=128, train_wall=30, gb_free=13.5, wall=563
+2024-11-02 09:40:09 - progress_bar.py[line:274] - INFO: epoch 001:     80 / 391 loss=0.006, loss_v1=0, loss_v2=0, nll_loss=13.083, ntokens=17601.8, nsentences=1024, sample_size=1024, sample_size_v1=0, sample_size_v2=0, ppl=8678.28, wps=3290, ups=0.19, wpb=17601.8, bsz=1024, num_updates=80, lr=1.70503e-06, gnorm=0.017, clip=0, loss_scale=128, train_wall=30, gb_free=13.5, wall=616
+2024-11-02 09:41:02 - progress_bar.py[line:274] - INFO: epoch 001:     90 / 391 loss=0.005, loss_v1=0, loss_v2=0, nll_loss=11.356, ntokens=17624.4, nsentences=1024, sample_size=1024, sample_size_v1=0, sample_size_v2=0, ppl=2621.81, wps=3333.9, ups=0.19, wpb=17624.4, bsz=1024, num_updates=90, lr=1.91816e-06, gnorm=0.017, clip=0, loss_scale=128, train_wall=30, gb_free=13.6, wall=669
+2024-11-02 09:41:56 - progress_bar.py[line:274] - INFO: epoch 001:    100 / 391 loss=0.005, loss_v1=0, loss_v2=0, nll_loss=9.937, ntokens=17657, nsentences=1024, sample_size=1024, sample_size_v1=0, sample_size_v2=0, ppl=980.08, wps=3280.1, ups=0.19, wpb=17657, bsz=1024, num_updates=100, lr=2.13129e-06, gnorm=0.015, clip=0, loss_scale=128, train_wall=30, gb_free=13.6, wall=723
+2024-11-02 09:42:49 - progress_bar.py[line:274] - INFO: epoch 001:    110 / 391 loss=0.005, loss_v1=0, loss_v2=0, nll_loss=8.982, ntokens=17488, nsentences=1024, sample_size=1024, sample_size_v1=0, sample_size_v2=0, ppl=505.57, wps=3281.3, ups=0.19, wpb=17488, bsz=1024, num_updates=110, lr=2.34442e-06, gnorm=0.01, clip=0, loss_scale=128, train_wall=30, gb_free=13.6, wall=776
+2024-11-02 09:43:42 - progress_bar.py[line:274] - INFO: epoch 001:    120 / 391 loss=0.005, loss_v1=0, loss_v2=0, nll_loss=8.139, ntokens=17657, nsentences=1024, sample_size=1024, sample_size_v1=0, sample_size_v2=0, ppl=281.86, wps=3371.4, ups=0.19, wpb=17657, bsz=1024, num_updates=120, lr=2.55754e-06, gnorm=0.01, clip=0, loss_scale=128, train_wall=30, gb_free=13.6, wall=828
+2024-11-02 09:44:34 - progress_bar.py[line:274] - INFO: epoch 001:    130 / 391 loss=0.004, loss_v1=0, loss_v2=0, nll_loss=7.533, ntokens=17663.1, nsentences=1024, sample_size=1024, sample_size_v1=0, sample_size_v2=0, ppl=185.25, wps=3358.2, ups=0.19, wpb=17663.1, bsz=1024, num_updates=130, lr=2.77067e-06, gnorm=0.008, clip=0, loss_scale=128, train_wall=30, gb_free=13.6, wall=881
+2024-11-02 09:45:27 - progress_bar.py[line:274] - INFO: epoch 001:    140 / 391 loss=0.004, loss_v1=0, loss_v2=0, nll_loss=6.862, ntokens=17542.9, nsentences=1024, sample_size=1024, sample_size_v1=0, sample_size_v2=0, ppl=116.35, wps=3306, ups=0.19, wpb=17542.9, bsz=1024, num_updates=140, lr=2.9838e-06, gnorm=0.006, clip=0, loss_scale=128, train_wall=30, gb_free=13.6, wall=934
+2024-11-02 09:46:20 - progress_bar.py[line:274] - INFO: epoch 001:    150 / 391 loss=0.004, loss_v1=0, loss_v2=0, nll_loss=6.468, ntokens=17394.6, nsentences=1024, sample_size=1024, sample_size_v1=0, sample_size_v2=0, ppl=88.5, wps=3300.1, ups=0.19, wpb=17394.6, bsz=1024, num_updates=150, lr=3.19693e-06, gnorm=0.006, clip=0, loss_scale=128, train_wall=30, gb_free=13.4, wall=987
+2024-11-02 09:47:13 - progress_bar.py[line:274] - INFO: epoch 001:    160 / 391 loss=0.004, loss_v1=0, loss_v2=0, nll_loss=6.296, ntokens=17608.3, nsentences=1024, sample_size=1024, sample_size_v1=0, sample_size_v2=0, ppl=78.57, wps=3351, ups=0.19, wpb=17608.3, bsz=1024, num_updates=160, lr=3.41006e-06, gnorm=0.006, clip=0, loss_scale=128, train_wall=30, gb_free=13.5, wall=1039
+2024-11-02 09:48:05 - progress_bar.py[line:274] - INFO: epoch 001:    170 / 391 loss=0.004, loss_v1=0, loss_v2=0, nll_loss=6.182, ntokens=18153.7, nsentences=1024, sample_size=1024, sample_size_v1=0, sample_size_v2=0, ppl=72.58, wps=3444.3, ups=0.19, wpb=18153.7, bsz=1024, num_updates=170, lr=3.62319e-06, gnorm=0.005, clip=0, loss_scale=128, train_wall=30, gb_free=13.6, wall=1092
+2024-11-02 09:48:58 - progress_bar.py[line:274] - INFO: epoch 001:    180 / 391 loss=0.004, loss_v1=0, loss_v2=0, nll_loss=5.895, ntokens=17369.1, nsentences=1024, sample_size=1024, sample_size_v1=0, sample_size_v2=0, ppl=59.51, wps=3282.8, ups=0.19, wpb=17369.1, bsz=1024, num_updates=180, lr=3.83632e-06, gnorm=0.005, clip=0, loss_scale=128, train_wall=30, gb_free=13.5, wall=1145
+2024-11-02 09:49:52 - progress_bar.py[line:274] - INFO: epoch 001:    190 / 391 loss=0.004, loss_v1=0, loss_v2=0, nll_loss=5.886, ntokens=17980.9, nsentences=1024, sample_size=1024, sample_size_v1=0, sample_size_v2=0, ppl=59.15, wps=3367.7, ups=0.19, wpb=17980.9, bsz=1024, num_updates=190, lr=4.04945e-06, gnorm=0.005, clip=0, loss_scale=128, train_wall=30, gb_free=13.4, wall=1198
+2024-11-02 09:50:44 - progress_bar.py[line:274] - INFO: epoch 001:    200 / 391 loss=0.004, loss_v1=0, loss_v2=0, nll_loss=5.786, ntokens=17957.7, nsentences=1024, sample_size=1024, sample_size_v1=0, sample_size_v2=0, ppl=55.16, wps=3407.1, ups=0.19, wpb=17957.7, bsz=1024, num_updates=200, lr=4.26257e-06, gnorm=0.004, clip=0, loss_scale=128, train_wall=30, gb_free=13.3, wall=1251
+2024-11-02 09:51:38 - progress_bar.py[line:274] - INFO: epoch 001:    210 / 391 loss=0.004, loss_v1=0, loss_v2=0, nll_loss=5.675, ntokens=17907.3, nsentences=1024, sample_size=1024, sample_size_v1=0, sample_size_v2=0, ppl=51.09, wps=3360.1, ups=0.19, wpb=17907.3, bsz=1024, num_updates=210, lr=4.4757e-06, gnorm=0.005, clip=0, loss_scale=128, train_wall=30, gb_free=13.3, wall=1304
+2024-11-02 09:52:31 - progress_bar.py[line:274] - INFO: epoch 001:    220 / 391 loss=0.004, loss_v1=0, loss_v2=0, nll_loss=5.64, ntokens=17882.3, nsentences=1024, sample_size=1024, sample_size_v1=0, sample_size_v2=0, ppl=49.88, wps=3365.9, ups=0.19, wpb=17882.3, bsz=1024, num_updates=220, lr=4.68883e-06, gnorm=0.004, clip=0, loss_scale=128, train_wall=30, gb_free=13.5, wall=1358
+2024-11-02 09:53:24 - progress_bar.py[line:274] - INFO: epoch 001:    230 / 391 loss=0.004, loss_v1=0, loss_v2=0, nll_loss=5.569, ntokens=17841, nsentences=1024, sample_size=1024, sample_size_v1=0, sample_size_v2=0, ppl=47.47, wps=3367.5, ups=0.19, wpb=17841, bsz=1024, num_updates=230, lr=4.90196e-06, gnorm=0.004, clip=0, loss_scale=128, train_wall=30, gb_free=13.6, wall=1411
+2024-11-02 09:54:17 - progress_bar.py[line:274] - INFO: epoch 001:    240 / 391 loss=0.004, loss_v1=0, loss_v2=0, nll_loss=5.553, ntokens=18014.1, nsentences=1024, sample_size=1024, sample_size_v1=0, sample_size_v2=0, ppl=46.95, wps=3382.2, ups=0.19, wpb=18014.1, bsz=1024, num_updates=240, lr=5.11509e-06, gnorm=0.005, clip=0, loss_scale=128, train_wall=30, gb_free=13.4, wall=1464
+2024-11-02 09:55:10 - progress_bar.py[line:274] - INFO: epoch 001:    250 / 391 loss=0.004, loss_v1=0, loss_v2=0, nll_loss=5.442, ntokens=17552.9, nsentences=1024, sample_size=1024, sample_size_v1=0, sample_size_v2=0, ppl=43.48, wps=3328.6, ups=0.19, wpb=17552.9, bsz=1024, num_updates=250, lr=5.32822e-06, gnorm=0.004, clip=0, loss_scale=128, train_wall=30, gb_free=13.6, wall=1517
+2024-11-02 09:56:03 - progress_bar.py[line:274] - INFO: epoch 001:    260 / 391 loss=0.003, loss_v1=0, loss_v2=0, nll_loss=5.429, ntokens=17776.1, nsentences=1024, sample_size=1024, sample_size_v1=0, sample_size_v2=0, ppl=43.09, wps=3352.2, ups=0.19, wpb=17776.1, bsz=1024, num_updates=260, lr=5.54135e-06, gnorm=0.004, clip=0, loss_scale=128, train_wall=30, gb_free=13.6, wall=1570
+2024-11-02 09:56:56 - progress_bar.py[line:274] - INFO: epoch 001:    270 / 391 loss=0.003, loss_v1=0, loss_v2=0, nll_loss=5.373, ntokens=17647.3, nsentences=1024, sample_size=1024, sample_size_v1=0, sample_size_v2=0, ppl=41.44, wps=3323.4, ups=0.19, wpb=17647.3, bsz=1024, num_updates=270, lr=5.75448e-06, gnorm=0.005, clip=0, loss_scale=128, train_wall=30, gb_free=13.6, wall=1623
+2024-11-02 09:57:49 - progress_bar.py[line:274] - INFO: epoch 001:    280 / 391 loss=0.003, loss_v1=0, loss_v2=0, nll_loss=5.345, ntokens=17675.8, nsentences=1024, sample_size=1024, sample_size_v1=0, sample_size_v2=0, ppl=40.64, wps=3330.4, ups=0.19, wpb=17675.8, bsz=1024, num_updates=280, lr=5.9676e-06, gnorm=0.004, clip=0, loss_scale=128, train_wall=30, gb_free=13.5, wall=1676
+2024-11-02 09:58:42 - progress_bar.py[line:274] - INFO: epoch 001:    290 / 391 loss=0.003, loss_v1=0, loss_v2=0, nll_loss=5.281, ntokens=17688.6, nsentences=1024, sample_size=1024, sample_size_v1=0, sample_size_v2=0, ppl=38.88, wps=3353.4, ups=0.19, wpb=17688.6, bsz=1024, num_updates=290, lr=6.18073e-06, gnorm=0.004, clip=0, loss_scale=128, train_wall=30, gb_free=13.6, wall=1728
+2024-11-02 09:59:34 - progress_bar.py[line:274] - INFO: epoch 001:    300 / 391 loss=0.003, loss_v1=0, loss_v2=0, nll_loss=5.243, ntokens=17589.2, nsentences=1024, sample_size=1024, sample_size_v1=0, sample_size_v2=0, ppl=37.87, wps=3352.8, ups=0.19, wpb=17589.2, bsz=1024, num_updates=300, lr=6.39386e-06, gnorm=0.004, clip=0, loss_scale=128, train_wall=30, gb_free=13.4, wall=1781
+2024-11-02 10:00:26 - progress_bar.py[line:274] - INFO: epoch 001:    310 / 391 loss=0.004, loss_v1=0, loss_v2=0, nll_loss=5.429, ntokens=18811.6, nsentences=1024, sample_size=1024, sample_size_v1=0, sample_size_v2=0, ppl=43.09, wps=3639.8, ups=0.19, wpb=18811.6, bsz=1024, num_updates=310, lr=6.60699e-06, gnorm=0.004, clip=0, loss_scale=128, train_wall=30, gb_free=13.4, wall=1833
+Traceback (most recent call last):
+  File "../../train.py", line 543, in <module>
+    cli_main()
+  File "../../train.py", line 536, in cli_main
+    distributed_utils.call_main(cfg, main)
+  File "/home/ubuntu/src/fairseq/fairseq/fairseq/distributed/utils.py", line 374, in call_main
+    distributed_main(cfg.distributed_training.device_id, main, cfg, kwargs)
+  File "/home/ubuntu/src/fairseq/fairseq/fairseq/distributed/utils.py", line 348, in distributed_main
+    main(cfg, **kwargs)
+  File "../../train.py", line 190, in main
+    valid_losses, should_stop = train(cfg, trainer, task, epoch_itr)
+  File "/home/ubuntu/anaconda3/envs/polyformer/lib/python3.7/contextlib.py", line 74, in inner
+    return func(*args, **kwds)
+  File "../../train.py", line 298, in train
+    for i, samples in enumerate(progress):
+  File "/home/ubuntu/src/fairseq/fairseq/fairseq/logging/progress_bar.py", line 261, in __iter__
+    for i, obj in enumerate(self.iterable, start=self.n):
+  File "/home/ubuntu/src/fairseq/fairseq/fairseq/data/iterators.py", line 56, in __next__
+    x = next(self._itr)
+  File "/home/ubuntu/src/fairseq/fairseq/fairseq/data/iterators.py", line 509, in _chunk_iterator
+    for x in itr:
+  File "/home/ubuntu/src/fairseq/fairseq/fairseq/data/iterators.py", line 56, in __next__
+    x = next(self._itr)
+  File "/home/ubuntu/src/fairseq/fairseq/fairseq/data/iterators.py", line 637, in __next__
+    raise item
+  File "/home/ubuntu/src/fairseq/fairseq/fairseq/data/iterators.py", line 567, in run
+    for item in self._source:
+  File "/home/ubuntu/anaconda3/envs/polyformer/lib/python3.7/site-packages/torch/utils/data/dataloader.py", line 628, in __next__
+    data = self._next_data()
+  File "/home/ubuntu/anaconda3/envs/polyformer/lib/python3.7/site-packages/torch/utils/data/dataloader.py", line 671, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+  File "/home/ubuntu/anaconda3/envs/polyformer/lib/python3.7/site-packages/torch/utils/data/_utils/fetch.py", line 58, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/ubuntu/anaconda3/envs/polyformer/lib/python3.7/site-packages/torch/utils/data/_utils/fetch.py", line 58, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/ubuntu/Workspaces/AIHub-polygon-transformer/data/refcoco_dataset.py", line 95, in __getitem__
+    image = Image.open(BytesIO(base64.b64decode(base64_str))).convert("RGB")
+  File "/home/ubuntu/anaconda3/envs/polyformer/lib/python3.7/site-packages/PIL/Image.py", line 3298, in open
+    raise UnidentifiedImageError(msg)
+PIL.UnidentifiedImageError: cannot identify image file <_io.BytesIO object at 0x7f7f04224830>
+WARNING:torch.distributed.elastic.multiprocessing.api:Sending process 250458 closing signal SIGTERM
+WARNING:torch.distributed.elastic.multiprocessing.api:Sending process 250459 closing signal SIGTERM
+WARNING:torch.distributed.elastic.multiprocessing.api:Sending process 250460 closing signal SIGTERM
+WARNING:torch.distributed.elastic.multiprocessing.api:Sending process 250461 closing signal SIGTERM
+WARNING:torch.distributed.elastic.multiprocessing.api:Sending process 250462 closing signal SIGTERM
+WARNING:torch.distributed.elastic.multiprocessing.api:Sending process 250463 closing signal SIGTERM
+WARNING:torch.distributed.elastic.multiprocessing.api:Sending process 250464 closing signal SIGTERM
+ERROR:torch.distributed.elastic.multiprocessing.api:failed (exitcode: 1) local_rank: 0 (pid: 250457) of binary: /home/ubuntu/anaconda3/envs/polyformer/bin/python3
+Traceback (most recent call last):
+  File "/home/ubuntu/anaconda3/envs/polyformer/lib/python3.7/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/home/ubuntu/anaconda3/envs/polyformer/lib/python3.7/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/home/ubuntu/anaconda3/envs/polyformer/lib/python3.7/site-packages/torch/distributed/launch.py", line 195, in <module>
+    main()
+  File "/home/ubuntu/anaconda3/envs/polyformer/lib/python3.7/site-packages/torch/distributed/launch.py", line 191, in main
+    launch(args)
+  File "/home/ubuntu/anaconda3/envs/polyformer/lib/python3.7/site-packages/torch/distributed/launch.py", line 176, in launch
+    run(args)
+  File "/home/ubuntu/anaconda3/envs/polyformer/lib/python3.7/site-packages/torch/distributed/run.py", line 756, in run
+    )(*cmd_args)
+  File "/home/ubuntu/anaconda3/envs/polyformer/lib/python3.7/site-packages/torch/distributed/launcher/api.py", line 132, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/home/ubuntu/anaconda3/envs/polyformer/lib/python3.7/site-packages/torch/distributed/launcher/api.py", line 248, in launch_agent
+    failures=result.failures,
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+../../train.py FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2024-11-02_10:01:09
+  host      : ip-172-31-38-178.us-west-2.compute.internal
+  rank      : 0 (local_rank: 0)
+  exitcode  : 1 (pid: 250457)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================

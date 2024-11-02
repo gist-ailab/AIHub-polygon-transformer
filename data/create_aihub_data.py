@@ -20,7 +20,7 @@ datasets = ['aihub_indoor']
 # datasets = ['aihub_manufact']
 
 if datasets[0] == 'aihub_indoor':
-    image_dir = './refer/data/aihub_refcoco_format/indoor/images'
+    image_dir = './refer/data/aihub_refcoco_format/indoor_80/images'
 elif datasets[0] == 'aihub_manufact':
     image_dir = './refer/data/aihub_refcoco_format/manufact/images'
 else:
@@ -42,7 +42,8 @@ for dataset in datasets:
         splits = ['train', 'val']
         splitBy = 'umd'
     elif dataset == 'aihub_indoor':
-        splits = ['train', 'val', 'test']
+        # splits = ['train', 'val', 'test']
+        splits = ['train', 'val']
         splitBy = None
     elif dataset == 'aihub_manufact':
         splits = ['train', 'val', 'test']
@@ -77,6 +78,7 @@ for dataset in datasets:
             img = Image.open(os.path.join(image_dir, this_img['file_name'])).convert("RGB")
 
             # convert image to string
+            # img_base64 = image_to_base64(img, format='png')
             img_base64 = image_to_base64(img, format='jpeg')
 
             # load mask
