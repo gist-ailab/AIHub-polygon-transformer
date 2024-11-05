@@ -18,12 +18,13 @@ num_bins=64
 batch_size=16
 
 dataset='aihub_indoor'
-ckpt_path=../finetune/polyformer_b_aihub_indoor_checkpoints/100_5e-5_512/checkpoint_epoch_1.pt
+ckpt_path=../finetune/polyformer_b_aihub_indoor_80_checkpoints/100_5e-5_512/checkpoint_epoch_61.pt
 # dataset='refcocog'
 # ckpt_path=../../weights/polyformer_b_refcocog.pt
 
 # for split in 'refcocog_val' 'refcocog_test'
-for split in 'aihub_indoor_val' 'aihub_indoor_test'
+# for split in 'aihub_indoor_val' 'aihub_indoor_test'
+for split in 'aihub_indoor_val'
 do
 data=../../datasets/finetune/${dataset}/${split}.tsv
 result_path=../../results_${model}/${dataset}/

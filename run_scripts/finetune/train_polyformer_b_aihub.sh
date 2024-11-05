@@ -22,7 +22,7 @@ data=${data_dir}/aihub_indoor/aihub_indoor_train.tsv,${data_dir}/aihub_indoor/ai
 selected_cols=0,5,6,2,4,3,7
 # restore_file=../../weights/polyformer_b_pretrain.pt
 # restore_file=../pretrain/polyformer_b_pretrain_aihub_indoor_checkpoints/20_5e-5_512/checkpoint_20_1000.pt
-restore_file=../pretrain/polyformer_b_pretrain_aihub_indoor_80_checkpoints_resume/20_5e-5_512/checkpoint.best_score_0.5110.pt
+restore_file=../pretrain/polyformer_b_pretrain_aihub_indoor_80_checkpoints_resume_2/20_5e-5_512/checkpoint.best_score_0.5220.pt
 
 
 

@@ -66,8 +66,8 @@ class REFER:
 			# print(os.listdir(self.IMAGE_DIR))
 		elif dataset == 'aihub_manufact':
 			# self.DATA_DIR = osp.join(data_root, 'refcocog')
-			self.DATA_DIR = "refer/data/aihub_refcoco_format/manufact"
-			self.IMAGE_DIR = "refer/data/aihub_refcoco_format/manufact/images"
+			self.DATA_DIR = "refer/data/aihub_refcoco_format/manufact_80"
+			self.IMAGE_DIR = "refer/data/aihub_refcoco_format/manufact_80/images"
 			print('Dataset preprocessing...')
 			print('Print list of AIHub Manufact dataset...')
 			# print(os.listdir(self.IMAGE_DIR))
@@ -142,7 +142,7 @@ class REFER:
 			for sent in ref['sentences']:
 				Sents[sent['sent_id']] = sent
 				sentToRef[sent['sent_id']] = ref
-				sentToTokens[sent['sent_id']] = sent['tokens']
+				# sentToTokens[sent['sent_id']] = sent['tokens']
 
 		# create class members
 		self.Refs = Refs
@@ -183,6 +183,8 @@ class REFER:
 				elif split == 'test':
 					refs = [ref for ref in refs if 'test' in ref['split']]
 				elif split == 'train' or split == 'val':
+					refs = [ref for ref in refs if ref['split'] == split]
+				elif split == 'validation':
 					refs = [ref for ref in refs if ref['split'] == split]
 				else:
 					print ('No such split [%s]' % split)

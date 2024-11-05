@@ -7,8 +7,8 @@ export MASTER_PORT=6061
 det_weight=1
 cls_weight=0
 num_bins=64
-log_dir=./polyformer_b_pretrain_aihub_indoor_80_logs_resume
-save_dir=./polyformer_b_pretrain_aihub_indoor_80_checkpoints_resume
+log_dir=./polyformer_b_pretrain_aihub_indoor_80_logs_resume_2
+save_dir=./polyformer_b_pretrain_aihub_indoor_80_checkpoints_resume_2
 mkdir -p $log_dir $save_dir
 
 bpe_dir=../../utils/BPE
@@ -39,8 +39,7 @@ max_tgt_length=420
 
 patch_image_size=512
 
-restore_file=../pretrain/polyformer_b_pretrain_aihub_indoor_80_checkpoints/20_5e-5_512/checkpoint_16_5000.pt
-
+restore_file=../pretrain/polyformer_b_pretrain_aihub_indoor_80_checkpoints_resume/20_5e-5_512/checkpoint.best_score_0.5110.pt
 
 for max_epoch in 20; do
   echo "max_epoch "${max_epoch}

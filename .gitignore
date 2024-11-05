@@ -7,6 +7,7 @@ run_scripts/finetune/polyformer_b_aihub_manufact_checkpoints
 run_scripts/finetune/polyformer_b_aihub_manufact_logs
 run_scripts/finetune/polyformer_l_checkpoints
 run_scripts/finetune/polyformer_l_logs
+run_scripts/pretrain/polyformer_b_pretrain_aihub_indoor_80_logs_resume_2/
 results_polyformer_b
 weights
 

@@ -5,13 +5,13 @@ import random
 import pickle
 
 
-img_path = 'refer/data/aihub_refcoco_format/indoor_80/images'
-# img_path = 'refer/data/aihub_refcoco_format/indoor/images'
+# img_path = 'refer/data/aihub_refcoco_format/indoor_80/images'
+img_path = 'refer/data/aihub_refcoco_format/manufact_80/images'
 
 # load annotation files
 # f = open("datasets/annotations/instances.json")
-f = open("refer/data/aihub_refcoco_format/indoor_80/instances.json")
-# f = open("refer/data/aihub_refcoco_format/manufact/instances.json")
+# f = open("refer/data/aihub_refcoco_format/indoor_80/instances.json")
+f = open("refer/data/aihub_refcoco_format/manufact_80/instances.json")
 print("Loading annotation file")
 data = json.load(f)
 f.close()
@@ -35,8 +35,8 @@ print(data['annotations'][6])
 print(len(data['images']))
 print(len(data['annotations']))
 
-ref_file = 'refer/data/aihub_refcoco_format/indoor_80/refs.p'
-# ref_file = 'refer/data/aihub_refcoco_format/manufact/refs.p'
+# ref_file = 'refer/data/aihub_refcoco_format/indoor_80/refs.p'
+ref_file = 'refer/data/aihub_refcoco_format/manufact_80/refs.p'
 ref_ann = pickle.load(open(ref_file, 'rb'))
 print(ref_ann[10])
 print(ref_ann[1])
@@ -51,7 +51,8 @@ print(len(ref_ann))
 # exit()
 
 
-tsv_filename = "datasets/pretrain/train_aihub_indoor_80_test.tsv"
+# tsv_filename = "datasets/pretrain/train_aihub_indoor_80_test.tsv"
+tsv_filename = "datasets/pretrain/train_aihub_manufact_80.tsv"
 writer = open(tsv_filename, 'w')
 print("generating ", tsv_filename)
 
@@ -80,6 +81,7 @@ for i, ref_ann_i in enumerate(tqdm(ref_ann)):
         # print("train!!")
         pass
     else:
+        # print(ref_ann_i['split'])
         # print("It's validation or test data")
         continue
 
@@ -117,7 +119,8 @@ writer.close()
 
 #####################################
 # generate validation tsv files
-tsv_filename = f"datasets/pretrain/val_aihub_indoor_80.tsv"
+# tsv_filename = f"datasets/pretrain/val_aihub_indoor_80.tsv"
+tsv_filename = f"datasets/pretrain/val_aihub_manufact_80.tsv"
 writer = open(tsv_filename, 'w')
 print("generating ", tsv_filename)
 
@@ -132,7 +135,7 @@ for i, ref_ann_i in enumerate(tqdm(ref_ann)):
     
     # ref_ann_i = next((d for d in ref_ann if d["ref_id"] == str(i)), None)
     # ref_ann_i = ref_ann[i]
-    if ref_ann_i['split'] == 'val':
+    if ref_ann_i['split'] == 'validation':
         # print("val!!")
         pass
     else:

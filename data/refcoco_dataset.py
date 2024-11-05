@@ -19,7 +19,7 @@ import base64
 import utils.transforms as T
 import math
 # from PIL import ImageFile
-from PIL import Image, ImageFile
+from PIL import Image, ImageFile, UnidentifiedImageError
 # import Image
 
 from data import data_utils
@@ -92,7 +92,19 @@ class RefcocoDataset(BaseDataset):
         # print(BytesIO(base64.urlsafe_b64decode(base64_str)))
         
         # image = Image.open(BytesIO(base64.urlsafe_b64decode(base64_str))).convert("RGB")
-        image = Image.open(BytesIO(base64.b64decode(base64_str))).convert("RGB")
+        try:
+            image = Image.open(BytesIO(base64.b64decode(base64_str))).convert("RGB")
+        # except UnidentifiedImageError:
+        except:
+            data = self.dataset[index+1]
+            if len(data) == 7:
+                uniq_id, base64_str, seg64_str, text, poly_original, region_coord, poly_interpolated = data
+                train = True
+            else:
+                uniq_id, base64_str, seg64_str, text, poly, region_coord = data
+                train = False
+            image = Image.open(BytesIO(base64.b64decode(base64_str))).convert("RGB")
+            
         
         label = Image.open(BytesIO(base64.urlsafe_b64decode(seg64_str)))
         label = np.asarray(label)
