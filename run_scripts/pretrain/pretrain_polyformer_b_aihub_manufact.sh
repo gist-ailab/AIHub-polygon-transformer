@@ -4,35 +4,30 @@
 # you need to specify different port numbers.
 export MASTER_PORT=6061
 
-det_weight=0.1
-cls_weight=0.0005
+det_weight=1
+cls_weight=0
 num_bins=64
-# log_dir=./polyformer_b_logs
-# save_dir=./polyformer_b_checkpoints
-log_dir=./polyformer_b_aihub_manufact_80_logs
-save_dir=./polyformer_b_aihub_manufact_80_checkpoints
+log_dir=./polyformer_b_pretrain_aihub_manufact_80_logs
+save_dir=./polyformer_b_pretrain_aihub_manufact_80_checkpoints
 mkdir -p $log_dir $save_dir
 
 bpe_dir=../../utils/BPE
 user_dir=../../polyformer_module
 
-data_dir=../../datasets/finetune
-data=${data_dir}/aihub_manufact/aihub_manufact_train.tsv,${data_dir}/aihub_manufact/aihub_manufact_val.tsv
-# data=${data_dir}/refcoco+g_train_shuffled.tsv,${data_dir}/refcoco/refcoco_val.tsv
-selected_cols=0,5,6,2,4,3,7
-# restore_file=../../weights/polyformer_b_pretrain.pt
-restore_file=../pretrain/polyformer_b_pretrain_aihub_manufact_80_checkpoints/20_5e-5_512/checkpoint.best_score_0.4980.pt
+# data_dir=../../datasets/pretrain
+# data=${data_dir}/train_shuffled.tsv,${data_dir}/val_refcoco_unc.tsv
+data_dir=../../datasets/pretrain
+data=${data_dir}/train_aihub_manufact_80.tsv,${data_dir}/val_aihub_manufact_80.tsv
+selected_cols=0,3,1,2
 
-task=refcoco
+task=refcoco_pretrain
 arch=polyformer_b
 criterion=adjust_label_smoothed_cross_entropy
 label_smoothing=0.1
 lr=3e-5
-# lr=1.5e-5
 max_epoch=5
 warmup_ratio=0.06
-batch_size=16
-# batch_size=8
+batch_size=20
 update_freq=8
 resnet_drop_path_rate=0.0
 encoder_drop_path_rate=0.1
@@ -44,7 +39,9 @@ max_tgt_length=420
 
 patch_image_size=512
 
-for max_epoch in 100; do
+restore_file=../pretrain/polyformer_b_pretrain_aihub_indoor_80_checkpoints_resume_2/20_5e-5_512/checkpoint.best_score_0.5220.pt
+
+for max_epoch in 20; do
   echo "max_epoch "${max_epoch}
   for lr in 5e-5; do
     echo "lr "${lr}
@@ -55,8 +52,6 @@ for max_epoch in 100; do
       save_path=${save_dir}/${max_epoch}"_"${lr}"_"${patch_image_size}
       mkdir -p $save_path
 
-      echo "train.py"
-            # CUDA_VISIBLE_DEVICES=0,1,2,3 python3 -m torch.distributed.launch --nproc_per_node=4 --master_port=${MASTER_PORT} ../../train.py \
       CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 python3 -m torch.distributed.launch --nproc_per_node=8 --master_port=${MASTER_PORT} ../../train.py \
           $data \
           --selected-cols=${selected_cols} \
@@ -90,7 +85,7 @@ for max_epoch in 100; do
           --fixed-validation-seed=7 \
           --no-epoch-checkpoints --keep-best-checkpoints=1 \
           --save-interval=1 --validate-interval=1 \
-          --save-interval-updates=500 --validate-interval-updates=500 \
+          --save-interval-updates=1000 --validate-interval-updates=1000 \
           --eval-acc \
           --eval-args='{"beam":5,"min_len":2,"max_len_a":0,"max_len_b":2}' \
           --best-checkpoint-metric=score --maximize-best-checkpoint-metric \
@@ -109,8 +104,6 @@ for max_epoch in 100; do
           --det_weight=${det_weight} \
           --cls_weight=${cls_weight} \
           --num-workers=0 > ${log_file} 2>&1
-      echo "train.py"
-
     done
   done
 done
