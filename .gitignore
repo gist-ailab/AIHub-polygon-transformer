@@ -1,6 +1,7 @@
 datasets/*
 refer/data/*
 pretrained_weights/*
+data/aihub_csv_error_csv
 run_scripts/finetune/polyformer_b_aihub_indoor_checkpoints
 run_scripts/finetune/polyformer_b_aihub_indoor_logs
 run_scripts/finetune/polyformer_b_aihub_manufact_checkpoints

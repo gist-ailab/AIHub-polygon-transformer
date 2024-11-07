@@ -21,7 +21,7 @@ use_fp16 = True
 # Load pretrained ckpt & config
 overrides={"bpe_dir":"utils/BPE"}
 models, cfg, task = load_model_ensemble_and_task(
-        utils.split_paths('weights/polyformer_l_refcocog.pt'),
+        utils.split_paths('run_scripts/finetune/polyformer_b_aihub_indoor_80_checkpoints/100_5e-5_512/checkpoint_epoch_21.pt'),
         arg_overrides=overrides
     )
 
@@ -33,8 +33,11 @@ cfg.generation.max_len_b = 420
 cfg.generation.no_repeat_ngram_size = 3
 cfg.task.patch_image_size = 512
 
-from bert.tokenization_bert import BertTokenizer
-tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+# from bert.tokenization_bert import BertTokenizer
+# tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+from transformers import AutoTokenizer, AutoModelForMaskedLM
+tokenizer = AutoTokenizer.from_pretrained('xlm-roberta-base')
+
 
 # Fix seed for stochastic decoding
 if cfg.common.seed is not None and not cfg.generation.no_seed_provided:
