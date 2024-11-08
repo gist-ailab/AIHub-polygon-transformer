@@ -17,8 +17,10 @@ model='polyformer_b'
 num_bins=64
 batch_size=16
 
-dataset='aihub_indoor'
-ckpt_path=../finetune/polyformer_b_aihub_indoor_80_checkpoints/100_5e-5_512/checkpoint_epoch_21.pt
+# dataset='aihub_indoor'
+dataset='aihub_indoor_bbox_fix'
+ckpt_path=../finetune/polyformer_b_aihub_indoor_80_bbox_fix_checkpoints/100_5e-5_512/checkpoint_epoch_4.pt
+
 # dataset='refcocog'
 # ckpt_path=../../weights/polyformer_b_refcocog.pt
 

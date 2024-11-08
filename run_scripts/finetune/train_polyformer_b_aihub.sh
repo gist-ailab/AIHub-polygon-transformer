@@ -9,21 +9,21 @@ cls_weight=0.0005
 num_bins=64
 # log_dir=./polyformer_b_logs
 # save_dir=./polyformer_b_checkpoints
-log_dir=./polyformer_b_aihub_indoor_80_logs
-save_dir=./polyformer_b_aihub_indoor_80_checkpoints
+log_dir=./polyformer_b_aihub_indoor_80_bbox_fix_logs
+save_dir=./polyformer_b_aihub_indoor_80_bbox_fix_checkpoints
 mkdir -p $log_dir $save_dir
 
 bpe_dir=../../utils/BPE
 user_dir=../../polyformer_module
 
 data_dir=../../datasets/finetune
-data=${data_dir}/aihub_indoor/aihub_indoor_train.tsv,${data_dir}/aihub_indoor/aihub_indoor_val.tsv
+data=${data_dir}/aihub_indoor_bbox_fix/aihub_indoor_train.tsv,${data_dir}/aihub_indoor_bbox_fix/aihub_indoor_val.tsv
 # data=${data_dir}/refcoco+g_train_shuffled.tsv,${data_dir}/refcoco/refcoco_val.tsv
 selected_cols=0,5,6,2,4,3,7
 # restore_file=../../weights/polyformer_b_pretrain.pt
 # restore_file=../pretrain/polyformer_b_pretrain_aihub_indoor_checkpoints/20_5e-5_512/checkpoint_20_1000.pt
 # restore_file=../pretrain/polyformer_b_pretrain_aihub_indoor_80_checkpoints_resume_2/20_5e-5_512/checkpoint.best_score_0.5220.pt
-restore_file=../finetune/polyformer_b_aihub_indoor_80_checkpoints/100_5e-5_512/checkpoint_epoch_73.pt
+restore_file=../finetune/polyformer_b_aihub_indoor_80_checkpoints/100_5e-5_512/checkpoint_epoch_53.pt
 
 
 task=refcoco

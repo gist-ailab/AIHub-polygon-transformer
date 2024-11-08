@@ -2331,3 +2331,4 @@ slice_id 0 seek offset 0
 2024-11-08 10:32:42 - trainer.py[line:703] - INFO: begin training epoch 11
 2024-11-08 10:32:42 - train.py[line:297] - INFO: Start iterating over samples
 2024-11-08 10:32:50 - progress_bar.py[line:274] - INFO: epoch 011:      1 / 391 loss=0.001, loss_v1=0, loss_v2=0, nll_loss=2.985, ntokens=16977.9, nsentences=985.6, sample_size=985.6, sample_size_v1=0, sample_size_v2=0, ppl=7.92, wps=347.2, ups=0.02, wpb=16977.9, bsz=985.6, num_updates=3910, lr=4.78723e-05, gnorm=0.008, clip=0, loss_scale=8192, train_wall=29, gb_free=13.3, wall=25183
+2024-11-08 10:33:43 - progress_bar.py[line:274] - INFO: epoch 011:     11 / 391 loss=0.001, loss_v1=0, loss_v2=0, nll_loss=2.874, ntokens=17466.2, nsentences=1024, sample_size=1024, sample_size_v1=0, sample_size_v2=0, ppl=7.33, wps=3300.5, ups=0.19, wpb=17466.2, bsz=1024, num_updates=3920, lr=4.78587e-05, gnorm=0.008, clip=0, loss_scale=8192, train_wall=30, gb_free=13.5, wall=25235
