@@ -18,8 +18,8 @@ max_length = 400
 
 data_root = './refer/data'
 # datasets = ['refcoco', 'refcoco+', 'refcocog']
-datasets = ['aihub_indoor']
-# datasets = ['aihub_manufact']
+# datasets = ['aihub_indoor']
+datasets = ['aihub_manufact']
 
 if datasets[0] == 'aihub_indoor':
     image_dir = './refer/data/aihub_refcoco_format/indoor_80/images'
