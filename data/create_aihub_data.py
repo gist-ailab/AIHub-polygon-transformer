@@ -114,7 +114,11 @@ for dataset in datasets:
             img_base64 = image_to_base64(img, format='jpeg')
 
             # load mask
-            ref = refer.loadRefs(this_ref_id)
+            try:
+                ref = refer.loadRefs(this_ref_id)
+            except TypeError:
+                print('None mask error')
+                continue
             ref_mask = np.array(refer.getMask(ref[0])['mask'])
             annot = np.zeros(ref_mask.shape)
             annot[ref_mask == 1] = 1  # 255
