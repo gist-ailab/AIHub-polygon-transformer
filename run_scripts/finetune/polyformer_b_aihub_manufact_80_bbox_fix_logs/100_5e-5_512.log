@@ -2332,3 +2332,137 @@ slice_id 0 seek offset 0
 2024-11-08 10:32:42 - train.py[line:297] - INFO: Start iterating over samples
 2024-11-08 10:32:50 - progress_bar.py[line:274] - INFO: epoch 011:      1 / 391 loss=0.001, loss_v1=0, loss_v2=0, nll_loss=2.985, ntokens=16977.9, nsentences=985.6, sample_size=985.6, sample_size_v1=0, sample_size_v2=0, ppl=7.92, wps=347.2, ups=0.02, wpb=16977.9, bsz=985.6, num_updates=3910, lr=4.78723e-05, gnorm=0.008, clip=0, loss_scale=8192, train_wall=29, gb_free=13.3, wall=25183
 2024-11-08 10:33:43 - progress_bar.py[line:274] - INFO: epoch 011:     11 / 391 loss=0.001, loss_v1=0, loss_v2=0, nll_loss=2.874, ntokens=17466.2, nsentences=1024, sample_size=1024, sample_size_v1=0, sample_size_v2=0, ppl=7.33, wps=3300.5, ups=0.19, wpb=17466.2, bsz=1024, num_updates=3920, lr=4.78587e-05, gnorm=0.008, clip=0, loss_scale=8192, train_wall=30, gb_free=13.5, wall=25235
+2024-11-08 10:34:36 - progress_bar.py[line:274] - INFO: epoch 011:     21 / 391 loss=0.001, loss_v1=0, loss_v2=0, nll_loss=2.875, ntokens=17232.2, nsentences=1024, sample_size=1024, sample_size_v1=0, sample_size_v2=0, ppl=7.34, wps=3261.5, ups=0.19, wpb=17232.2, bsz=1024, num_updates=3930, lr=4.78451e-05, gnorm=0.011, clip=0, loss_scale=8192, train_wall=31, gb_free=13.6, wall=25288
+2024-11-08 10:35:31 - progress_bar.py[line:274] - INFO: epoch 011:     31 / 391 loss=0.001, loss_v1=0, loss_v2=0, nll_loss=2.849, ntokens=17421.6, nsentences=1024, sample_size=1024, sample_size_v1=0, sample_size_v2=0, ppl=7.2, wps=3152.5, ups=0.18, wpb=17421.6, bsz=1024, num_updates=3940, lr=4.78315e-05, gnorm=0.01, clip=0, loss_scale=8192, train_wall=49, gb_free=13.1, wall=25344
+2024-11-08 10:36:26 - progress_bar.py[line:274] - INFO: epoch 011:     41 / 391 loss=0.001, loss_v1=0, loss_v2=0, nll_loss=2.854, ntokens=17403.5, nsentences=1024, sample_size=1024, sample_size_v1=0, sample_size_v2=0, ppl=7.23, wps=3160.4, ups=0.18, wpb=17403.5, bsz=1024, num_updates=3950, lr=4.78179e-05, gnorm=0.008, clip=0, loss_scale=8192, train_wall=55, gb_free=13.3, wall=25399
+2024-11-08 10:37:22 - progress_bar.py[line:274] - INFO: epoch 011:     51 / 391 loss=0.001, loss_v1=0, loss_v2=0, nll_loss=2.836, ntokens=17456.1, nsentences=1024, sample_size=1024, sample_size_v1=0, sample_size_v2=0, ppl=7.14, wps=3151.8, ups=0.18, wpb=17456.1, bsz=1024, num_updates=3960, lr=4.78043e-05, gnorm=0.007, clip=0, loss_scale=8192, train_wall=55, gb_free=13.5, wall=25454
+Traceback (most recent call last):
+  File "../../train.py", line 543, in <module>
+    cli_main()
+  File "../../train.py", line 536, in cli_main
+Traceback (most recent call last):
+  File "../../train.py", line 543, in <module>
+    distributed_utils.call_main(cfg, main)
+  File "/home/ubuntu/src/fairseq/fairseq/fairseq/distributed/utils.py", line 374, in call_main
+    distributed_main(cfg.distributed_training.device_id, main, cfg, kwargs)
+  File "/home/ubuntu/src/fairseq/fairseq/fairseq/distributed/utils.py", line 348, in distributed_main
+    main(cfg, **kwargs)
+  File "../../train.py", line 190, in main
+    valid_losses, should_stop = train(cfg, trainer, task, epoch_itr)
+  File "/home/ubuntu/anaconda3/envs/polyformer/lib/python3.7/contextlib.py", line 74, in inner
+    cli_main()    
+return func(*args, **kwds)  File "../../train.py", line 536, in cli_main
+
+  File "../../train.py", line 298, in train
+    for i, samples in enumerate(progress):
+  File "/home/ubuntu/src/fairseq/fairseq/fairseq/logging/progress_bar.py", line 261, in __iter__
+    distributed_utils.call_main(cfg, main)
+  File "/home/ubuntu/src/fairseq/fairseq/fairseq/distributed/utils.py", line 374, in call_main
+    for i, obj in enumerate(self.iterable, start=self.n):
+  File "/home/ubuntu/src/fairseq/fairseq/fairseq/data/iterators.py", line 56, in __next__
+    x = next(self._itr)
+  File "/home/ubuntu/src/fairseq/fairseq/fairseq/data/iterators.py", line 509, in _chunk_iterator
+    distributed_main(cfg.distributed_training.device_id, main, cfg, kwargs)
+  File "/home/ubuntu/src/fairseq/fairseq/fairseq/distributed/utils.py", line 348, in distributed_main
+        for x in itr:main(cfg, **kwargs)
+
+  File "/home/ubuntu/src/fairseq/fairseq/fairseq/data/iterators.py", line 56, in __next__
+  File "../../train.py", line 190, in main
+    x = next(self._itr)
+  File "/home/ubuntu/src/fairseq/fairseq/fairseq/data/iterators.py", line 637, in __next__
+    valid_losses, should_stop = train(cfg, trainer, task, epoch_itr)
+  File "/home/ubuntu/anaconda3/envs/polyformer/lib/python3.7/contextlib.py", line 74, in inner
+    return func(*args, **kwds)
+  File "../../train.py", line 298, in train
+    raise item
+  File "/home/ubuntu/src/fairseq/fairseq/fairseq/data/iterators.py", line 567, in run
+    for i, samples in enumerate(progress):
+  File "/home/ubuntu/src/fairseq/fairseq/fairseq/logging/progress_bar.py", line 261, in __iter__
+    for i, obj in enumerate(self.iterable, start=self.n):
+      File "/home/ubuntu/src/fairseq/fairseq/fairseq/data/iterators.py", line 56, in __next__
+for item in self._source:
+  File "/home/ubuntu/anaconda3/envs/polyformer/lib/python3.7/site-packages/torch/utils/data/dataloader.py", line 628, in __next__
+    x = next(self._itr)
+  File "/home/ubuntu/src/fairseq/fairseq/fairseq/data/iterators.py", line 509, in _chunk_iterator
+    for x in itr:    
+data = self._next_data()  File "/home/ubuntu/src/fairseq/fairseq/fairseq/data/iterators.py", line 56, in __next__
+
+  File "/home/ubuntu/anaconda3/envs/polyformer/lib/python3.7/site-packages/torch/utils/data/dataloader.py", line 671, in _next_data
+    x = next(self._itr)
+  File "/home/ubuntu/src/fairseq/fairseq/fairseq/data/iterators.py", line 637, in __next__
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+  File "/home/ubuntu/anaconda3/envs/polyformer/lib/python3.7/site-packages/torch/utils/data/_utils/fetch.py", line 58, in fetch
+    raise item
+  File "/home/ubuntu/src/fairseq/fairseq/fairseq/data/iterators.py", line 567, in run
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/ubuntu/anaconda3/envs/polyformer/lib/python3.7/site-packages/torch/utils/data/_utils/fetch.py", line 58, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/ubuntu/workspaces/AIHub-polygon-transformer/data/refcoco_dataset.py", line 82, in __getitem__
+    for item in self._source:
+  File "/home/ubuntu/anaconda3/envs/polyformer/lib/python3.7/site-packages/torch/utils/data/dataloader.py", line 628, in __next__
+    data = self.dataset[index]
+  File "/home/ubuntu/workspaces/AIHub-polygon-transformer/data/file_dataset.py", line 111, in __getitem__
+    column_l = [dtype(column_l[col_id]) for col_id, dtype in zip(self.selected_col_ids, self.dtypes)]
+  File "/home/ubuntu/workspaces/AIHub-polygon-transformer/data/file_dataset.py", line 111, in <listcomp>
+    column_l = [dtype(column_l[col_id]) for col_id, dtype in zip(self.selected_col_ids, self.dtypes)]
+    data = self._next_data()
+  File "/home/ubuntu/anaconda3/envs/polyformer/lib/python3.7/site-packages/torch/utils/data/dataloader.py", line 671, in _next_data
+IndexError: list index out of range
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+  File "/home/ubuntu/anaconda3/envs/polyformer/lib/python3.7/site-packages/torch/utils/data/_utils/fetch.py", line 58, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/ubuntu/anaconda3/envs/polyformer/lib/python3.7/site-packages/torch/utils/data/_utils/fetch.py", line 58, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/ubuntu/workspaces/AIHub-polygon-transformer/data/refcoco_dataset.py", line 82, in __getitem__
+    data = self.dataset[index]
+  File "/home/ubuntu/workspaces/AIHub-polygon-transformer/data/file_dataset.py", line 111, in __getitem__
+    column_l = [dtype(column_l[col_id]) for col_id, dtype in zip(self.selected_col_ids, self.dtypes)]
+  File "/home/ubuntu/workspaces/AIHub-polygon-transformer/data/file_dataset.py", line 111, in <listcomp>
+    column_l = [dtype(column_l[col_id]) for col_id, dtype in zip(self.selected_col_ids, self.dtypes)]
+IndexError: list index out of range
+WARNING:torch.distributed.elastic.multiprocessing.api:Sending process 1721037 closing signal SIGTERM
+WARNING:torch.distributed.elastic.multiprocessing.api:Sending process 1721039 closing signal SIGTERM
+WARNING:torch.distributed.elastic.multiprocessing.api:Sending process 1721040 closing signal SIGTERM
+WARNING:torch.distributed.elastic.multiprocessing.api:Sending process 1721041 closing signal SIGTERM
+WARNING:torch.distributed.elastic.multiprocessing.api:Sending process 1721043 closing signal SIGTERM
+WARNING:torch.distributed.elastic.multiprocessing.api:Sending process 1721044 closing signal SIGTERM
+ERROR:torch.distributed.elastic.multiprocessing.api:failed (exitcode: 1) local_rank: 1 (pid: 1721038) of binary: /home/ubuntu/anaconda3/envs/polyformer/bin/python3
+Traceback (most recent call last):
+  File "/home/ubuntu/anaconda3/envs/polyformer/lib/python3.7/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/home/ubuntu/anaconda3/envs/polyformer/lib/python3.7/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/home/ubuntu/anaconda3/envs/polyformer/lib/python3.7/site-packages/torch/distributed/launch.py", line 195, in <module>
+    main()
+  File "/home/ubuntu/anaconda3/envs/polyformer/lib/python3.7/site-packages/torch/distributed/launch.py", line 191, in main
+    launch(args)
+  File "/home/ubuntu/anaconda3/envs/polyformer/lib/python3.7/site-packages/torch/distributed/launch.py", line 176, in launch
+    run(args)
+  File "/home/ubuntu/anaconda3/envs/polyformer/lib/python3.7/site-packages/torch/distributed/run.py", line 756, in run
+    )(*cmd_args)
+  File "/home/ubuntu/anaconda3/envs/polyformer/lib/python3.7/site-packages/torch/distributed/launcher/api.py", line 132, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/home/ubuntu/anaconda3/envs/polyformer/lib/python3.7/site-packages/torch/distributed/launcher/api.py", line 248, in launch_agent
+    failures=result.failures,
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+../../train.py FAILED
+------------------------------------------------------------
+Failures:
+[1]:
+  time      : 2024-11-08_10:38:04
+  host      : ip-172-31-11-84.us-west-2.compute.internal
+  rank      : 5 (local_rank: 5)
+  exitcode  : 1 (pid: 1721042)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2024-11-08_10:38:04
+  host      : ip-172-31-11-84.us-west-2.compute.internal
+  rank      : 1 (local_rank: 1)
+  exitcode  : 1 (pid: 1721038)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================

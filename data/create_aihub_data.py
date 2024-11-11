@@ -70,8 +70,8 @@ for dataset in datasets:
         splits = ['train', 'val']
         splitBy = None
     elif dataset == 'aihub_manufact':
-        # splits = ['val', 'test']
-        splits = ['train', 'val', 'test']
+        splits = ['val', 'test']
+        # splits = ['train', 'val', 'test']
         splitBy = None
 
     save_dir = f'datasets/finetune/{dataset}_bbox_fix'
@@ -91,10 +91,10 @@ for dataset in datasets:
         writer = open(file_name, 'w')
         refer = REFER(data_root, dataset, splitBy)
 
-        if dataset == 'aihub_manufact' and split == 'val':
-            ref_ids = refer.getRefIds(split='validation')
-        else:
-            ref_ids = refer.getRefIds(split=split)
+        # if dataset == 'aihub_manufact' and split == 'val':
+        #     ref_ids = refer.getRefIds(split='validation')
+        # else:
+        ref_ids = refer.getRefIds(split=split)
 
         for this_ref_id in tqdm(ref_ids):
             this_img_id = refer.getImgIds(this_ref_id)

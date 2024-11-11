@@ -7,22 +7,20 @@ import pandas as pd
 import glob
 
 
-img_path = 'refer/data/aihub_refcoco_format/indoor_80/images'
-# img_path = 'refer/data/aihub_refcoco_format/manufact_80/images'
+# img_path = 'refer/data/aihub_refcoco_format/indoor_80/images'
+img_path = 'refer/data/aihub_refcoco_format/manufact_80/images'
 
 # load annotation files
 # f = open("datasets/annotations/instances.json")
-# f = open("refer/data/aihub_refcoco_format/indoor_80/instances.json")
 f = open("refer/data/aihub_refcoco_format/manufact_80/instances_2.json")
-f = open("refer/data/aihub_refcoco_format/indoor_80/instances_2.json")
-# f = open("refer/data/aihub_refcoco_format/manufact_80/instances.json")
+# f = open("refer/data/aihub_refcoco_format/indoor_80/instances_2.json")
 print("Loading annotation file")
 data = json.load(f)
 f.close()
 
 # Define the directory containing your CSV files
-csv_dir = 'data/aihub_csv_error_csv/indoor'  # Replace with the actual directory path
-# csv_dir = 'data/aihub_csv_error_csv/manufact'  # Replace with the actual directory path
+# csv_dir = 'data/aihub_csv_error_csv/indoor'  # Replace with the actual directory path
+csv_dir = 'data/aihub_csv_error_csv/manufact'  # Replace with the actual directory path
 csv_files = glob.glob(f'{csv_dir}/*.csv')
 
 # Initialize an empty dictionary to store bounding box values from all CSV files
@@ -60,7 +58,7 @@ print(len(data['images']))
 print(len(data['annotations']))
 
 # ref_file = 'refer/data/aihub_refcoco_format/indoor_80/refs.p'
-ref_file = 'refer/data/aihub_refcoco_format/manufact_80/refs.p'
+ref_file = 'refer/data/aihub_refcoco_format/manufact_80/refs_2.p'
 ref_ann = pickle.load(open(ref_file, 'rb'))
 print(ref_ann[10])
 print(ref_ann[1])
@@ -190,7 +188,7 @@ for i, ref_ann_i in enumerate(tqdm(ref_ann)):
     
     # ref_ann_i = next((d for d in ref_ann if d["ref_id"] == str(i)), None)
     # ref_ann_i = ref_ann[i]
-    if ref_ann_i['split'] == 'validation':
+    if ref_ann_i['split'] == 'val':
         # print("val!!")
         pass
     else:
@@ -205,10 +203,35 @@ for i, ref_ann_i in enumerate(tqdm(ref_ann)):
     height, width = img_dict_i['height'], img_dict_i['width']
 
     try:
-        x, y, w, h = bbox
-        box_string = f'{x},{y},{x + w},{y + h}'
+        fn = img_dict_i['file_name']
+        img_id = fn.split(".")[0].split("_")[-1]
+
+        # Determine the appropriate prefix for file_name_key
+        prefix = fn.split(".")[0].split("_")[0] + "_"
+        file_name_key = f"{prefix}{img_id}"
+        # load box
+        if file_name_key in bbox_dict:
+            print('bbox dict')
+            # Update bbox value based on CSV data
+            x1, y1, x2, y2 = map(int, bbox_dict[file_name_key].split(','))
+            box_string = f'{x1},{y1},{x2},{y2}'
+        else:
+            # prefix = img_dict_i['file_name'].split('_')[0]
+            # print(prefix)
+            # box = refer.getRefBox(this_ref_id)  # x,y,w,h
+            # Fallback to the default logic if not in combined CSV data
+            if prefix == "real_":
+                x, y, w, h = bbox
+                box_string = f'{x},{y},{x + w},{y + h}'
+            elif prefix == "syn_":
+                x1, y1, x2, y2 = bbox
+                box_string = f'{x1},{y1},{x2},{y2}'
+            else:
+                print("Image must be either real or syn")
+                exit()
     except TypeError:
-        print(bbox)
+        # print(bbox)
+        print(ann_i)
         continue
     
     img_name = img_dict_i['file_name']
@@ -222,5 +245,5 @@ for i, ref_ann_i in enumerate(tqdm(ref_ann)):
 writer.writelines(lines)
 writer.close()
 
-print("train_idx", train_idx)
+# print("train_idx", train_idx)
 print('val_idx', val_idx)
