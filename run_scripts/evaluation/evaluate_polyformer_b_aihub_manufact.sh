@@ -17,8 +17,9 @@ model='polyformer_b'
 num_bins=64
 batch_size=16
 
-dataset='aihub_manufact'
-ckpt_path=../finetune/polyformer_b_aihub_manufact_checkpoints/100_5e-5_512/checkpoint_last.pt
+dataset='aihub_manufact_bbox_fix'
+# ckpt_path=../finetune/polyformer_b_aihub_manufact_checkpoints/100_5e-5_512/checkpoint_last.pt
+ckpt_path=../finetune/polyformer_b_aihub_manufact_80_uniq_checkpoints/100_5e-5_512/checkpoint_epoch_55.pt
 # dataset='refcocog'
 # ckpt_path=../../weights/polyformer_b_refcocog.pt
 
@@ -45,5 +46,6 @@ python3 -m torch.distributed.launch --nproc_per_node=${GPUS_PER_NODE} --master_p
     --num-bins=${num_bins} \
     --vis_dir=${vis_dir} \
     --result_dir=${result_dir} \
-    --model-overrides="{\"data\":\"${data}\",\"bpe_dir\":\"${bpe_dir}\",\"selected_cols\":\"${selected_cols}\"}"
+    --model-overrides="{\"data\":\"${data}\",\"bpe_dir\":\"${bpe_dir}\",\"selected_cols\":\"${selected_cols}\"}" \
+    # --vis
 done

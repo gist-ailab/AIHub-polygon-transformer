@@ -7,8 +7,8 @@ export MASTER_PORT=6061
 det_weight=1
 cls_weight=0
 num_bins=64
-log_dir=./polyformer_b_pretrain_aihub_manufact_80_logs
-save_dir=./polyformer_b_pretrain_aihub_manufact_80_checkpoints
+log_dir=./polyformer_b_pretrain_aihub_manufact_uniq_80_logs
+save_dir=./polyformer_b_pretrain_aihub_manufact_uniq_80_checkpoints
 mkdir -p $log_dir $save_dir
 
 bpe_dir=../../utils/BPE
@@ -39,7 +39,7 @@ max_tgt_length=420
 
 patch_image_size=512
 
-restore_file=../pretrain/polyformer_b_pretrain_aihub_indoor_80_checkpoints_resume_2/20_5e-5_512/checkpoint.best_score_0.5220.pt
+# restore_file=../pretrain/polyformer_b_pretrain_aihub_indoor_80_checkpoints_resume_2/20_5e-5_512/checkpoint.best_score_0.5220.pt
 
 for max_epoch in 20; do
   echo "max_epoch "${max_epoch}
@@ -66,7 +66,6 @@ for max_epoch in 20; do
           --batch-size=${batch_size} \
           --update-freq=${update_freq} \
           --encoder-normalize-before \
-          --restore-file=${restore_file} \
           --decoder-normalize-before \
           --share-decoder-input-output-embed \
           --share-all-embeddings \
@@ -103,7 +102,9 @@ for max_epoch in 20; do
           --fp16-scale-window=512 \
           --det_weight=${det_weight} \
           --cls_weight=${cls_weight} \
-          --num-workers=0 > ${log_file} 2>&1
+          --num-workers=0 > ${log_file} 2>&1 
+          # --restore-file=${restore_file} \
+          
     done
   done
 done

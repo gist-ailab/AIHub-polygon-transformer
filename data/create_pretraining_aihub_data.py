@@ -7,20 +7,20 @@ import pandas as pd
 import glob
 
 
-img_path = 'refer/data/aihub_refcoco_format/indoor_80/images'
-# img_path = 'refer/data/aihub_refcoco_format/manufact_80/images'
+# img_path = 'refer/data/aihub_refcoco_format/indoor_80/images'
+img_path = 'refer/data/aihub_refcoco_format/manufact_80/images'
 
 # load annotation files
 # f = open("datasets/annotations/instances.json")
-f = open("refer/data/aihub_refcoco_format/indoor_80/instances_2.json")
-# f = open("refer/data/aihub_refcoco_format/manufact_80/instances.json")
+f = open("refer/data/aihub_refcoco_format/manufact_80/instances_2.json")
+# f = open("refer/data/aihub_refcoco_format/indoor_80/instances_2.json")
 print("Loading annotation file")
 data = json.load(f)
 f.close()
 
 # Define the directory containing your CSV files
-csv_dir = 'data/aihub_csv_error_csv/indoor'  # Replace with the actual directory path
-# csv_dir = 'data/aihub_csv_error_csv/manufact'  # Replace with the actual directory path
+# csv_dir = 'data/aihub_csv_error_csv/indoor'  # Replace with the actual directory path
+csv_dir = 'data/aihub_csv_error_csv/manufact'  # Replace with the actual directory path
 csv_files = glob.glob(f'{csv_dir}/*.csv')
 
 # Initialize an empty dictionary to store bounding box values from all CSV files
@@ -57,8 +57,8 @@ print(data['annotations'][6])
 print(len(data['images']))
 print(len(data['annotations']))
 
-ref_file = 'refer/data/aihub_refcoco_format/indoor_80/refs_2.p'
-# ref_file = 'refer/data/aihub_refcoco_format/manufact_80/refs.p'
+# ref_file = 'refer/data/aihub_refcoco_format/indoor_80/refs.p'
+ref_file = 'refer/data/aihub_refcoco_format/manufact_80/refs_2.p'
 ref_ann = pickle.load(open(ref_file, 'rb'))
 print(ref_ann[10])
 print(ref_ann[1])

@@ -18,8 +18,8 @@ max_length = 400
 
 data_root = './refer/data'
 # datasets = ['refcoco', 'refcoco+', 'refcocog']
-datasets = ['aihub_indoor']
-# datasets = ['aihub_manufact']
+# datasets = ['aihub_indoor']
+datasets = ['aihub_manufact']
 
 if datasets[0] == 'aihub_indoor':
     image_dir = './refer/data/aihub_refcoco_format/indoor_80/images'
@@ -70,8 +70,8 @@ for dataset in datasets:
         splits = ['train', 'val']
         splitBy = None
     elif dataset == 'aihub_manufact':
-        # splits = ['val', 'test']
-        splits = ['train', 'val', 'test']
+        splits = ['val', 'test']
+        # splits = ['train', 'val', 'test']
         splitBy = None
 
     save_dir = f'datasets/finetune/{dataset}_bbox_fix'
@@ -91,10 +91,10 @@ for dataset in datasets:
         writer = open(file_name, 'w')
         refer = REFER(data_root, dataset, splitBy)
 
-        if dataset == 'aihub_manufact' and split == 'val':
-            ref_ids = refer.getRefIds(split='validation')
-        else:
-            ref_ids = refer.getRefIds(split=split)
+        # if dataset == 'aihub_manufact' and split == 'val':
+        #     ref_ids = refer.getRefIds(split='validation')
+        # else:
+        ref_ids = refer.getRefIds(split=split)
 
         for this_ref_id in tqdm(ref_ids):
             this_img_id = refer.getImgIds(this_ref_id)
