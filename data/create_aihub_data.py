@@ -116,10 +116,10 @@ for dataset in datasets:
             # load mask
             try:
                 ref = refer.loadRefs(this_ref_id)
+                ref_mask = np.array(refer.getMask(ref[0])['mask'])
             except TypeError:
                 print('None mask error')
                 continue
-            ref_mask = np.array(refer.getMask(ref[0])['mask'])
             annot = np.zeros(ref_mask.shape)
             annot[ref_mask == 1] = 1  # 255
             annot_img = Image.fromarray(annot.astype(np.uint8), mode="P")

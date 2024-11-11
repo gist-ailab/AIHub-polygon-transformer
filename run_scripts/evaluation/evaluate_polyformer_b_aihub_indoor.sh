@@ -19,7 +19,7 @@ batch_size=16
 
 # dataset='aihub_indoor'
 dataset='aihub_indoor_bbox_fix'
-ckpt_path=../finetune/polyformer_b_aihub_indoor_80_bbox_fix_checkpoints/100_5e-5_512/checkpoint_epoch_4.pt
+ckpt_path=../finetune/polyformer_b_aihub_indoor_80_unique_checkpoints/100_5e-5_512/checkpoint_epoch_64.pt
 
 # dataset='refcocog'
 # ckpt_path=../../weights/polyformer_b_refcocog.pt
@@ -46,8 +46,8 @@ python3 -m torch.distributed.launch --nproc_per_node=${GPUS_PER_NODE} --master_p
     --fp16 \
     --num-workers=0 \
     --num-bins=${num_bins} \
-    --vis \
     --vis_dir=${vis_dir} \
     --result_dir=${result_dir} \
-    --model-overrides="{\"data\":\"${data}\",\"bpe_dir\":\"${bpe_dir}\",\"selected_cols\":\"${selected_cols}\"}"
+    --model-overrides="{\"data\":\"${data}\",\"bpe_dir\":\"${bpe_dir}\",\"selected_cols\":\"${selected_cols}\"}" \
+    # --vis 
 done
