@@ -18,8 +18,8 @@ max_length = 400
 
 data_root = './refer/data'
 # datasets = ['refcoco', 'refcoco+', 'refcocog']
-# datasets = ['aihub_indoor']
-datasets = ['aihub_manufact']
+datasets = ['aihub_indoor']
+# datasets = ['aihub_manufact']
 
 if datasets[0] == 'aihub_indoor':
     image_dir = './refer/data/aihub_refcoco_format/indoor_80/images'
@@ -66,15 +66,15 @@ for dataset in datasets:
         splits = ['train', 'val']
         splitBy = 'umd'
     elif dataset == 'aihub_indoor':
-        # splits = ['train', 'val', 'test']
-        splits = ['train', 'val']
+        splits = ['train', 'val', 'test']
+        # splits = ['train', 'val']
         splitBy = None
     elif dataset == 'aihub_manufact':
         splits = ['val', 'test']
         # splits = ['train', 'val', 'test']
         splitBy = None
 
-    save_dir = f'datasets/finetune/{dataset}_bbox_fix'
+    save_dir = f'datasets/finetune/{dataset}_bbox_fix_1112'
     os.makedirs(save_dir, exist_ok=True)
     for split in splits:
         num_pts = []

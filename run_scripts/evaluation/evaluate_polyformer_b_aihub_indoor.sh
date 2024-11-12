@@ -19,7 +19,7 @@ batch_size=16
 
 # dataset='aihub_indoor'
 dataset='aihub_indoor_bbox_fix'
-ckpt_path=../finetune/polyformer_b_aihub_indoor_80_unique_checkpoints/100_5e-5_512/checkpoint_epoch_64.pt
+ckpt_path=../finetune/polyformer_b_aihub_indoor_80_unique_resume_checkpoints/100_5e-5_512/checkpoint_best.pt
 
 # dataset='refcocog'
 # ckpt_path=../../weights/polyformer_b_refcocog.pt
