@@ -234,7 +234,7 @@ def merge_results(task, cfg, logger, score_cnt, score_sum, f_score_sum=None, ap_
             dist.all_reduce(score_cnt.data)
         if score_cnt.item() > 0:
             prec_list = [.5, .6, .7, .8, .9]
-            txt = "sample_cnt: {}, mIoU score: {}, oIoU score: {}, ap det score: {}, f score: {}, J&F: {}\n".format(
+            txt = "sample_cnt: {}, mIoU score: {}, oIoU score: {}, ap det score (box prec@0.5): {}, f score: {}, J&F: {}\n".format(
                 score_cnt, round(score_sum.item() / score_cnt.item(), 4),
                 round(cum_I_sum.item() / cum_U_sum.item(), 4),
                 round(ap_det_score_sum.item() / score_cnt.item(), 4),

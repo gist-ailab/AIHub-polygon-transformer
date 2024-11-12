@@ -19,12 +19,13 @@ batch_size=16
 
 dataset='aihub_manufact_bbox_fix'
 # ckpt_path=../finetune/polyformer_b_aihub_manufact_checkpoints/100_5e-5_512/checkpoint_last.pt
-ckpt_path=../finetune/polyformer_b_aihub_manufact_80_uniq_checkpoints/100_5e-5_512/checkpoint_epoch_55.pt
+ckpt_path=../finetune/polyformer_b_aihub_manufact_80_uniq_checkpoints/100_5e-5_512/checkpoint_best.pt
 # dataset='refcocog'
 # ckpt_path=../../weights/polyformer_b_refcocog.pt
 
 # for split in 'refcocog_val' 'refcocog_test'
-for split in 'aihub_manufact_val' 'aihub_manufact_test'
+# for split in 'aihub_manufact_val' 'aihub_manufact_test'
+for split in 'aihub_manufact_test'
 do
 data=../../datasets/finetune/${dataset}/${split}.tsv
 result_path=../../results_${model}/${dataset}/

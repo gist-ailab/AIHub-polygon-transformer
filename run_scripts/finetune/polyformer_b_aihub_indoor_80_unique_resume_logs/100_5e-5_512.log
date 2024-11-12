@@ -2982,3 +2982,15 @@ slice_id 7 seek offset 327637
 slice_id 3 seek offset 140417
 2024-11-12 17:08:48 - checkpoint_utils.py[line:135] - INFO: Saved checkpoint ./polyformer_b_aihub_indoor_80_unique_resume_checkpoints/100_5e-5_512/checkpoint_best.pt (epoch 17 @ 6221 updates, score 0) (writing took 227.04599334893283 seconds)
 cp ./polyformer_b_aihub_indoor_80_unique_resume_checkpoints/100_5e-5_512/checkpoint_last.pt ./polyformer_b_aihub_indoor_80_unique_resume_checkpoints/100_5e-5_512/checkpoint_epoch_17.pt
+local datafile ../../datasets/finetune/aihub_indoor_bbox_fix/aihub_indoor_train.tsv slice_id 4 finished initializing row_count and line_idx-to-offset mapping
+file ../../datasets/finetune/aihub_indoor_bbox_fix/aihub_indoor_train.tsv slice_id 4 row count 46805 total row count 374442
+local datafile ../../datasets/finetune/aihub_indoor_bbox_fix/aihub_indoor_train.tsv slice_id 6 finished initializing row_count and line_idx-to-offset mappinglocal datafile ../../datasets/finetune/aihub_indoor_bbox_fix/aihub_indoor_train.tsv slice_id 2 finished initializing row_count and line_idx-to-offset mapping
+local datafile ../../datasets/finetune/aihub_indoor_bbox_fix/aihub_indoor_train.tsv slice_id 5 finished initializing row_count and line_idx-to-offset mapping
+
+file ../../datasets/finetune/aihub_indoor_bbox_fix/aihub_indoor_train.tsv slice_id 6 row count 46805 total row count 374442
+file ../../datasets/finetune/aihub_indoor_bbox_fix/aihub_indoor_train.tsv slice_id 2 row count 46805 total row count 374442
+file ../../datasets/finetune/aihub_indoor_bbox_fix/aihub_indoor_train.tsv slice_id 5 row count 46805 total row count 374442
+slice_id 4 seek offset 187222
+slice_id 6 seek offset 280832
+slice_id 5 seek offset 234027
+slice_id 2 seek offset 93612
