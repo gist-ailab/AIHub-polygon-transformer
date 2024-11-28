@@ -18,6 +18,7 @@ from skimage import draw
 from PIL import Image
 from utils.vis_utils import overlay_predictions
 from torchvision.utils import save_image
+import pandas as pd
 
 SMOOTH = 1e-6
 
@@ -94,6 +95,12 @@ def eval_refcoco(task, generator, models, sample, **kwargs):
         bboxes = torch.tensor(np.stack(bboxes, 0))
         bboxes = bboxes.to(sample['w_resize_ratios'].device)
         ap_scores = _calculate_ap_score(bboxes.float(), sample['region_coords'].float())
+        
+        # Load the ID-to-File Name Mapping
+        mapping_csv_path = os.path.join(vis_dir, 'id_file_mapping.csv')
+        mapping_df = pd.read_csv(mapping_csv_path)
+        id_to_file = dict(zip(mapping_df['id'], mapping_df['file_name']))
+        
         for i in range(b):
             hyps_i = hyps[i]
             gt_mask = refs[i]
@@ -132,20 +139,56 @@ def eval_refcoco(task, generator, models, sample, **kwargs):
                 img_ndarray = img.permute(1, 2, 0).cpu().numpy() * 255
                 img_ndarray = img_ndarray.astype(np.uint8)
 
-                gt_overlayed_fn = f"{uniq_id}_{text}_gt_overlayed.png"
-                pred_overlayed_fn = f"{uniq_id}_{text}_pred_overlayed.png"
+                
+                # gt_overlayed_fn = f"{uniq_id}_{text}_gt_overlayed.png"
+                # pred_overlayed_fn = f"{uniq_id}_{text}_pred_overlayed.png"
+
+                # pred_overlayed = overlay_predictions(img_ndarray, pred_mask, hyps_i, pred_box)
+                # gt_overlayed = overlay_predictions(img_ndarray, gt_mask, None, gt_box)
+
+                # pred_overlayed = Image.fromarray(pred_overlayed.astype(np.uint8))
+                # pred_overlayed.save(os.path.join(vis_dir, pred_overlayed_fn))
+                # gt_overlayed = Image.fromarray(gt_overlayed.astype(np.uint8))
+                # gt_overlayed.save(os.path.join(vis_dir, gt_overlayed_fn))
+
+                # img_fn = f"{uniq_id}_{text}.png"
+                # save_image(img, os.path.join(vis_dir, img_fn))
+
+                # Replace uniq_id with file_name_without_ext
+                uniq_id = int(sample["id"][i].split('_')[0])
+                file_name = id_to_file.get(uniq_id, 'unknown')  # Replace 'unknown' if necessary
+                file_name_without_ext, _ = os.path.splitext(file_name)
+
+                gt_overlayed_fn = f"{file_name_without_ext}_{text}_gt_overlayed.png"
+                pred_overlayed_fn = f"{file_name_without_ext}_{text}_pred_overlayed.png"
 
                 pred_overlayed = overlay_predictions(img_ndarray, pred_mask, hyps_i, pred_box)
                 gt_overlayed = overlay_predictions(img_ndarray, gt_mask, None, gt_box)
 
                 pred_overlayed = Image.fromarray(pred_overlayed.astype(np.uint8))
-                pred_overlayed.save(os.path.join(vis_dir, pred_overlayed_fn))
                 gt_overlayed = Image.fromarray(gt_overlayed.astype(np.uint8))
-                gt_overlayed.save(os.path.join(vis_dir, gt_overlayed_fn))
+                img_fn = f"{file_name_without_ext}_{text}.png"
 
-                img_fn = f"{uniq_id}_{text}.png"
-                save_image(img, os.path.join(vis_dir, img_fn))
-
+                # if ap_scores[i] == 0:
+                #     print(file_name_without_ext)
+                # print(os.path.exists(os.path.join(vis_dir, img_fn)))
+                # print(os.path.exists(os.path.join(vis_dir, pred_overlayed_fn)))
+                # print(os.path.exists(os.path.join(vis_dir, gt_overlayed_fn)))
+                # print(vis_dir)
+                try:
+                    pred_overlayed.save(os.path.join(vis_dir, pred_overlayed_fn))
+                    gt_overlayed.save(os.path.join(vis_dir, gt_overlayed_fn))
+                    save_image(img, os.path.join(vis_dir, img_fn))
+                except OSError:
+                    # Truncate text to avoid filename length issues
+                    truncated_text = text[:15]
+                    gt_overlayed_fn = f"{file_name_without_ext}_{truncated_text}_gt_overlayed.png"
+                    pred_overlayed_fn = f"{file_name_without_ext}_{truncated_text}_pred_overlayed.png"
+                    pred_overlayed.save(os.path.join(vis_dir, pred_overlayed_fn))
+                    gt_overlayed.save(os.path.join(vis_dir, gt_overlayed_fn))
+                    img_fn = f"{file_name_without_ext}_{truncated_text}.png"
+                    save_image(img, os.path.join(vis_dir, img_fn))
+                
         return torch.tensor(IoU), torch.tensor(F_score), ap_scores, torch.tensor(cum_I), torch.tensor(cum_U)
 
     gen_out = task.inference_step(models, sample)
@@ -242,10 +285,10 @@ def merge_results(task, cfg, logger, score_cnt, score_sum, f_score_sum=None, ap_
                 round((f_score_sum.item() + score_sum.item()) / (2 * score_cnt.item()), 4)
             )
 
-            prec_txt = " ".join(
-                [f"prec@{prec}: {round(prec_score.item() / score_cnt.item(), 4)}\n" for prec, prec_score in
-                 zip(prec_list, prec_score_sum)])
-            txt += prec_txt
+            # prec_txt = " ".join(
+            #     [f"prec@{prec}: {round(prec_score.item() / score_cnt.item(), 4)}\n" for prec, prec_score in
+            #      zip(prec_list, prec_score_sum)])
+            # txt += prec_txt
 
             logger.info(txt)
             output_path = os.path.join(cfg.common_eval.results_path, "{}_result.txt".format(cfg.dataset.gen_subset))

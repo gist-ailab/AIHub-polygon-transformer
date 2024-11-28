@@ -19,8 +19,8 @@ max_length = 400
 
 data_root = './refer/data'
 # datasets = ['refcoco', 'refcoco+', 'refcocog']
-datasets = ['aihub_indoor']
-# datasets = ['aihub_manufact']
+# datasets = ['aihub_indoor']
+datasets = ['aihub_manufact']
 
 if datasets[0] == 'aihub_indoor':
     # image_dir = '/media/sblee/170d6766-97d9-4917-8fc6-7d6ae84df896/aihub_2024_datasets/indoor_test_1120/images'
@@ -139,7 +139,7 @@ for dataset in datasets:
     # print(f"총 {len(base_filenames_set)}개의 base_id.png가 세트에 추가되었습니다.")
 
 
-    save_dir = f'datasets/finetune/{dataset}_test_1121'
+    save_dir = f'datasets/finetune/{dataset}_test_1120'
     os.makedirs(save_dir, exist_ok=True)
     for split in splits:
         num_pts = []

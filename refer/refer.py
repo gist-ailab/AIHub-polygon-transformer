@@ -59,15 +59,22 @@ class REFER:
 			self.DATA_DIR = osp.join(data_root, 'refcoco')
 			print('Dataset preprocessing...')
 			print('Print list of AIHub Indoor dataset...')
-			self.DATA_DIR = "refer/data/aihub_refcoco_format/indoor_80"
-			self.IMAGE_DIR = "refer/data/aihub_refcoco_format/indoor_80/images"
+			# self.DATA_DIR = "refer/data/aihub_refcoco_format/indoor_80"
+			# self.IMAGE_DIR = "refer/data/aihub_refcoco_format/indoor_80/images"
+			# self.DATA_DIR = "/media/sblee/170d6766-97d9-4917-8fc6-7d6ae84df896/aihub_2024_datasets/indoor_test_1120"
+			# self.IMAGE_DIR = "/media/sblee/170d6766-97d9-4917-8fc6-7d6ae84df896/aihub_2024_datasets/indoor_test_1120/images"
+			# self.DATA_DIR = "../indoor_80"
+			# self.IMAGE_DIR = "../indoor_80/images"
+			self.DATA_DIR = "./refer/data/aihub_refcoco_format/indoor_test_1121"
+			self.IMAGE_DIR = "./refer/data/aihub_refcoco_format/indoor_test_1121/images"
+			
 			print('Dataset preprocessing...')
 			print('Print list of AIHub Indoor dataset...')
 			# print(os.listdir(self.IMAGE_DIR))
 		elif dataset == 'aihub_manufact':
 			# self.DATA_DIR = osp.join(data_root, 'refcocog')
-			self.DATA_DIR = "refer/data/aihub_refcoco_format/manufact_80"
-			self.IMAGE_DIR = "refer/data/aihub_refcoco_format/manufact_80/images"
+			self.DATA_DIR = "./refer/data/aihub_refcoco_format/manufact_test_1120"
+			self.IMAGE_DIR = "./refer/data/aihub_refcoco_format/manufact_test_1120/images"
 			print('Dataset preprocessing...')
 			print('Print list of AIHub Manufact dataset...')
 			# print(os.listdir(self.IMAGE_DIR))
@@ -78,7 +85,7 @@ class REFER:
 		# load refs from data/dataset/refs(dataset).json
 		tic = time.time()
 		if dataset in ['aihub_indoor', 'aihub_manufact']:
-			ref_file = osp.join(self.DATA_DIR, 'refs_3.p')
+			ref_file = osp.join(self.DATA_DIR, 'refs.p')
 		else:
 			ref_file = osp.join(self.DATA_DIR, 'refs('+splitBy+').p')
 		self.data = {}
@@ -86,7 +93,7 @@ class REFER:
 		self.data['refs'] = pickle.load(open(ref_file, 'rb'))
 
 		# load annotations from data/dataset/instances.json
-		instances_file = osp.join(self.DATA_DIR, 'instances_3.json')
+		instances_file = osp.join(self.DATA_DIR, 'instances.json')
 		instances = json.load(open(instances_file, 'r'))
 		self.data['images'] = instances['images']
 		self.data['annotations'] = instances['annotations']

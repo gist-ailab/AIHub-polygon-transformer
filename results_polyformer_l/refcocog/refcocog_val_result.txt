@@ -1,6 +1,0 @@
-sample_cnt: tensor([4896.], device='cuda:7'), mIoU score: 0.2652, oIoU score: 0.2009, ap det score: 0.3256, f score: 0.2993, J&F: 0.2822
-prec@0.5: 0.2972
- prec@0.6: 0.2843
- prec@0.7: 0.2561
- prec@0.8: 0.1979
- prec@0.9: 0.0768
