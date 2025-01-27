@@ -65,16 +65,16 @@ class REFER:
 			# self.IMAGE_DIR = "/media/sblee/170d6766-97d9-4917-8fc6-7d6ae84df896/aihub_2024_datasets/indoor_test_1120/images"
 			# self.DATA_DIR = "../indoor_80"
 			# self.IMAGE_DIR = "../indoor_80/images"
-			self.DATA_DIR = "./refer/data/aihub_refcoco_format/indoor_test_1121"
-			self.IMAGE_DIR = "./refer/data/aihub_refcoco_format/indoor_test_1121/images"
+			self.DATA_DIR = "./refer/data/aihub_refcoco_format/indoor"
+			self.IMAGE_DIR = "./refer/data/aihub_refcoco_format/indoor/images"
 			
 			print('Dataset preprocessing...')
 			print('Print list of AIHub Indoor dataset...')
 			# print(os.listdir(self.IMAGE_DIR))
 		elif dataset == 'aihub_manufact':
 			# self.DATA_DIR = osp.join(data_root, 'refcocog')
-			self.DATA_DIR = "./refer/data/aihub_refcoco_format/manufact_test_1120"
-			self.IMAGE_DIR = "./refer/data/aihub_refcoco_format/manufact_test_1120/images"
+			self.DATA_DIR = "./refer/data/aihub_refcoco_format/manufact"
+			self.IMAGE_DIR = "./refer/data/aihub_refcoco_format/manufact/images"
 			print('Dataset preprocessing...')
 			print('Print list of AIHub Manufact dataset...')
 			# print(os.listdir(self.IMAGE_DIR))

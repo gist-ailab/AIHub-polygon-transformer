@@ -70,7 +70,7 @@ def eval_refcoco(task, generator, models, sample, **kwargs):
         mask = mask > 0
         return mask.astype(np.uint8)
 
-    def _calculate_score(hyps, hyps_det, refs, sample, n_poly_pred, n_poly_gt, vis=True, vis_dir=None):
+    def _calculate_score(hyps, hyps_det, refs, sample, n_poly_pred, n_poly_gt, vis=False, vis_dir=None):
         if vis:
             os.makedirs(vis_dir, exist_ok=True)
 
@@ -98,8 +98,9 @@ def eval_refcoco(task, generator, models, sample, **kwargs):
         
         # Load the ID-to-File Name Mapping
         mapping_csv_path = os.path.join(vis_dir, 'id_file_mapping.csv')
-        mapping_df = pd.read_csv(mapping_csv_path)
-        id_to_file = dict(zip(mapping_df['id'], mapping_df['file_name']))
+        if vis:
+            mapping_df = pd.read_csv(mapping_csv_path)
+            id_to_file = dict(zip(mapping_df['id'], mapping_df['file_name']))
         
         for i in range(b):
             hyps_i = hyps[i]

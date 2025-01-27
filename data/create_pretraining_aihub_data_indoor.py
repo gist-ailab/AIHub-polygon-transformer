@@ -7,36 +7,17 @@ import pandas as pd
 import glob
 
 
-# img_path = 'refer/data/aihub_refcoco_format/indoor_80/images'
-img_path = 'refer/data/aihub_refcoco_format/manufact_80/images'
+img_path = 'refer/data/aihub_refcoco_format/indoor/images'
 
 # load annotation files
-# f = open("datasets/annotations/instances.json")
-f = open("refer/data/aihub_refcoco_format/manufact_80/instances_2.json")
-# f = open("refer/data/aihub_refcoco_format/indoor_80/instances_2.json")
+f = open("refer/data/aihub_refcoco_format/indoor/instances.json")
 print("Loading annotation file")
 data = json.load(f)
 f.close()
 
-# Define the directory containing your CSV files
-# csv_dir = 'data/aihub_csv_error_csv/indoor'  # Replace with the actual directory path
-csv_dir = 'data/aihub_csv_error_csv/manufact'  # Replace with the actual directory path
-csv_files = glob.glob(f'{csv_dir}/*.csv')
 
 # Initialize an empty dictionary to store bounding box values from all CSV files
 bbox_dict = {}
-
-# Load and combine data from all CSV files
-for csv_file in csv_files:
-    bbox_data = pd.read_csv(csv_file)
-    
-    # Determine prefix based on the file name
-    prefix = "real_" if "real_" in csv_file else "syn_"
-    
-    # Convert filenames to the appropriate format and store in bbox_dict
-    bbox_data['파일명'] = bbox_data['파일명'].apply(lambda x: f'{prefix}{x}')
-    # Update bbox_dict with bbox data from this file
-    bbox_dict.update(dict(zip(bbox_data['파일명'], bbox_data['bbox'])))  # Replace 'bbox_column_name' with actual column name
 
 # load the validation and test image list of refcoco, refcoco+, and refcocog
 # val_test_files = pickle.load(open("data/val_test_files.p", "rb"))
@@ -57,8 +38,7 @@ print(data['annotations'][6])
 print(len(data['images']))
 print(len(data['annotations']))
 
-# ref_file = 'refer/data/aihub_refcoco_format/indoor_80/refs.p'
-ref_file = 'refer/data/aihub_refcoco_format/manufact_80/refs_2.p'
+ref_file = 'refer/data/aihub_refcoco_format/indoor/refs.p'
 ref_ann = pickle.load(open(ref_file, 'rb'))
 print(ref_ann[10])
 print(ref_ann[1])
@@ -73,8 +53,7 @@ print(len(ref_ann))
 # exit()
 
 
-# tsv_filename = "datasets/pretrain/train_aihub_indoor_80_test.tsv"
-tsv_filename = "datasets/pretrain/train_aihub_manufact_80.tsv"
+tsv_filename = "datasets/pretrain/train_aihub_indoor_80.tsv"
 writer = open(tsv_filename, 'w')
 print("generating ", tsv_filename)
 
@@ -173,7 +152,6 @@ writer.close()
 #####################################
 # generate validation tsv files
 tsv_filename = f"datasets/pretrain/val_aihub_indoor_80.tsv"
-# tsv_filename = f"datasets/pretrain/val_aihub_manufact_80.tsv"
 writer = open(tsv_filename, 'w')
 print("generating ", tsv_filename)
 

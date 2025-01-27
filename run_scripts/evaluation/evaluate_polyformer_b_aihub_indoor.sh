@@ -18,9 +18,9 @@ num_bins=64
 batch_size=16
 
 # dataset='aihub_indoor'
-dataset='aihub_indoor_test_1120'
+dataset='aihub_indoor'
 # ckpt_path=../finetune/polyformer_b_aihub_indoor_80_unique_logs/checkpoint_epoch_1.pt
-ckpt_path=../finetune/polyformer_b_aihub_indoor_80_unique_resume_checkpoints/100_5e-5_512/checkpoint_epoch_1.pt
+ckpt_path=../finetune/polyformer_b_aihub_indoor_80_unique_resume_checkpoints/100_5e-5_512/checkpoint_best.pt
 # dataset='refcocog'
 # ckpt_path=../../weights/polyformer_b_refcocog.pt
 
@@ -29,7 +29,7 @@ ckpt_path=../finetune/polyformer_b_aihub_indoor_80_unique_resume_checkpoints/100
 for split in 'aihub_indoor_test'
 do
 # data=../../datasets/finetune/${dataset}/${split}.tsv
-data=../../datasets/finetune/aihub_indoor_test_1121/aihub_indoor_test.tsv
+data=../../datasets/finetune/aihub_indoor/aihub_indoor_test.tsv
 result_path=../../results_${model}/${dataset}/
 vis_dir=${result_path}/vis/${split}
 result_dir=${result_path}/result/${split}
@@ -53,6 +53,6 @@ python3 -m torch.distributed.launch --nproc_per_node=${GPUS_PER_NODE} --master_p
     --num-bins=${num_bins} \
     --vis_dir=${vis_dir} \
     --result_dir=${result_dir} \
-    --model-overrides="{\"data\":\"${data}\",\"bpe_dir\":\"${bpe_dir}\",\"selected_cols\":\"${selected_cols}\"}" \
-    --vis >> ${log_file} 2>&1
+    --model-overrides="{\"data\":\"${data}\",\"bpe_dir\":\"${bpe_dir}\",\"selected_cols\":\"${selected_cols}\"}" >> ${log_file} 2>&1
+    # --vis >> ${log_file} 2>&1
 done

@@ -6,7 +6,7 @@ docker run --gpus all -it aihub-manufact-polyformer
 ```
 
 ## Preprocessing Data for Test
-1. Locate test data into "refer/data" (e.g. refer/data/원천데이터, refer/data/라벨링데이터)
+1. Locate test data into "refer/data" (e.g. refer/data/source_data, refer/data/labeling_data)
 2. Run python preprocessing code
 ```
 python convert_aihub_manufact.py

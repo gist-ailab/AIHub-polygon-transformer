@@ -17,12 +17,14 @@ bpe_dir=../../utils/BPE
 user_dir=../../polyformer_module
 
 data_dir=../../datasets/finetune
-data=${data_dir}/aihub_manufact_bbox_fix/aihub_manufact_train.tsv,${data_dir}/aihub_manufact_bbox_fix/aihub_manufact_val.tsv
+data=${data_dir}/aihub_manufact/aihub_manufact_train.tsv,${data_dir}/aihub_manufact/aihub_manufact_val.tsv
 # data=${data_dir}/refcoco+g_train_shuffled.tsv,${data_dir}/refcoco/refcoco_val.tsv
 selected_cols=0,5,6,2,4,3,7
 # restore_file=../../weights/polyformer_b_pretrain.pt
-# restore_file=../finetune/polyformer_b_aihub_manufact_80_checkpoints/100_5e-5_512/checkpoint_epoch_33.pt
-restore_file=../pretrain/polyformer_b_pretrain_aihub_manufact_uniq_80_checkpoints/20_5e-5_512/checkpoint.best_score_0.7740.pt
+
+### Change to your own checkpoint path
+# restore_file=../pretrain/polyformer_b_pretrain_aihub_manufact_uniq_80_checkpoints/20_5e-5_512/checkpoint.best_score_0.7740.pt
+restore_file=../finetune/polyformer_b_aihub_manufact_80_uniq_logs/checkpoint_best.pt
 
 task=refcoco
 arch=polyformer_b
@@ -57,7 +59,6 @@ for max_epoch in 100; do
       mkdir -p $save_path
 
       echo "train.py"
-            # CUDA_VISIBLE_DEVICES=0,1,2,3 python3 -m torch.distributed.launch --nproc_per_node=4 --master_port=${MASTER_PORT} ../../train.py \
       CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 python3 -m torch.distributed.launch --nproc_per_node=8 --master_port=${MASTER_PORT} ../../train.py \
           $data \
           --selected-cols=${selected_cols} \

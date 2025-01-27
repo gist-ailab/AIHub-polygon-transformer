@@ -9,34 +9,33 @@ cls_weight=0.0005
 num_bins=64
 # log_dir=./polyformer_b_logs
 # save_dir=./polyformer_b_checkpoints
-log_dir=./polyformer_b_aihub_indoor_80_unique_resume_2_logs
-save_dir=./polyformer_b_aihub_indoor_80_unique_resume_2_checkpoints
+log_dir=./polyformer_b_aihub_indoor_80_unique_resume_logs
+save_dir=./polyformer_b_aihub_indoor_80_unique_resume_checkpoints
 mkdir -p $log_dir $save_dir
 
 bpe_dir=../../utils/BPE
 user_dir=../../polyformer_module
 
 data_dir=../../datasets/finetune
-data=${data_dir}/aihub_indoor_train_1121/aihub_indoor_train.tsv,${data_dir}/aihub_indoor_test_1120/aihub_indoor_test.tsv
-# data=${data_dir}/aihub_indoor_bbox_fix/aihub_indoor_train.tsv,${data_dir}/aihub_indoor_bbox_fix/aihub_indoor_val.tsv
+data=${data_dir}/aihub_indoor/aihub_indoor_train.tsv,${data_dir}/aihub_indoor/aihub_indoor_test.tsv
 # data=${data_dir}/refcoco+g_train_shuffled.tsv,${data_dir}/refcoco/refcoco_val.tsv
 selected_cols=0,5,6,2,4,3,7
 # restore_file=../../weights/polyformer_b_pretrain.pt
-# restore_file=../pretrain/polyformer_b_pretrain_aihub_indoor_checkpoints/20_5e-5_512/checkpoint_20_1000.pt
+
+### Change to your own checkpoint path
 # restore_file=../pretrain/polyformer_b_pretrain_aihub_indoor_80_uniq_checkpoints/20_5e-5_512/checkpoint.best_score_0.6740.pt
 restore_file=../finetune/polyformer_b_aihub_indoor_80_unique_resume_2_checkpoints/100_5e-5_512/checkpoint_last.pt
-# run_scripts/finetune/polyformer_b_aihub_indoor_80_unique_resume_2_checkpoints/100_5e-5_512/checkpoint_last.pt
 
 task=refcoco
 arch=polyformer_b
 criterion=adjust_label_smoothed_cross_entropy
 label_smoothing=0.1
-# lr=3e-5
-lr=1.5e-5
+lr=3e-5
+# lr=1.5e-5
 max_epoch=5
 warmup_ratio=0.06
-# batch_size=16
-batch_size=8
+batch_size=16
+# batch_size=8
 update_freq=8
 resnet_drop_path_rate=0.0
 encoder_drop_path_rate=0.1
@@ -60,7 +59,6 @@ for max_epoch in 100; do
       mkdir -p $save_path
 
       echo "train.py"
-            # CUDA_VISIBLE_DEVICES=0,1,2,3 python3 -m torch.distributed.launch --nproc_per_node=4 --master_port=${MASTER_PORT} ../../train.py \
       CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 python3 -m torch.distributed.launch --nproc_per_node=8 --master_port=${MASTER_PORT} ../../train.py \
           $data \
           --selected-cols=${selected_cols} \
